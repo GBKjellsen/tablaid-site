@@ -1,81 +1,84 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
-export default function BrukerePage() {
+export default function BrukerPage() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold mb-6">For brukere</h1>
+    <main className="bg-[#0A0F1F] text-white">
 
-      <p className="text-lg opacity-90 mb-10">
-        Tablaid er en enkel og trygg helse- og legemiddelassistent som hjelper deg 
-        å holde oversikt – uten stress, uten kompliserte systemer, og uten at 
-        du trenger å “gjøre alt riktig” hele tiden. Den er utviklet for mennesker 
-        som lever med én eller flere faste medisiner, og som ønsker bedre innsikt 
-        i egen helse.
-      </p>
+      {/* HERO */}
+      <section className="max-w-5xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
 
-      <h2 className="text-2xl font-semibold mt-12 mb-4">
-        Hva får du som bruker?
-      </h2>
+        <div>
+          <h1 className="text-4xl font-bold mb-4 leading-tight">
+            En enklere og tryggere medisin­hverdag
+          </h1>
 
-      <ul className="list-disc ml-6 space-y-3 opacity-90">
-        <li>Enkel påminnelse og oversikt over medisiner</li>
-        <li>NFC-registrering som gjør logging raskt og intuitivt</li>
-        <li>Et helsekompass som gir daglig innsikt i egen funksjon</li>
-        <li>Trygg oversikt over søvn, energi, humør, mobilitet og mer</li>
-        <li>Mulighet til å dele innsikt med pårørende dersom du ønsker det</li>
-      </ul>
+          <p className="text-gray-300 text-lg mb-6">
+            Tablaid er din digitale helse- og legemiddelassistent. Den hjelper deg
+            holde oversikt, ta medisiner riktig, forstå behandlingen bedre og følge
+            med på egen helse dag for dag — på en måte som er enkel og human.
+          </p>
+        </div>
 
-      <h2 className="text-2xl font-semibold mt-12 mb-4">
-        Hvorfor betyr dette noe?
-      </h2>
+        {/* NYTT BILDE – OPTIMALISERT */}
+        <div className="flex justify-center">
+          <Image
+            src="/app-hand.png"
+            alt="Bruker holder Tablaid-appen"
+            width={280}
+            height={380}
+            priority
+            className="rounded-xl shadow-xl object-cover max-w-[260px] md:max-w-[300px]"
+          />
+        </div>
 
-      <p className="opacity-90 mb-6">
-        Mange som bruker faste medisiner ønsker større trygghet – både for seg selv 
-        og for familien. Samtidig vil de fleste unngå tunge systemer eller apper 
-        som føles kompliserte.
-      </p>
+      </section>
 
-      <div className="border-l-4 border-blue-600 pl-4 mb-6 italic opacity-90">
-        Verdien ligger i de små, daglige signalene – og hvordan de samlet gir et 
-        bilde av helsen din over tid.
-      </div>
+      {/* INNHOLD */}
+      <section className="max-w-5xl mx-auto px-4 pb-20 space-y-6">
 
-      <p className="opacity-90 mb-6">
-        Når du får innsikt, blir det lettere å forstå når ting går bra – og når 
-        noe bør tas tak i. Tablaid handler om å skape mestring og forutsigbarhet.
-      </p>
+        <p className="text-gray-200">
+          Med Tablaid får du:
+        </p>
 
-      <h2 className="text-2xl font-semibold mt-12 mb-4">
-        Et verktøy som arbeider for deg – i bakgrunnen
-      </h2>
+        <ul className="list-disc pl-5 space-y-2 text-gray-300">
+          <li>
+            <strong>Smart legemiddelstøtte</strong> — påminnelser, oversikt og enkel registrering via NFC
+          </li>
+          <li>
+            <strong>Full kontroll</strong> — alt du trenger å vite om medisinene dine, samlet på ett sted
+          </li>
+          <li>
+            <strong>Helsekompass</strong> — korte daglige spørsmål inspirert av WHO ICOPE
+          </li>
+          <li>
+            <strong>Egenvurdert funksjon (CFS)</strong> — et enkelt verktøy som gir deg innsikt i utviklingen over tid
+          </li>
+          <li>
+            <strong>Dashbord</strong> — se mønstre i søvn, energi, mobilitet, kognisjon, humør og mer
+          </li>
+          <li>
+            <strong>Deling av innsikt</strong> — velg om du vil dele data med pårørende eller kommunen
+          </li>
+        </ul>
 
-      <ul className="list-disc ml-6 space-y-3 opacity-90">
-        <li>Automatiske påminnelser når du ikke er hjemme</li>
-        <li>Trendanalyse som viser hvordan ting utvikler seg</li>
-        <li>Tidlige signaler på endringer du bør være oppmerksom på</li>
-        <li>Trygg datalagring og full kontroll over deling og tilgang</li>
-      </ul>
+        <p className="text-gray-200 pt-4">
+          Tablaid er utviklet med faglig forankring og ekte pasienterfaring i bunn —
+          for å gi deg trygghet, oversikt og mer forutsigbarhet i hverdagen.
+        </p>
 
-      <h2 className="text-2xl font-semibold mt-12 mb-4">Kostnad</h2>
+        <div className="pt-8">
+          <Link
+            href="/kontakt"
+            className="inline-block px-6 py-3 bg-green-600 hover:bg-green-500 text-black rounded-full font-semibold"
+          >
+            Vil du teste Tablaid?
+          </Link>
+        </div>
 
-      <p className="text-lg opacity-90 mb-6">
-        Appen vil koste en rimelig månedspris, men i kommuner som deltar i pilot 
-        kan den dekkes for deg og dine pårørende.
-      </p>
-
-      <h2 className="text-2xl font-semibold mt-12 mb-4">Vil du prøve Tablaid?</h2>
-      <p className="opacity-90 mb-8">
-        Meld interesse for å teste appen i pilot sammen med din kommune eller som privat bruker.
-      </p>
-
-      <Link
-        href="/kontakt"
-        className="px-8 py-4 rounded-xl bg-blue-600 text-white text-lg font-semibold hover:bg-blue-700 transition inline-block"
-      >
-        Kontakt oss
-      </Link>
+      </section>
     </main>
   );
 }
