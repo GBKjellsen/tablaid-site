@@ -1,60 +1,71 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
 
-export default function OmPage() {
+export default function OmOssPage() {
   return (
     <main className="bg-[#0A0F1F] text-white">
-      {/* HERO */}
-      <section className="max-w-5xl mx-auto px-4 py-20">
-        <h1 className="text-4xl font-bold mb-4">Hvorfor Tablaid finnes</h1>
-        <p className="text-gray-300 text-lg max-w-3xl">
-          Tablaid er bygget på én grunnidé: <br />
-          <span className="font-semibold">Tidlige signaler kan endre forløp.</span>
+
+      {/* HEADER SECTION */}
+      <section className="max-w-4xl mx-auto px-4 py-20">
+        <h1 className="text-4xl font-bold mb-6">Om Tablaid</h1>
+
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          Tablaid ble etablert for å løse et økende og kritisk gap i
+          helse- og omsorgstjenestene: mangel på innsikt i hvordan mennesker
+          faktisk fungerer i hverdagen – og utilstrekkelig støtte til trygg
+          legemiddelbruk.
         </p>
-        <p className="text-gray-300 text-lg max-w-3xl mt-4">
-          Når medisinbruk, funksjon og hverdag endrer seg, skjer det som regel gradvis. 
-          Da trengs et verktøy som ser utviklingen — ikke bare enkeltøyeblikk.
+
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          Som sykepleier og selv kronisk medisinbruker erfarte grunnleggeren
+          hvordan dagens systemer ofte fanger opp tidlige tegn på forverring
+          altfor sent. Endringer i søvn, mobilitet, energi, kognisjon og
+          medisininntak utvikler seg gradvis – men verktøyene for å oppdage
+          dette i tide mangler.
+        </p>
+
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          Tablaid er derfor utviklet i tett dialog med fagpersoner, pasienter
+          og <strong>Bydel Østensjø i Oslo</strong>, som har bidratt med viktige
+          perspektiver og tidlig validering av konseptet. Dette har formet en
+          løsning som er like praktisk som den er faglig solid.
+        </p>
+
+        <p className="text-lg text-gray-300 leading-relaxed mb-6">
+          I 2025 inngikk Tablaid en <strong>rammeavtale med Podium AS</strong>,
+          en ledende aktør innen arbeidsinkludering og teknologisk
+          kompetansebygging. Avtalen gir:
+        </p>
+
+        <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-6">
+          <li>langvarig og fleksibelt samarbeid om teknisk utvikling</li>
+          <li>praksisplasser og reell kompetansebygging for deltakere i arbeidsmarkedstiltak</li>
+          <li>dynamisk videreutvikling av plattformen basert på faktiske behov</li>
+          <li>gjensidig verdiskaping gjennom faglig forankring og praktisk kompetanse</li>
+        </ul>
+
+        <p className="text-lg text-gray-300 leading-relaxed mb-8">
+          Dette gir Tablaid et utviklingsmiljø som kombinerer fagforsvarlighet,
+          sosialt entreprenørskap og effektiv gjennomføring — et partnerskap som
+          er både sosialt bærekraftig og utviklingsmessig robust.
+        </p>
+
+        <p className="text-lg text-gray-300 leading-relaxed">
+          Tablaid er i dag et helhetlig e-helsekonsept som styrker samspillet
+          mellom bruker, pårørende og kommune — med mål om tidligere signaler,
+          tryggere legemiddelbruk og bedre oversikt i hverdagen.
         </p>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 pb-20 grid md:grid-cols-2 gap-10 items-start">
-        <Image
-          src="/Bilde_om_selskapsnavnet_oppdateringsmail.png"
-          alt="Historien bak Tablaid"
-          width={380}
-          height={320}
-          className="rounded-xl shadow-xl object-cover"
-        />
-
-        <div className="space-y-4">
-          <p className="text-gray-200">
-            Tablaid er grunnlagt av:
-          </p>
-          <ul className="list-disc pl-5 space-y-2 text-gray-300">
-            <li>
-              <strong>Gaute Birkeland Kjellsen</strong>, anestesisykepleier med lang klinisk erfaring, kombinert med flere år i helseteknologiske prosjekter og innovasjonsarbeid. Hans personlige erfaring med å leve med kronisk behandling gjennom mange år har gitt verdifull innsikt i etterlevelse, medisinbruk og samspill i helsevesenet — og er en av grunnpilarene i hvordan Tablaid er utviklet.
-            </li>
-            <li>Samarbeid med Podium og tverrfaglige utviklere</li>
-            <li>Dialog med kommuner, treffsentre, pårørende og fagmiljøer</li>
-            <li>Støtte fra SmartOslo og flere innovative miljøer</li>
-          </ul>
-
-          <h2 className="text-2xl font-semibold pt-4">Vår filosofi</h2>
-          <ul className="list-disc pl-5 space-y-2 text-gray-300">
-            <li>Brukeren først</li>
-            <li>Datadrevet trygghet</li>
-            <li>Enkel UX for alle aldersgrupper</li>
-            <li>Forebygging før behandling</li>
-            <li>Pårørende som ressurs, ikke kriseløsning</li>
-            <li>Kommuner som trenger smart verktøy, ikke mer skjemaer</li>
-          </ul>
-
-          <p className="text-gray-200 pt-4">
-            Tablaid er ikke nok en app. Det er et helsekompass — bygget for å skape trygghet, 
-            oversikt og bedre samspill.
-          </p>
-        </div>
+      {/* LINK TO TEAM PAGE */}
+      <section className="text-center py-12">
+        <Link
+          href="/team"
+          className="inline-block px-6 py-3 bg-green-600 hover:bg-green-500 rounded-full font-semibold text-black"
+        >
+          Se Team & Styre
+        </Link>
       </section>
     </main>
   );
