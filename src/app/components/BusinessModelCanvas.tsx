@@ -1,182 +1,214 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import { useRef } from "react";
 
 export default function BusinessModelCanvas() {
-  return (
-    <section
-      id="bmc"
-      className="bg-slate-950 print:bg-white print:text-black"
-    >
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-        {/* Topptekst */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">
-              Investor lite
-            </p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl print:text-black">
-              Tablaid – Business Model Canvas
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm text-slate-300 sm:text-base print:text-black/80">
-              Kortversjon av forretningsmodellen, tilpasset dialog med investorer
-              og kommunale beslutningstakere.
-            </p>
-          </div>
+  const canvasRef = useRef<HTMLDivElement | null>(null);
 
-          {/* Nedlastbar PDF – aktiver når du har filen klar */}
-          <div className="flex items-center gap-3">
-            {/* TODO: Når du har en PDF, legg den i /public/investor/tablaid-bmc.pdf */}
-            <a
-              href="/investor/tablaid-bmc.pdf"
-              className="hidden sm:inline-flex items-center rounded-full border border-emerald-500/70 bg-slate-950 px-4 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-500/10 print:hidden"
-            >
-              Last ned som PDF
-            </a>
-            <button
-              type="button"
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  window.print();
-                }
-              }}
-              className="inline-flex items-center rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-xs font-semibold text-slate-200 hover:bg-slate-800 print:hidden"
-            >
-              Skriv ut canvas
-            </button>
+ const handlePrint = () => {
+  if (!canvasRef.current) return;
+
+  const html = canvasRef.current.innerHTML;
+
+  const win = window.open("", "", "width=900,height=600");
+  if (!win) return;
+
+  // 🔥 1: ABSOLUTT URL – bytt ut domenet med ditt faktiske Vercel-domene når du deployer
+  const logoUrl = `${window.location.origin}/Tablaid%20Logo%20Horizontal%20Positive.png`;
+
+  win.document.write(`
+    <html>
+      <head>
+        <title>Tablaid – Business Model Canvas</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 32px;
+            color: #000;
+            background: #ffffff;
+            line-height: 1.5;
+          }
+
+          .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #333;
+          }
+
+          .header img {
+            height: 50px;
+            width: auto;
+          }
+
+          .contact {
+            text-align: right;
+            font-size: 12px;
+            line-height: 1.3;
+          }
+
+          .footer {
+            margin-top: 40px;
+            padding-top: 12px;
+            border-top: 1px solid #ccc;
+            font-size: 12px;
+            text-align: center;
+            color: #444;
+          }
+        </style>
+      </head>
+
+      <body>
+        <div class="header">
+          <img src="${logoUrl}" alt="Tablaid logo" />
+
+          <div class="contact">
+            <strong>Tablaid AS</strong><br />
+            Gaute Birkeland Kjellsen, Founder & CEO<br />
+            Tel: +47 913 43 663<br />
+            post@tablaid.no<br />
+            www.tablaid.no
           </div>
         </div>
 
-        {/* Grid – BMC-bokser */}
-        <div className="mt-8 grid gap-5 md:grid-cols-3 print:border print:border-slate-300 print:mt-6">
+        ${html}
+
+        <div class="footer">
+          © ${new Date().getFullYear()} Tablaid AS – Business Model Canvas
+        </div>
+      </body>
+    </html>
+  `);
+
+  win.document.close();
+  win.focus();
+  win.print();
+  win.close();
+};
+
+
+  return (
+    <div className="mb-12">
+      {/* PRINT-KNAPP */}
+      <button
+        onClick={handlePrint}
+        className="mb-4 rounded-full bg-emerald-500 px-4 py-2 text-xs font-semibold text-slate-900 hover:bg-emerald-400"
+      >
+        📄 Last ned / skriv ut
+      </button>
+
+      {/* SELVE BMC-INNHOLDET */}
+      <div
+        ref={canvasRef}
+        className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6"
+      >
+        <h2 className="text-xl font-semibold text-slate-50">
+          Business Model Canvas – Tablaid
+        </h2>
+
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {/* Kundesegmenter */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Kundesegmenter
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Kommunal primærhelsetjeneste (hjemmetjenester, forebyggende tjenester, fastleger)</li>
-              <li>• Pasienter med kronisk legemiddelbruk</li>
-              <li>• Pårørende som ønsker innsikt og støtte</li>
-              <li>• Myndigheter med ansvar for kvalitet og forebygging</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Kundesegmenter</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Kommunal primærhelsetjeneste</li>
+              <li>Kronisk syke og legemiddelbrukere</li>
+              <li>Pårørende</li>
+              <li>Myndigheter og forskningsmiljøer</li>
+            </ul>
+          </div>
+
+          {/* Verdiforslag */}
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Verdiforslag</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Digital legemiddelassistent</li>
+              <li>Funksjonskompass (ICOPE + CFS)</li>
+              <li>Tidlige trendsignaler</li>
+              <li>Deling med kommune og pårørende</li>
             </ul>
           </div>
 
           {/* Kanaler */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Kanaler
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Direkte dialog med kommuner</li>
-              <li>• Faglige nettverk og arenaer</li>
-              <li>• Tablaid.no</li>
-              <li>• Rekruttering via treffsentere</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Kanaler</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Kommunedialog</li>
+              <li>Faglige nettverk</li>
+              <li>Nettside</li>
+              <li>Treffsentere</li>
             </ul>
           </div>
 
           {/* Kunderelasjoner */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Kunderelasjoner
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Enkel selvbetjening i app</li>
-              <li>• Pilotoppfølging med tett kommunedialog</li>
-              <li>• Løpende innsikt og rapporter</li>
-              <li>• Support for brukere og pårørende</li>
-            </ul>
-          </div>
-
-          {/* Verdiforslag – får litt ekstra plass */}
-          <div className="md:col-span-3 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Verdiforslag
-            </h3>
-            <ul className="mt-2 grid gap-1 text-xs sm:grid-cols-2 sm:text-sm">
-              <li>• Digital legemiddelassistent for riktig bruk</li>
-              <li>• Funksjonskompass basert på ICOPE og CFS</li>
-              <li>• Trendsignaler for tidlig oppdagelse av funksjonsendringer</li>
-              <li>• Deling av innsikt mellom bruker, kommune og pårørende</li>
-              <li>• Bedre beslutningsgrunnlag og tryggere hverdagsoppfølging</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Kunderelasjoner</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Selvbetjeningsapp</li>
+              <li>Pilotoppfølging</li>
+              <li>Support</li>
+              <li>Pårørendedialog</li>
             </ul>
           </div>
 
           {/* Inntektsstrømmer */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Inntektsstrømmer
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Pilotmodell: 20 kommuner á 25 000 NOK</li>
-              <li>• Kommunelisens (B2G)</li>
-              <li>• Pårørende-abonnement</li>
-              <li>• Mulige affiliate-inntekter (syn, hørsel)</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Inntektsstrømmer</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Pilotinntekter (25k × 20 kommuner)</li>
+              <li>Kommunelisens</li>
+              <li>Pårørende-abonnement</li>
+              <li>Affiliate (syn/hørsel)</li>
             </ul>
           </div>
 
           {/* Ressurser */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Nøkkelressurser
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Tablaid + utviklingsressurser</li>
-              <li>• Medisinsk og sykepleiefaglig kompetanse</li>
-              <li>• ICOPE- og CFS-rammeverk</li>
-              <li>• Solid styre og faglige rådgivere</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Ressurser</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Utviklerteam</li>
+              <li>Helsefaglig kompetanse</li>
+              <li>ICOPE + CFS</li>
+              <li>Eksterne partnere & styre</li>
             </ul>
           </div>
 
-          {/* Kjerneaktiviteter */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Kjerneaktiviteter
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Videreutvikling og stabilisering av app</li>
-              <li>• Pilotgjennomføring i Østensjø + 20 kommuner</li>
-              <li>• Innsiktsarbeid og kontinuerlig forbedring</li>
-              <li>• Dokumentasjon av effekt og gevinst</li>
+          {/* Aktiviteter */}
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Kjerneaktiviteter</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Apputvikling & stabilitet</li>
+              <li>Pilotfase Østensjø</li>
+              <li>20-kommuners læringspilot</li>
+              <li>Brukerinnsikt</li>
             </ul>
           </div>
 
           {/* Partnere */}
-          <div className="md:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Nøkkelpartnere
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Bydel Østensjø (pilotpartner)</li>
-              <li>• SmartOslo</li>
-              <li>• Teknologi- og utviklingspartnere</li>
-              <li>• Dialog med flere kommuner</li>
-              <li>• Treffsentere og lokale møteplasser (rekruttering)</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Partnere</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Bydel Østensjø</li>
+              <li>SmartOslo</li>
+              <li>Podium</li>
+              <li>Flere kommuner</li>
             </ul>
           </div>
 
           {/* Kostnadsstruktur */}
-          <div className="md:col-span-3 rounded-2xl border border-slate-800 bg-slate-900/70 p-4 text-sm text-slate-200 print:bg-white print:border-slate-300 print:text-black">
-            <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Kostnadsstruktur
-            </h3>
-            <ul className="mt-2 space-y-1 text-xs sm:text-sm">
-              <li>• Utvikling, drift og teknisk infrastruktur</li>
-              <li>• Pilotoppfølging og tjenesteutvikling</li>
-              <li>• Markedsføring, kommunikasjon og innholdsutvikling</li>
-              <li>• Skaleringskostnader ved utrulling til flere kommuner</li>
+          <div className="bmc-box border border-slate-800 rounded-xl bg-slate-900/50 p-4">
+            <h3 className="bmc-title text-emerald-300">Kostnadsstruktur</h3>
+            <ul className="text-slate-300 text-sm">
+              <li>Utvikling</li>
+              <li>Pilotdrift</li>
+              <li>Markedsføring</li>
+              <li>Teknisk drift</li>
             </ul>
           </div>
         </div>
-
-        {/* Liten fotnote for investorer */}
-        <p className="mt-6 text-xs text-slate-500 print:text-black/60">
-          Denne canvasen er en forenklet oversikt. Utfyllende dokumentasjon
-          (inkludert endringsteori, pilotoppsett og finansieringsplan) deles ved
-          interesse.
-        </p>
       </div>
-    </section>
+    </div>
   );
 }
