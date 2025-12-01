@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react"; // NØDVENDIG FOR useState
 import "./globals.css";
 import MobileNav from "./MobileNav";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Tablaid – Digital helse- og legemiddelassistent",
@@ -87,11 +88,13 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Page Content */}
-        <div className="flex min-h-screen flex-col">
-          {children}
-        </div>
-
+       {/* Page Content */}
+<div className="flex flex-col min-h-[100vh]">
+  <main className="flex-grow">
+    {children}
+  </main>
+  <Footer />
+</div>
       </body>
     </html>
   );

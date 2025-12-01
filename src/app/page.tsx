@@ -11,8 +11,7 @@ export default function HomePage() {
         <NeedsSection />
         <VoicesSection />
       </main>
-      <SiteFooter />
-    </>
+          </>
   );
 }
 
@@ -359,90 +358,5 @@ function VoicesSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function SiteFooter() {
-  return (
-    <footer className="border-t border-slate-800 bg-slate-950">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold text-slate-100">Tablaid AS</p>
-            <p className="text-xs text-slate-400">
-              Digital helse- og legemiddelassistent utviklet i Norge.
-            </p>
-            <p className="text-[11px] text-slate-500">
-              Ikke et journalsystem – men et samhandlingsverktøy som kan gi bedre
-              beslutningsgrunnlag for brukere, pårørende og tjenester.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-10 text-xs text-slate-300">
-            <div>
-              <p className="mb-2 font-semibold text-slate-100">Navigasjon</p>
-              <ul className="space-y-1">
-                <li>
-                  <Link href="/" className="hover:text-emerald-300">
-                    Forside
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/om-oss" className="hover:text-emerald-300">
-                    Om Tablaid
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/kontakt" className="hover:text-emerald-300">
-                    Kontakt
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/en" className="hover:text-emerald-300">
-                    English summary
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="mb-2 font-semibold text-slate-100">Personvern</p>
-              <ul className="space-y-1">
-                <li>
-                  <Link href="/personvern" className="hover:text-emerald-300">
-                    Personvernerklæring
-                  </Link>
-                </li>
-                <li>
-                  <span className="text-slate-500">
-                    GDPR • Normen • EU Data Act (coming)
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="mb-2 font-semibold text-slate-100">Pilot & dialog</p>
-              <ul className="space-y-1">
-                <li>
-                  <Link href="#kommunepilot" className="hover:text-emerald-300">
-                    Kommunepilot 2026
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/investor" className="hover:text-emerald-300">
-                    For investorer
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6 border-t border-slate-800 pt-4 text-[11px] text-slate-500">
-          © {new Date().getFullYear()} Tablaid AS. Alle rettigheter reservert.
-        </div>
-      </div>
-    </footer>
   );
 }
