@@ -52,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nb">
-      <body className="min-h-screen bg-slate-950 text-slate-50 antialiased">
+      <body className="min-h-screen bg-slate-950 text-slate-100">
 
         {/* Sticky Header */}
         <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
@@ -103,8 +103,8 @@ export default function RootLayout({
         </header>
 
        {/* Page Content */}
-<div className="flex flex-col min-h-[100vh]">
-  <main className="flex-grow">
+<div className="flex flex-col min-h-screen">
+  <main className="grow">
     {children}
   </main>
   <Footer />
