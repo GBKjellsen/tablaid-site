@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Logo + beskrivelse */}
           <div>
             <img
-              src="/tablaid-full-logo.png"
+              src="/tablaid-logo-negative.png"
               alt="Tablaid logo"
               className="h-8 w-auto mb-4"
             />

@@ -56,36 +56,50 @@ export default function RootLayout({
 
         {/* Sticky Header */}
         <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-          <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-4 sm:px-6">
+          <div className="mx-auto max-w-6xl flex items-center justify-start gap-8 px-4 py-4 sm:px-6">
+
+
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
               <img
-                src="/tablaid-full-logo.png"
+                src="/tablaid-logo-negative.png"
                 alt="Tablaid logo"
                 className="h-7 w-auto"
               />
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden sm:flex gap-6 text-xs text-slate-300">
-              <Link href="/#for-brukere" className="hover:text-emerald-300">
-                For brukere
-              </Link>
-              <Link href="/#for-brukere" className="hover:text-emerald-300">
-                Pårørende
-              </Link>
-              <Link href="/#kommunepilot" className="hover:text-emerald-300">
-                Kommuner
-              </Link>
-              <Link href="/kontakt" className="hover:text-emerald-300">
-                Kontakt
-              </Link>
-            </nav>
+
+{/* Right side section: nav + flag + mobile menu */}
+<div className="flex items-center gap-4 ml-auto">
+  
+  {/* Desktop Nav */}
+  <nav className="hidden sm:flex gap-6 text-xs text-slate-300">
+    <Link href="/#for-brukere" className="hover:text-emerald-300">For brukere</Link>
+    <Link href="/#for-brukere" className="hover:text-emerald-300">Pårørende</Link>
+    <Link href="/#kommunepilot" className="hover:text-emerald-300">Kommuner</Link>
+    <Link href="/kontakt" className="hover:text-emerald-300">Kontakt</Link>
+  </nav>
+
+  {/* English flag */}
+  <Link href="/en" className="hidden sm:block hover:opacity-80">
+    <img
+      src="/gb-flag.svg"
+      alt="English"
+      className="h-4 w-auto"
+    />
+  </Link>
+
+  {/* Mobile menu */}
+  <MobileNav />
+</div>
+
+
+
 
             {/* Mobile Menu */}
             <MobileNav />
-          </div>
+                  </div>
         </header>
 
        {/* Page Content */}
