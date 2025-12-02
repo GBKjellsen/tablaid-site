@@ -39,10 +39,18 @@ export default function Header() {
           </Link>
         </div>
 
-            {/* MOBILE MENU (NEW VERSION) */}
+        {/* MOBILE MENU TOGGLE BUTTON */}
+        <button
+          className="lg:hidden flex items-center text-white focus:outline-none"
+          onClick={() => setOpen(!open)}
+        >
+          <span className="text-2xl">{open ? "✕" : "☰"}</span>
+        </button>
+      </nav>
+
+      {/* MOBILE MENU (NEW VERSION) */}
       {open && (
         <div className="lg:hidden flex flex-col bg-[#0A0F1F] text-white px-6 py-4 space-y-4 border-t border-white/10 w-full">
-
           <Link href="/bruker" onClick={() => setOpen(false)}>Bruker</Link>
           <Link href="/parorende" onClick={() => setOpen(false)}>Pårørende</Link>
           <Link href="/kommuner" onClick={() => setOpen(false)}>Kommuner</Link>
@@ -61,4 +69,3 @@ export default function Header() {
     </header>
   );
 }
-
