@@ -72,7 +72,7 @@ export default function BrukerPage() {
         <div className="pt-8">
           <Link
             href="/kontakt"
-            className="inline-block px-6 py-3 bg-green-600 hover:bg-green-500 text-black rounded-full font-semibold"
+            className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black rounded-full font-semibold shadow-lg shadow-emerald-500/30 transition"
           >
             Vil du teste Tablaid?
           </Link>

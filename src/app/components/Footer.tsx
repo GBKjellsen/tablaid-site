@@ -49,6 +49,10 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-400">
               <li><Link href="/pilot" className="hover:text-emerald-300">Kommunepilot 2026</Link></li>
               <li><Link href="/investor" className="hover:text-emerald-300">For investorer</Link></li>
+              <Link href="/support" className="hover:text-emerald-300">
+  Support Tablaid
+</Link>
+
             </ul>
           </div>
 

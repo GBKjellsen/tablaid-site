@@ -36,7 +36,8 @@ export default function KontaktPage() {
 
           <Link
             href="mailto:post@tablaid.no"
-            className="px-8 py-3 bg-green-600 hover:bg-green-500 text-black rounded-full font-semibold"
+  className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black rounded-full font-semibold shadow-lg shadow-emerald-500/30 transition"
+
           >
             Book et uforpliktende møte
           </Link>

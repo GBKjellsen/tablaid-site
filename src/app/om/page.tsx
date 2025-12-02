@@ -8,6 +8,10 @@ export default function OmOssPage() {
 
       {/* HEADER SECTION */}
       <section className="max-w-4xl mx-auto px-4 py-20">
+        <Link href="/support" className="hover:text-emerald-300">
+  Support Tablaid
+</Link>
+
         <h1 className="text-4xl font-bold mb-6">Om Tablaid</h1>
 
         <p className="text-lg text-gray-300 leading-relaxed mb-6">

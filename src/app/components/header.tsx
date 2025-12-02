@@ -12,34 +12,52 @@ export default function Header() {
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 w-full">
 
         {/* LOGO */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/tablaid-logo-negative.png"
             alt="Tablaid logo"
-            width={300}
-            height={100}
-            className="object-contain h-10 w-auto"
+            width={130}
+            height={40}
+            className="h-8 w-auto object-contain"
             priority
           />
         </Link>
 
+        {/* SPACER */}
+        <div className="flex-1" />
+
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-8 text-white text-sm">
-          <Link href="/bruker">Bruker</Link>
-          <Link href="/parorende">Pårørende</Link>
-          <Link href="/kommuner">Kommuner</Link>
-          <Link href="/investor">Investor</Link>
-          <Link href="/om">Om oss</Link>
-
-          <Link
-            href="/kontakt"
-            className="px-4 py-2 rounded-full bg-green-600 hover:bg-green-500 text-black font-semibold transition"
-          >
-            Kontakt oss
+          <Link href="/bruker" className="hover:text-emerald-300">
+            For personer
           </Link>
+          <Link href="/parorende" className="hover:text-emerald-300">
+            Pårørende
+          </Link>
+          <Link href="/kommuner" className="hover:text-emerald-300">
+            Kommuner
+          </Link>
+          <Link href="/kontakt" className="hover:text-emerald-300">
+            Kontakt
+          </Link>
+
+          {/* ENGLISH FLAG */}
+          <Link href="/en" className="hover:opacity-80">
+            <Image
+              src="/gb-flag.svg"
+              alt="English"
+              width={22}
+              height={14}
+              className="object-contain"
+            />
+          </Link>
+          <Link href="/support" className="hover:text-emerald-300">
+  Support Tablaid
+</Link>
+
         </div>
 
-        {/* MOBILE MENU TOGGLE BUTTON */}
+        {/* MOBILE MENU BUTTON */}
         <button
           className="lg:hidden flex items-center text-white focus:outline-none"
           onClick={() => setOpen(!open)}
@@ -48,21 +66,37 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* MOBILE MENU (NEW VERSION) */}
+      {/* MOBILE MENU */}
       {open && (
         <div className="lg:hidden flex flex-col bg-[#0A0F1F] text-white px-6 py-4 space-y-4 border-t border-white/10 w-full">
-          <Link href="/bruker" onClick={() => setOpen(false)}>Bruker</Link>
-          <Link href="/parorende" onClick={() => setOpen(false)}>Pårørende</Link>
-          <Link href="/kommuner" onClick={() => setOpen(false)}>Kommuner</Link>
-          <Link href="/investor" onClick={() => setOpen(false)}>Investor</Link>
-          <Link href="/om" onClick={() => setOpen(false)}>Om oss</Link>
 
-          <Link
-            href="/kontakt"
-            onClick={() => setOpen(false)}
-            className="block mt-2 px-4 py-2 rounded-full bg-green-600 hover:bg-green-500 text-black text-center font-semibold"
-          >
-            Kontakt oss
+          <Link href="/bruker" onClick={() => setOpen(false)} className="hover:text-emerald-300">
+            For personer
+          </Link>
+
+          <Link href="/parorende" onClick={() => setOpen(false)} className="hover:text-emerald-300">
+            Pårørende
+          </Link>
+
+          <Link href="/kommuner" onClick={() => setOpen(false)} className="hover:text-emerald-300">
+            Kommuner
+          </Link>
+
+          <Link href="/kontakt" onClick={() => setOpen(false)} className="hover:text-emerald-300">
+            Kontakt
+          </Link>
+          <Link href="/support" className="hover:text-emerald-300">
+  Support Tablaid
+</Link>
+
+          <Link href="/en" onClick={() => setOpen(false)} className="hover:opacity-80">
+            <Image
+              src="/gb-flag.svg"
+              alt="English"
+              width={26}
+              height={18}
+              className="object-contain"
+            />
           </Link>
         </div>
       )}

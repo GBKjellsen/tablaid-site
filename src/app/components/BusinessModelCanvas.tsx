@@ -61,10 +61,10 @@ export default function BusinessModelCanvas() {
       </head>
 
       <body>
-        <div class="header">
+        <div className="header">
           <img src="${logoUrl}" alt="Tablaid logo" />
 
-          <div class="contact">
+          <div className="contact">
             <strong>Tablaid AS</strong><br />
             Gaute Birkeland Kjellsen, Founder & CEO<br />
             Tel: +47 913 43 663<br />
@@ -75,7 +75,7 @@ export default function BusinessModelCanvas() {
 
         ${html}
 
-        <div class="footer">
+        <div className="footer">
           © ${new Date().getFullYear()} Tablaid AS – Business Model Canvas
         </div>
       </body>

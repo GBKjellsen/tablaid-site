@@ -26,18 +26,14 @@ function HeroSection() {
       {/* Bakgrunnsglød */}
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-linear-to-b from-emerald-500/15 via-slate-900 to-slate-950 blur-3xl" />
 
-      <div className="mx-auto flex max-w-6xl flex-col-reverse gap-10 px-4 pb-16 pt-20 
-                      sm:px-6 sm:pb-20 sm:pt-24 
-                      lg:flex-row lg:items-center lg:gap-16 lg:pb-24 lg:pt-28">
+      <div className="mx-auto flex max-w-6xl flex-col-reverse gap-10 px-4 pb-16 pt-20 sm:px-6 sm:pb-20 sm:pt-24 lg:flex-row lg:items-center lg:gap-16 lg:pb-24 lg:pt-28">
 
         {/* Bilde – app-triple.png */}
         <div className="relative flex flex-1 justify-center lg:justify-end">
-          <div className="relative w-full max-w-md overflow-hidden rounded-3xl 
-                          border border-slate-700/70 bg-slate-900/80 
-                          shadow-2xl shadow-emerald-500/20">
+          <div className="relative w-full max-w-md overflow-hidden rounded-3xl border border-slate-700/70 bg-slate-900/80 shadow-2xl shadow-emerald-500/20">
             <Image
               src="/app-triple.png"
-              alt="Tablaid mobilapp"
+              alt="Helsepersonell viser Tablaid-appen til bruker og pårørende"
               width={900}
               height={600}
               className="object-cover w-full h-full"
@@ -48,47 +44,44 @@ function HeroSection() {
 
         {/* Tekst */}
         <div className="max-w-xl">
-          <span className="inline-flex items-center rounded-full border border-emerald-500/30 
-                           bg-emerald-500/10 px-3 py-1 text-xs font-medium uppercase 
-                           tracking-wide text-emerald-300">
+          <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium uppercase tracking-wide text-emerald-300">
             Pilot våren 2026 • Tablaid
           </span>
 
-          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-50 
-                         sm:text-4xl lg:text-5xl">
+          <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
             En digital{" "}
             <span className="text-emerald-400">helse- og legemiddelassistent</span>{" "}
             for brukere, pårørende og kommuner.
           </h1>
 
           <p className="mt-4 text-base leading-relaxed text-slate-200 sm:text-lg">
-            Tablaid kombinerer legemiddelassistent, helsekompass og pårørendestøtte
-            for å fange opp tidlige signaler om funksjonsfall – før behovet for tjenester eskalerer.
+            Tablaid kombinerer legemiddelassistent, helsekompass og
+            pårørendestøtte for å fange opp tidlige signaler om
+            funksjonsfall – før behovet for tjenester eskalerer.
           </p>
 
+          {/* ⭐ OPPDATERT CTA-BLOKK */}
           <div className="mt-6 flex flex-wrap items-center gap-4">
+
             <Link
-              href="#kommunepilot"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-500 
-                         px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg 
-                         shadow-emerald-500/30 transition hover:bg-emerald-400"
+              href="/kommuner"
+              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
             >
-              Les om kommunepiloten
+              Kommunepilot 2026
             </Link>
 
             <Link
-              href="#for-brukere"
-              className="inline-flex items-center justify-center rounded-full border 
-                         border-slate-600 px-5 py-2.5 text-sm font-semibold 
-                         text-slate-100 hover:border-slate-400 hover:bg-slate-900/60"
+              href="/bruker"
+              className="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-slate-400 hover:bg-slate-900/60"
             >
               Se hvordan Tablaid fungerer
             </Link>
+
           </div>
 
           <p className="mt-4 text-xs text-slate-400">
-            Samutviklet med Bydel Østensjø og norske helsefaglige miljøer.  
-            Designet for styrket samspill mellom bruker, pårørende og kommune.
+            Samutviklet med Bydel Østensjø og norske helsefaglige miljøer.
+            Designet for å styrke samspill mellom bruker, pårørende og kommune.
           </p>
         </div>
 
@@ -98,7 +91,7 @@ function HeroSection() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                          AUDIENCE SECTION (3 cards)                        */
+/*                            AUDIENCE SECTION                                */
 /* -------------------------------------------------------------------------- */
 
 function AudienceSection() {
@@ -111,58 +104,71 @@ function AudienceSection() {
             Én løsning – tre perspektiver
           </h2>
           <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Tablaid er laget for samspill mellom bruker, pårørende og kommune.
+            Tablaid er laget for samspill mellom innbygger, pårørende og kommune.
+            Samme innsikt – ulike behov og ansvar.
           </p>
         </div>
 
         <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
 
-          {/* Brukere */}
+          {/* INNBYGGER / BRUKER */}
           <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
-            <h3 className="text-sm font-semibold text-emerald-300">For brukere</h3>
+            <h3 className="text-sm font-semibold text-emerald-300">For deg</h3>
             <p className="mt-2 text-sm text-slate-200">
               Enkel legemiddelassistent med påminnelser, skanning og daglige sjekk-inn.
             </p>
+
             <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
-              <li>• Oversiktlig dashbord</li>
-              <li>• Daglige mikromålinger</li>
+              <li>• Oversiktlig helse- og funksjonsdashbord</li>
+              <li>• Daglige spørsmål om energi, balanse og trygghet</li>
               <li>• Valgfri deling av innsikt</li>
             </ul>
-            <Link href="/bruker" className="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200">
-              Les mer →
-            </Link>
+
+            <div className="mt-4">
+              <Link href="/bruker" className="text-xs font-medium text-emerald-300 hover:text-emerald-200">
+                Les mer →
+              </Link>
+            </div>
           </div>
 
-          {/* Pårørende */}
+          {/* PÅRØRENDE */}
           <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
             <h3 className="text-sm font-semibold text-emerald-300">For pårørende</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Oversikt uten daglig oppfølging. Du ser trender – ikke detaljer.
+              Få oversikt uten å måtte følge opp hver dag – se utvikling, ikke detaljer.
             </p>
+
             <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
               <li>• Varsler ved negative trender</li>
-              <li>• Enkelt trend-dashbord</li>
-              <li>• Felles språk for oppfølging</li>
+              <li>• Trygt og enkelt pårørendedashbord</li>
+              <li>• Et felles språk når noe må følges opp</li>
             </ul>
-            <Link href="/parorende" className="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200">
-              Les mer →
-            </Link>
+
+            <div className="mt-4">
+              <Link href="/parorende" className="text-xs font-medium text-emerald-300 hover:text-emerald-200">
+                Les mer →
+              </Link>
+            </div>
           </div>
 
-          {/* Kommuner */}
+          {/* KOMMUNER */}
           <div id="kommunepilot" className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
             <h3 className="text-sm font-semibold text-emerald-300">For kommuner</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Aggregert innsikt om funksjon og etterlevelse – uten nye journalsystemer.
+              Aggregert innsikt om funksjon og legemiddelbruk – uten nye journalsystemer.
             </p>
+
             <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
-              <li>• Pilotoppsett: 25 brukere per kommune</li>
+              <li>• Pilotoppsett: 25 personer per kommune</li>
               <li>• Tidlige signaler og bedre ressursutnyttelse</li>
-              <li>• Under anbudsgrensen</li>
+              <li>• Under anbudsgrensen – med tydelig læringsagenda</li>
             </ul>
-            <Link href="/kontakt" className="mt-4 text-xs font-medium text-emerald-300 hover:text-emerald-200">
-              Les mer om pilot →
-            </Link>
+
+            <div className="mt-4">
+              <Link href="/kommuner" className="text-xs font-medium text-emerald-300 hover:text-emerald-200">
+                Les mer →
+              </Link>
+            </div>
           </div>
 
         </div>
@@ -170,6 +176,7 @@ function AudienceSection() {
     </section>
   );
 }
+
 
 /* -------------------------------------------------------------------------- */
 /*                          FEATURES SECTION (3 cards)                        */
@@ -219,14 +226,15 @@ function FeaturesSection() {
               <li>• Leveres i pilot-startpakken</li>
             </ul>
 
-            <Link
-              href="/kontakt"
-              className="inline-flex mt-5 items-center justify-center rounded-full 
-                         border border-emerald-400/50 px-4 py-2 text-xs font-semibold 
-                         text-emerald-300 hover:bg-emerald-400/10"
-            >
-              Bestill SmartTag
-            </Link>
+           <Link
+  href="/smarttag/order"
+  className="inline-flex mt-5 items-center justify-center rounded-full 
+             border border-emerald-400/50 px-4 py-2 text-xs font-semibold 
+             text-emerald-300 hover:bg-emerald-400/10"
+>
+  Bestill SmartTags
+</Link>
+
           </div>
 
           {/* HELSEKOMPASS MOCKUP — NYTT KORT */}
