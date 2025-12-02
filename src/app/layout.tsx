@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react"; // NØDVENDIG FOR useState
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import MobileNav from "./MobileNav";
 import Footer from "./components/Footer";
@@ -109,6 +110,7 @@ export default function RootLayout({
   </main>
   <Footer />
 </div>
+        <Analytics />
       </body>
     </html>
   );
