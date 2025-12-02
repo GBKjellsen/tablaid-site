@@ -103,17 +103,7 @@ export default function OmOssPage() {
 
           </div>
 
-          {/* SECURITY */}
-          <h3 className="text-2xl font-bold mt-20 mb-6 text-center">Sikkerhet og kvalitet</h3>
-          <div className="bg-[#0A0F1F] p-6 rounded-xl border border-white/10 shadow-lg max-w-3xl mx-auto">
-            <h4 className="font-semibold text-lg">Christian Håland – Binary Security</h4>
-            <p className="text-gray-400 text-sm">Sikkerhetsrådgiver</p>
-            <p className="text-gray-300 text-sm mt-3">
-              Rådgiver innen informasjonssikkerhet og personvern fra Binary Security. 
-              Bidrar med styrking av sikkerhetsarbeid, risikovurderinger og struktur 
-              for etterlevelse av Normen og GDPR.
-            </p>
-          </div>
+          
 
           {/* BOARD */}
           <h3 className="text-2xl font-bold mt-20 mb-8 text-center">Styret</h3>

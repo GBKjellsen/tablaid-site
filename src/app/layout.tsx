@@ -1,20 +1,24 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
-import React from "react"; // NØDVENDIG FOR useState
+import React from "react";
 import "./globals.css";
 import MobileNav from "./MobileNav";
 import Footer from "./components/Footer";
 
+import { Analytics } from "@vercel/analytics/next";
+
+
+
 export const metadata: Metadata = {
   title: "Tablaid – Digital helse- og legemiddelassistent",
   description:
-    "Tablaid hjelper brukere, pårørende og kommuner å få oversikt over legemiddelbruk og funksjon over tid – for tidligere oppdagelse av funksjonsfall.",
+    "Tablaid hjelper mennesker, pårørende og kommuner å få oversikt over legemiddelbruk og funksjon over tid – for tidligere oppdagelse av funksjonsfall.",
   metadataBase: new URL("https://tablaid.no"),
   openGraph: {
     title: "Tablaid – Digital helse- og legemiddelassistent",
     description:
-      "En digital helseassistent som kombinerer legemiddeloversikt, funksjonsdata og pårørendestøtte for tryggere hverdag og bedre beslutninger i helsetjenesten.",
+      "En digital helseassistent som kombinerer legemiddeloversikt, funksjonsdata og pårørendestøtte for tryggere hverdag og bedre beslutninger.",
     url: "https://tablaid.no",
     siteName: "Tablaid",
     images: [
@@ -44,7 +48,6 @@ export const metadata: Metadata = {
   },
 };
 
-// 🔥 ROOT LAYOUT
 export default function RootLayout({
   children,
 }: {
@@ -54,11 +57,9 @@ export default function RootLayout({
     <html lang="nb">
       <body className="min-h-screen bg-slate-950 text-slate-100">
 
-        {/* Sticky Header */}
+        {/* HEADER */}
         <header className="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-          <div className="mx-auto max-w-6xl flex items-center justify-start gap-8 px-4 py-4 sm:px-6">
-
-
+          <div className="mx-auto max-w-6xl flex items-center gap-6 px-4 py-4 sm:px-6">
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
@@ -69,46 +70,48 @@ export default function RootLayout({
               />
             </Link>
 
+            {/* Spacer */}
+            <div className="flex-1" />
 
-{/* Right side section: nav + flag + mobile menu */}
-<div className="flex items-center gap-4 ml-auto">
-  
-  {/* Desktop Nav */}
-  <nav className="hidden sm:flex gap-6 text-xs text-slate-300">
-    <Link href="/#for-brukere" className="hover:text-emerald-300">For brukere</Link>
-    <Link href="/#for-brukere" className="hover:text-emerald-300">Pårørende</Link>
-    <Link href="/#kommunepilot" className="hover:text-emerald-300">Kommuner</Link>
-    <Link href="/kontakt" className="hover:text-emerald-300">Kontakt</Link>
-  </nav>
+            {/* Desktop Navigation */}
+            <nav className="hidden sm:flex gap-6 text-xs text-slate-300">
+              <Link href="/#for-brukere" className="hover:text-emerald-300">
+                For personer
+              </Link>
+              <Link href="/#for-brukere" className="hover:text-emerald-300">
+                Pårørende
+              </Link>
+              <Link href="/#kommunepilot" className="hover:text-emerald-300">
+                Kommuner
+              </Link>
+              <Link href="/kontakt" className="hover:text-emerald-300">
+                Kontakt
+              </Link>
+            </nav>
 
-  {/* English flag */}
-  <Link href="/en" className="hidden sm:block hover:opacity-80">
-    <img
-      src="/gb-flag.svg"
-      alt="English"
-      className="h-4 w-auto"
-    />
-  </Link>
+            {/* English Flag */}
+            <Link href="/en" className="hidden sm:block hover:opacity-80">
+              <img
+                src="/gb-flag.svg"
+                alt="English"
+                className="h-4 w-auto"
+              />
+            </Link>
 
-  {/* Mobile menu */}
-  <MobileNav />
-</div>
-
-
-
-
-            {/* Mobile Menu */}
+            {/* Mobile navigation */}
             <MobileNav />
-                  </div>
+          </div>
         </header>
 
-       {/* Page Content */}
-<div className="flex flex-col min-h-screen">
-  <main className="grow">
-    {children}
-  </main>
-  <Footer />
-</div>
+        {/* PAGE CONTENT */}
+        <div className="flex flex-col min-h-screen">
+          <main className="grow">{children}</main>
+          <Footer />
+        </div>
+
+        {/* ANALYTICS */}
+        <Analytics />
+        
       </body>
     </html>
   );

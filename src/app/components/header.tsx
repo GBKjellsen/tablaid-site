@@ -16,8 +16,8 @@ export default function Header() {
           <Image
             src="/tablaid-logo-negative.png"
             alt="Tablaid logo"
-            width={150}
-            height={50}
+            width={300}
+            height={100}
             className="object-contain h-10 w-auto"
             priority
           />
@@ -39,16 +39,7 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* MOBILE BURGER */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden border border-white/20 rounded-md w-10 h-10 flex items-center justify-center text-white"
-        >
-          ☰
-        </button>
-      </nav>
-
-      {/* MOBILE MENU (NEW VERSION) */}
+            {/* MOBILE MENU (NEW VERSION) */}
       {open && (
         <div className="lg:hidden flex flex-col bg-[#0A0F1F] text-white px-6 py-4 space-y-4 border-t border-white/10 w-full">
 
