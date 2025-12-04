@@ -51,7 +51,7 @@ function HeroSection() {
           <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
             En digital{" "}
             <span className="text-emerald-400">helse- og legemiddelassistent</span>{" "}
-            for brukere, pårørende og kommuner.
+            for deg, dine pårørende og din kommune.
           </h1>
 
           <p className="mt-4 text-base leading-relaxed text-slate-200 sm:text-lg">
@@ -61,27 +61,32 @@ function HeroSection() {
           </p>
 
           {/* ⭐ OPPDATERT CTA-BLOKK */}
-          <div className="mt-6 flex flex-wrap items-center gap-4">
+<div className="mt-6 flex flex-wrap items-center gap-4">
 
-            <Link
-              href="/kommuner"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
-            >
-              Kommunepilot 2026
-            </Link>
+  <Link
+    href="/kommuner"
+    className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
+  >
+    Kommunepilot 2026
+  </Link>
 
-            <Link
-              href="/bruker"
-              className="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-slate-400 hover:bg-slate-900/60"
-            >
-              Se hvordan Tablaid fungerer
-            </Link>
+  <Link
+    href="/innbyggere"
+    className="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:border-slate-400 hover:bg-slate-900/60"
+  >
+    Se hvordan Tablaid fungerer
+  </Link>
 
-          </div>
+</div>
+
+{/* 🔐 Samtykkesetning */}
+<p className="mt-4 text-xs text-slate-400">
+  Du velger selv om du vil dele innsikt med dine pårørende eller din kommune.
+</p>
 
           <p className="mt-4 text-xs text-slate-400">
             Samutviklet med Bydel Østensjø og norske helsefaglige miljøer.
-            Designet for å styrke samspill mellom bruker, pårørende og kommune.
+            Designet for å styrke samspill mellom innbyggere, pårørende og kommuner.
           </p>
         </div>
 
@@ -96,7 +101,7 @@ function HeroSection() {
 
 function AudienceSection() {
   return (
-    <section id="for-brukere" className="bg-slate-950 py-12 sm:py-16 lg:py-20">
+    <section id="innbyggere" className="bg-slate-950 py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
         <div className="mx-auto max-w-3xl text-center">
@@ -111,11 +116,11 @@ function AudienceSection() {
 
         <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
 
-          {/* INNBYGGER / BRUKER */}
+          {/* INNBYGGER */}
           <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
-            <h3 className="text-sm font-semibold text-emerald-300">For deg</h3>
+            <h3 className="text-sm font-semibold text-emerald-300">For innbyggere</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Enkel legemiddelassistent med påminnelser, skanning og daglige sjekk-inn.
+            For deg som står på medisinsk behandling og ønsker en trygg og enkel oversikt.
             </p>
 
             <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
@@ -125,7 +130,7 @@ function AudienceSection() {
             </ul>
 
             <div className="mt-4">
-              <Link href="/bruker" className="text-xs font-medium text-emerald-300 hover:text-emerald-200">
+              <Link href="/innbyggere" className="text-xs font-medium text-emerald-300 hover:text-emerald-200">
                 Les mer →
               </Link>
             </div>
@@ -133,9 +138,9 @@ function AudienceSection() {
 
           {/* PÅRØRENDE */}
           <div className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
-            <h3 className="text-sm font-semibold text-emerald-300">For pårørende</h3>
+            <h3 className="text-sm font-semibold text-emerald-300">For dine pårørende</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Få oversikt uten å måtte følge opp hver dag – se utvikling, ikke detaljer.
+              Gir dine nærmeste innsikt uten overvåking eller innblanding — kun når du ønsker det.
             </p>
 
             <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
@@ -155,7 +160,7 @@ function AudienceSection() {
           <div id="kommunepilot" className="flex flex-col rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
             <h3 className="text-sm font-semibold text-emerald-300">For kommuner</h3>
             <p className="mt-2 text-sm text-slate-200">
-              Aggregert innsikt om funksjon og legemiddelbruk – uten nye journalsystemer.
+            Tidlige signaler og bedre grunnlag for riktigere tjenester.
             </p>
 
             <ul className="mt-3 space-y-1.5 text-xs text-slate-300">
@@ -324,7 +329,7 @@ function FeaturesSection() {
             </ul>
 
             <Link
-              href="/bruker"
+              href="/innbyggere"
               className="inline-flex mt-5 items-center justify-center rounded-full 
                          border border-emerald-400/50 px-4 py-2 text-xs font-semibold 
                          text-emerald-300 hover:bg-emerald-400/10"
@@ -338,133 +343,188 @@ function FeaturesSection() {
     </section>
   );
 }
-
 /* -------------------------------------------------------------------------- */
 /*                               NEEDS SECTION                                */
 /* -------------------------------------------------------------------------- */
 
 function NeedsSection() {
   return (
-    <section className="bg-slate-950 py-14 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <>
+      <section className="bg-slate-950 py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-            Dokumenterte behov i helsetjenesten
-          </h2>
-          <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Tilsyn og strategidokumenter peker på tre gjennomgående utfordringer.
-          </p>
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
+              Dokumenterte behov i helsetjenesten
+            </h2>
+            <p className="mt-3 text-sm text-slate-300 sm:text-base">
+              Tilsyn og strategidokumenter peker på tre gjennomgående utfordringer.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+            {/* Kort 1 */}
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                Legemiddelbruk
+              </p>
+              <p className="mt-2 text-sm text-slate-200">
+                Risiko ved uklare lister og fravær av system for faktisk etterlevelse hjemme.
+              </p>
+              <p className="mt-3 text-xs text-slate-400">
+                Tablaid gir innsikt der legemidlene faktisk tas – i hjemmet.
+              </p>
+            </div>
+
+            {/* Kort 2 */}
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                Funksjon & skrøpelighet
+              </p>
+              <p className="mt-2 text-sm text-slate-200">
+                Kommunene etterlyser løpende innsikt – ikke sjeldne enkeltmålinger.
+              </p>
+              <p className="mt-3 text-xs text-slate-400">
+                Helsekompasset gir korte, daglige datapunkter som avslører trender.
+              </p>
+            </div>
+
+            {/* Kort 3 */}
+            <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                Pårørende som ressurs
+              </p>
+              <p className="mt-2 text-sm text-slate-200">
+                Viktige observasjoner systematiseres og deles med innbyggerens samtykke.
+              </p>
+              <p className="mt-3 text-xs text-slate-400">
+                Tablaid styrker samarbeid rundt innbyggeren.
+              </p>
+            </div>
+
+          </div>
         </div>
+      </section>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {/* -------------------------------------------------------------------------- */}
+      {/*     SEKSJON: TABLAID ER IKKE BARE FOR ELDRE                               */}
+      {/* -------------------------------------------------------------------------- */}
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Legemiddelbruk
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Risiko ved uklare lister og fravær av system for faktisk etterlevelse hjemme.
-            </p>
-            <p className="mt-3 text-xs text-slate-400">
-              Tablaid gir innsikt der legemidlene faktisk tas – i hjemmet.
-            </p>
-          </div>
+      <section className="max-w-3xl mx-auto px-4 mt-14 pb-14">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl mb-4">
+          Tablaid er ikke bare for eldre
+        </h2>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Funksjon & skrøpelighet
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Kommunene etterlyser løpende innsikt – ikke sjeldne enkeltmålinger.
-            </p>
-            <p className="mt-3 text-xs text-slate-400">
-              Helsekompasset gir korte, daglige datapunkter som avslører trender.
-            </p>
-          </div>
+        <p className="text-slate-300 text-lg leading-relaxed">
+          Vi starter med eldre og kronikere fordi behovet er størst.
+          Men Tablaid er utviklet for alle som står på medisinsk behandling –
+          uansett alder, diagnose eller livssituasjon.
+        </p>
 
-          <div className="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-              Pårørende som ressurs
-            </p>
-            <p className="mt-2 text-sm text-slate-200">
-              Viktige observasjoner systematiseres og deles med brukerens samtykke.
-            </p>
-            <p className="mt-3 text-xs text-slate-400">
-              Tablaid styrker samarbeid rundt brukeren.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
+        <p className="text-slate-400 text-sm mt-3">
+          Tablaid styrker samarbeid mellom innbyggere, pårørende og kommunen.
+        </p>
+      </section>
+    </>
   );
 }
 
+
 /* -------------------------------------------------------------------------- */
-/*                               VOICES SECTION                               */
+/*                             VOICES SECTION                                 */
 /* -------------------------------------------------------------------------- */
 
 function VoicesSection() {
   return (
-    <section className="bg-slate-950 py-14 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <>
+      {/* ---------------------------------------------------------------------- */}
+      {/*   MYNDIGHETENES BUDSKAP                                               */}
+      {/* ---------------------------------------------------------------------- */}
 
-        <div className="max-w-3xl">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
-            Myndighetenes budskap
+      <section className="bg-slate-950 py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
+              Myndighetenes budskap
+            </h2>
+            <p className="mt-3 text-sm text-slate-300 sm:text-base">
+              Tablaid bygger på føringer fra Helsedirektoratet, KS og nasjonale reformer.
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <p className="text-sm text-slate-300 italic">
+                «Utvikling over tid er avgjørende for å identifisere økende risiko tidlig.»
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                – Helsedirektoratet, Samhandlingsstrategi 2024–2030
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <p className="text-sm text-slate-300 italic">
+                «Pasienter og pårørende er en ressurs i forbedringsarbeidet.»
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                – Helsetilsynet, Tilsynsmelding 2023
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <p className="text-sm text-slate-300 italic">
+                «Det er behov for å styrke helsepersonells kunnskap om legemidler.»
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                – Helsetilsynet, Tilsynsmelding 2025
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+              <p className="text-sm text-slate-300">
+                <strong>
+                  Hovedmålet i reformen er å flytte hjemmetjenestene fra reaktiv til proaktiv oppfølging.
+                </strong>
+              </p>
+              <p className="mt-3 text-xs text-slate-500">
+                – Basert på Regjeringens «Bo Trygt Hjemme»-reform
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ---------------------------------------------------------------------- */}
+      {/*   APP LANSERING – iOS, Android og Web                                 */}
+      {/* ---------------------------------------------------------------------- */}
+
+      <section className="bg-slate-900/60 backdrop-blur-sm py-16 mt-20">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
+            Tablaid lanseres på alle plattformer
           </h2>
-          <p className="mt-3 text-sm text-slate-300 sm:text-base">
-            Tablaid bygger på føringer fra Helsedirektoratet, KS og Helsetilsynet.
+
+          <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed mb-8">
+            Den fullverdige Tablaid-appen kommer på 
+            <span className="text-emerald-400 font-semibold"> iOS</span> og 
+            <span className="text-emerald-400 font-semibold"> Android</span> i løpet av 2026.
+            For pilotkommunene starter vi med en moderne web-app som fungerer på alle mobiler,
+            nettbrett og datamaskiner — uten behov for nedlasting.
           </p>
-        </div>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-
-          {/* Helsedirektoratet */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <p className="text-sm text-slate-300 italic">
-              «Utvikling over tid er avgjørende for å identifisere økende risiko tidlig.»
-            </p>
-            <p className="mt-3 text-xs text-slate-500">
-              – Helsedirektoratet, Samhandlingsstrategi 2024–2030
-            </p>
-          </div>
-
-          {/* Helsetilsynet 2023 */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <p className="text-sm text-slate-300 italic">
-              «Pasienter og pårørende er en ressurs i forbedringsarbeidet.»
-            </p>
-            <p className="mt-3 text-xs text-slate-500">
-              – Helsetilsynet, Tilsynsmelding 2023
-            </p>
-          </div>
-
-          {/* Helsetilsynet 2025 */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <p className="text-sm text-slate-300 italic">
-              «Det er behov for å styrke helsepersonells kunnskap om legemidler.»
-            </p>
-            <p className="mt-3 text-xs text-slate-500">
-              – Helsetilsynet, Tilsynsmelding 2025
-            </p>
-          </div>
-
-          {/* Bo Trygt Hjemme */}
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-            <p className="text-sm text-slate-300">
-              <strong>
-                Hovedmålet i reformen er å flytte hjemmetjenestene fra reaktiv til proaktiv oppfølging.
-              </strong>
-            </p>
-            <p className="mt-3 text-xs text-slate-500">
-              – Basert på Regjeringens «Bo Trygt Hjemme»-reform
-            </p>
-          </div>
+          <p className="text-slate-400 text-sm max-w-xl mx-auto">
+            Dette gir en rask og trygg oppstart for både innbyggere, pårørende og kommunen –
+            samtidig som vi sikrer en app-opplevelse som er stabil og kvalitetssikret før
+            lansering i App Store og Google Play.
+          </p>
 
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

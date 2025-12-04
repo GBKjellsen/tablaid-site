@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import VpcInnbyggere from "@/components/vpc/VpcInnbyggere";
+
 
 export default function BrukerPage() {
   return (
@@ -54,7 +56,8 @@ export default function BrukerPage() {
             <strong>Helsekompass</strong> — korte daglige spørsmål inspirert av WHO ICOPE
           </li>
           <li>
-            <strong>Egenvurdert funksjon (CFS)</strong> — et enkelt verktøy som gir deg innsikt i utviklingen over tid
+            <strong>Egenvurdert funksjon</strong> — et enkelt verktøy som hjelper deg forstå utviklingen over tid
+
           </li>
           <li>
             <strong>Dashbord</strong> — se mønstre i søvn, energi, mobilitet, kognisjon, humør og mer
@@ -74,11 +77,15 @@ export default function BrukerPage() {
             href="/kontakt"
             className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black rounded-full font-semibold shadow-lg shadow-emerald-500/30 transition"
           >
-            Vil du teste Tablaid?
+            Meld din interesse dersom du vil teste Tablaids app - den er klar våren 2026?
           </Link>
         </div>
+            <section className="mt-20">
+  <VpcInnbyggere />
+</section>
 
       </section>
     </main>
+
   );
 }

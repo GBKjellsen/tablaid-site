@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import VpcParorende from "@/components/vpc/VpcParorende";
 
 export default function ParorendePage() {
   return (
@@ -56,6 +57,10 @@ export default function ParorendePage() {
             Snakk med oss
           </Link>
         </div>
+        <section className="mt-20">
+  <VpcParorende />
+</section>
+
       </section>
     </main>
   );

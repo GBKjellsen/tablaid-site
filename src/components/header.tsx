@@ -28,18 +28,34 @@ export default function Header() {
 
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-8 text-white text-sm">
-          <Link href="/bruker" className="hover:text-emerald-300">
-            For personer
-          </Link>
-          <Link href="/parorende" className="hover:text-emerald-300">
-            Pårørende
-          </Link>
-          <Link href="/kommuner" className="hover:text-emerald-300">
-            Kommuner
-          </Link>
-          <Link href="/kontakt" className="hover:text-emerald-300">
-            Kontakt
-          </Link>
+
+  <Link href="/innbyggere" className="hover:text-emerald-300">
+    Innbyggere
+  </Link>
+
+  <Link href="/parorende" className="hover:text-emerald-300">
+    Pårørende
+  </Link>
+
+  <Link href="/kommuner" className="hover:text-emerald-300">
+    Kommuner
+  </Link>
+
+  <Link href="/investor" className="hover:text-emerald-300">
+    Investor
+  </Link>
+
+  <Link href="/om" className="hover:text-emerald-300">
+    Om Tablaid
+  </Link>
+
+  <Link
+    href="/kontakt"
+    className="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold transition shadow-lg shadow-emerald-500/30"
+  >
+    Kontakt oss
+  </Link>
+
 
           {/* ENGLISH FLAG */}
           <Link href="/en" className="hover:opacity-80">
@@ -70,7 +86,7 @@ export default function Header() {
       {open && (
         <div className="lg:hidden flex flex-col bg-[#0A0F1F] text-white px-6 py-4 space-y-4 border-t border-white/10 w-full">
 
-          <Link href="/bruker" onClick={() => setOpen(false)} className="hover:text-emerald-300">
+          <Link href="/innbyggere" onClick={() => setOpen(false)} className="hover:text-emerald-300">
             For personer
           </Link>
 
