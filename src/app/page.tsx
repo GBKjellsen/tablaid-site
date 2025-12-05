@@ -139,7 +139,18 @@ function AudienceSection() {
   );
 }
 
-function AudienceCard({ title, text, bullets, href }) {
+function AudienceCard({
+  title,
+  text,
+  bullets,
+  href,
+}: {
+  title: string;
+  text: string;
+  bullets: string[];
+  href: string;
+}) {
+
   return (
     <div className="card">
       <h3 className="text-sm text-emerald-300 font-semibold">{title}</h3>
