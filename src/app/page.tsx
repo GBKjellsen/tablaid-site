@@ -228,7 +228,18 @@ function FeaturesSection() {
   );
 }
 
-function FeatureCard({ title, text, bullets, image }) {
+function FeatureCard({
+  title,
+  text,
+  bullets,
+  image,
+}: {
+  title: string;
+  text: string;
+  bullets: string[];
+  image?: string;
+}) {
+
   return (
     <div className="card">
       <div className="flex items-center justify-between mb-4">
@@ -294,7 +305,16 @@ function NeedsSection() {
   );
 }
 
-function NeedCard({ title, text, bottom }) {
+function NeedCard({
+  title,
+  text,
+  bottom,
+}: {
+  title: string;
+  text: string;
+  bottom: string;
+}) {
+
   return (
     <div className="card">
       <p className="text-sm text-emerald-300 uppercase">{title}</p>
@@ -348,7 +368,14 @@ function VoicesSection() {
   );
 }
 
-function QuoteCard({ quote, source }) {
+function QuoteCard({
+  quote,
+  source,
+}: {
+  quote: string;
+  source: string;
+}) {
+
   return (
     <div className="card">
       <p className="italic text-[var(--text-secondary)]">{quote}</p>
