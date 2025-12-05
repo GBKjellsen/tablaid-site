@@ -1,9 +1,8 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Tablaid – Digital helse- og legemiddelassistent",
@@ -17,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nb">
-      <body className="min-h-screen bg-slate-950 text-slate-100">
+    <html lang="nb" className="dark">
+      <body className="min-h-screen transition-colors duration-500">
 
         {/* GLOBAL HEADER */}
         <Header />
@@ -31,7 +30,6 @@ export default function RootLayout({
 
         {/* ANALYTICS */}
         <Analytics />
-
       </body>
     </html>
   );

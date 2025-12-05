@@ -1,9 +1,50 @@
 @import "tailwindcss";
 @import "tailwindcss/utilities";
 
-/* === Tablaid Design System === */
+/* ============================================================
+   TABLAID DESIGN SYSTEM v1.0
+   ============================================================ */
+
+/* -------------------------------
+   1. DESIGN TOKENS (GLOBAL)
+   ------------------------------- */
 
 :root {
+  /* BRAND COLORS */
+  --brand-emerald-50:  #ecfdf5;
+  --brand-emerald-100: #d1fae5;
+  --brand-emerald-300: #6ee7b7;
+  --brand-emerald-400: #34d399;
+  --brand-emerald-500: #10b981;
+  --brand-emerald-600: #059669;
+  --brand-emerald-700: #047857;
+
+  /* SURFACE COLORS */
+  --surface-light:      #ffffff;
+  --surface-soft:       #f8fafc;
+  --surface-muted:      #f1f5f9;
+  --surface-dark:       #0f172a;
+  --surface-darker:     #0b1120;
+
+  /* TEXT COLORS */
+  --text-primary-light: #0f172a;
+  --text-secondary-light:#475569;
+  --text-primary-dark:  #f8fafc;
+  --text-secondary-dark:#cbd5e1;
+
+  /* SHADOWS */
+  --shadow-soft:        0 4px 14px rgba(0,0,0,0.08);
+  --shadow-card:        0 4px 28px rgba(0,0,0,0.10);
+  --shadow-glow-emerald:0 0 32px rgba(16,185,129,0.35);
+
+  /* RADII */
+  --radius-card:        14px;
+  --radius-button:      10px;
+
+  /* TRANSITIONS */
+  --transition-base: 0.25s ease;
+
+  /* LEGACY THEME VARIABLES (your existing ones – kept for compatibility) */
   --color-bg: #040816;
   --color-bg-alt: #0b1021;
   --color-surface: #111827;
@@ -15,29 +56,53 @@
   --radius-lg: 1.5rem;
   --radius-md: 1rem;
   --radius-full: 999px;
-  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.6);
+  --shadow-soft-legacy: 0 18px 45px rgba(15, 23, 42, 0.6);
   --max-width: 1120px;
   --nav-height: 72px;
 }
 
-/* Reset + base */
-*, *::before, *::after { box-sizing: border-box; }
-
-html, body { padding: 0; margin: 0; }
+/* -------------------------------
+   2. GLOBAL LIGHT MODE
+   ------------------------------- */
 
 body {
+  background: var(--surface-light);
+  color: var(--text-primary-light);
+  transition: background var(--transition-base), color var(--transition-base);
   font-family: system-ui, sans-serif;
-  background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 90%);
-  color: var(--color-text);
+  padding: 0;
+  margin: 0;
 }
 
-/* Layout helpers */
-.page-container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
+/* -------------------------------
+   3. GLOBAL DARK MODE
+   ------------------------------- */
+
+.dark body {
+  background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 90%);
+  color: var(--text-primary-dark);
 }
+
+/* -------------------------------
+   4. CARD COMPONENT
+   ------------------------------- */
+
+.card {
+  background: var(--surface-light);
+  border: 1px solid var(--surface-muted);
+  border-radius: var(--radius-card);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+}
+
+.dark .card {
+  background: var(--surface-dark);
+  border-color: rgba(255,255,255,0.06);
+}
+
+/* -------------------------------
+   5. TYPOGRAPHY
+   ------------------------------- */
 
 h1, h2, h3 {
   font-weight: 600;
@@ -56,9 +121,23 @@ h2 {
 
 p { line-height: 1.6; }
 
-/* Buttons */
+/* -------------------------------
+   6. LAYOUT HELPERS
+   ------------------------------- */
+
+.page-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* -------------------------------
+   7. BUTTONS
+   ------------------------------- */
+
 .button {
-  @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-transparent text-base font-medium whitespace-nowrap transition;
+  @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-base font-medium whitespace-nowrap transition;
 }
 
 .button-primary {
@@ -82,7 +161,10 @@ p { line-height: 1.6; }
   background: rgba(15,23,42,1);
 }
 
-/* Badge */
+/* -------------------------------
+   8. BADGE
+   ------------------------------- */
+
 .badge {
   @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs;
   background: var(--color-primary-soft);

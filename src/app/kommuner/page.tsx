@@ -1,124 +1,187 @@
+"use client";
+
+import React from "react";
+import Link from "next/link";
 import VpcKommuner from "@/components/vpc/VpcKommuner";
 
 export default function KommunerPage() {
   return (
-    <>
-      <main className="min-h-screen bg-slate-950 text-slate-50">
-        <div className="max-w-6xl mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gray-50 text-gray-900 flex flex-col">
 
-          {/* TITLE */}
-          <h1 className="text-4xl font-bold mb-6">
-            Tablaid for kommuner
+      {/* HERO SECTION */}
+      <section className="w-full bg-white py-16 px-6 md:px-12 border-b">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            En innbyggertjeneste som gir <span className="text-emerald-600">din kommune</span> tidlig innsikt
           </h1>
 
-          <p className="text-lg opacity-90 mb-10 max-w-3xl">
-            Tablaid gir kommuner og primærhelsetjenester et nytt beslutningsgrunnlag:
-            en kombinasjon av faktisk legemiddelbruk, tidlige funksjonssignaler og
-            trygg deling med pårørende. Målet er tidligere tiltak, bedre prioritering
-            og økt trygghet – før behovet for tjenester eskalerer.
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+            Fra <strong>mars 2026</strong> kan din kommune delta i en 
+            <strong> 3–6 måneders pilot</strong> der innbyggere logger hverdagsinformasjon og legemiddelbruk.
+            Dere får anonymiserte trender som gjør det enklere å oppdage endringer tidlig – 
+            og prioritere ressursene bedre.
           </p>
 
-          {/* WHY SECTION */}
-          <h2 className="text-2xl font-semibold mt-10 mb-4">
-            Hvorfor kommuner velger Tablaid
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#pilotkontakt"
+              className="px-6 py-3 rounded-md bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-700 transition"
+            >
+              Meld interesse for pilot fra mars 2026
+            </a>
+
+            <a
+              href="/files/tablaid-info-kommuner.pdf"
+              className="px-6 py-3 rounded-md bg-white border text-gray-800 font-semibold shadow hover:bg-gray-100 transition"
+            >
+              Last ned infoskriv (PDF)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION – PROBLEMET FOR KOMMUNER */}
+      <section className="py-16 px-6 md:px-12 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Kommunene trenger tidligere signaler – ikke flere systemer
           </h2>
 
-          <ul className="list-disc ml-6 space-y-3 opacity-90">
-            <li>Oppdager tidlige endringer i funksjon og legemiddelbruk – basert på faktisk etterlevelse</li>
-            <li>Gir et bedre grunnlag for prioritering i møte med økende tjenestebehov</li>
-            <li>Forsterker samhandling mellom innbygger, pårørende og tjenestene</li>
-            <li>Reduserer unødvendige henvendelser og øker forutsigbarhet i oppfølgingen</li>
-            <li>Krever ingen integrasjoner for å komme i gang</li>
-          </ul>
-
-          {/* PILOT SECTION */}
-          <h2 className="text-2xl font-semibold mt-12 mb-4">
-            Pilot: 25 innbyggere fra din kommune
-          </h2>
-
-          <p className="opacity-90 mb-4 max-w-3xl">
-            Piloten er utformet for å være rask, rimelig og innenfor terskelen for enkeltkjøp.
-            Målet er å gi kommunen dokumenterbar innsikt i hva tidlige signaler kan bety for
-            beslutninger, prioritering og kvalitet i tjenesten.
+          <p className="text-lg text-gray-700 mb-6">
+            Mange kommuner beskriver at endringer i funksjon og legemiddelbruk oppdages 
+            først når behovet har blitt akutt. Pårørende sitter på viktig informasjon, 
+            men mangler verktøy. Tjenestene mangler kontinuerlig innsikt – og må basere 
+            seg på punktvise vurderinger.
           </p>
 
-          <ul className="list-disc ml-6 space-y-3 opacity-90">
-            <li>Oppstartsmøte og tilpasning til kommunens behov</li>
-            <li>Rekruttering gjennom treffsteder, forebyggende tjenester og pårørende</li>
-            <li>Løpende støtte og faglig oppfølging fra Tablaid-teamet</li>
-            <li>Månedlige funn og trendrapporter til kommunen</li>
-            <li>Mulighet for overgang til kommunelisens for hele kommunen</li>
-          </ul>
+          <p className="text-sm text-gray-500 italic">
+            Parafrase fra Helsedirektoratet og Legeforeningen:
+            «Tidlige signaler og innsikt over tid er avgjørende for å identifisere økende risiko 
+            før behovet blir omfattende.»
+          </p>
+        </div>
+      </section>
 
-          {/* PRICING */}
-          <h2 className="text-2xl font-semibold mt-12 mb-4">
-            Pris og modell
+      {/* SECTION – WHAT'S IN IT FOR THEM */}
+      <section className="py-16 px-6 md:px-12 bg-white border-y">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">
+            Hva får <span className="text-emerald-600">din kommune</span> ut av Tablaid?
           </h2>
 
-          <p className="text-lg opacity-90 mb-6">
-            <b>Pilot: 25 000 NOK</b> — Kommunelisens tilbys deretter for 
-            <b> 100 000 NOK/år</b>, og piloten gir full lisens ut 2026.
+          <div className="grid md:grid-cols-2 gap-10 text-lg text-gray-700">
+            <ul className="space-y-4">
+              <li>• Din kommune får tidligere signaler om endringer – basert på faktisk hverdag.</li>
+              <li>• Dere får bedre grunnlag for å prioritere innsats når behovet øker.</li>
+              <li>• Dere styrker samhandling mellom innbygger, pårørende og tjenester.</li>
+            </ul>
+
+            <ul className="space-y-4">
+              <li>• Dere får trenddata som viser utvikling over tid – ikke bare punktmålinger.</li>
+              <li>• Dere reduserer unødvendige henvendelser og øker forutsigbarhet.</li>
+              <li>• Ingen integrasjoner eller nye systemer – Tablaid kan brukes som ren innbyggertjeneste.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION – PILOT 3–6 MND */}
+      <section className="py-16 px-6 md:px-12 bg-gray-50" id="pilot">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Pilot fra mars 2026 – 3–6 måneder
+          </h2>
+
+          <p className="text-lg text-gray-700 mb-6">
+            Piloten er utviklet for å gi din kommune nok tid og datagrunnlag til å vurdere 
+            effekten av Tablaid. Dette gir innsikt i trender, etterlevelse, trivsel og tidlige 
+            signaler – uten å legge ekstra belastning på kommunens tjenester.
           </p>
 
-          {/* REGISTRATION FORM */}
-          <h2 className="text-2xl font-semibold mt-12 mb-6">
-            Registrer kommunen for pilotinformasjon
+          <div className="bg-white p-6 rounded-lg shadow border">
+            <h3 className="text-xl font-semibold mb-4">Pilotopplegg (3–6 måneder)</h3>
+
+            <ul className="space-y-3 text-gray-700 text-lg">
+              <li>• Oppstartsmøte med tilpasning til din kommune</li>
+              <li>• Rekruttering av 20–30 innbyggere (frivillig deltakelse)</li>
+              <li>• Daglig logging av hverdagsinformasjon og medisiner</li>
+              <li>• Månedlige trendrapporter og funn</li>
+              <li>• Anonymiserte trender – ingen personsensitiv data deles</li>
+              <li>• Valgfri lavterskel lisens ut 2026 for kontinuitet</li>
+            </ul>
+          </div>
+
+          <p className="mt-6 text-sm text-gray-500 italic">
+            Parafrase fra Helsetilsynet og pasientsikkerhetsprogrammet:
+            «Legemiddelbruk i hjemmet er en av de store og vedvarende pasientsikkerhetsutfordringene.»
+          </p>
+        </div>
+      </section>
+
+      {/* FORM FOR INTERESSE */}
+      <section id="pilotkontakt" className="py-16 px-6 md:px-12 bg-white border-t">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Meld interesse for pilot fra mars 2026
           </h2>
+
+          <p className="text-lg text-gray-700 mb-8">
+            Fyll ut skjemaet under – du får tilsendt infoskriv og vi tar kontakt for et kort 
+            uforpliktende videomøte.
+          </p>
 
           <form
-            action="https://formspree.io/f/xwpgbqaj"
+            action="https://formspree.io/f/mleowead"
             method="POST"
-            className="max-w-lg space-y-4 bg-slate-900 border border-slate-700 p-6 rounded-xl shadow-lg"
+            className="bg-gray-50 p-6 rounded-lg shadow space-y-4 border"
           >
-            <div>
-              <label className="block text-sm mb-1">Kommunenavn</label>
-              <input
-                type="text"
-                name="kommune"
-                required
-                className="w-full px-3 py-2 rounded bg-slate-800 border border-slate-600"
-              />
-            </div>
+            <input
+              type="text"
+              name="navn"
+              required
+              placeholder="Navn"
+              className="w-full p-3 border rounded"
+            />
 
-            <div>
-              <label className="block text-sm mb-1">Kontaktperson</label>
-              <input
-                type="text"
-                name="kontaktperson"
-                required
-                className="w-full px-3 py-2 rounded bg-slate-800 border border-slate-600"
-              />
-            </div>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="E-post"
+              className="w-full p-3 border rounded"
+            />
 
-            <div>
-              <label className="block text-sm mb-1">E-post</label>
-              <input
-                type="email"
-                name="epost"
-                required
-                className="w-full px-3 py-2 rounded bg-slate-800 border border-slate-600"
-              />
-            </div>
+            <input
+              type="text"
+              name="kommune"
+              required
+              placeholder="Kommune"
+              className="w-full p-3 border rounded"
+            />
+
+            <textarea
+              name="melding"
+              placeholder="Evt. kommentar"
+              rows={4}
+              className="w-full p-3 border rounded"
+            />
 
             <button
               type="submit"
-              className="w-full mt-4 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-3 rounded-lg"
+              className="w-full py-3 bg-emerald-600 text-white font-semibold rounded shadow hover:bg-emerald-700 transition"
             >
-              Send forespørsel
+              Send inn
             </button>
           </form>
-
-          <p className="text-sm opacity-60 mt-4">
-            Vi sender en PDF med pilotbeskrivelse og avtalealternativer.
-          </p>
-
-          {/* FULL VPC-LAYOUT FOR KOMMUNER */}
-          <section className="mt-20 mb-16 w-full max-w-5xl mx-auto px-6">
-            <VpcKommuner />
-          </section>
-
         </div>
-      </main>
-    </>
+      </section>
+
+      {/* VPC-KOMPONENT ( FAGLIG VERDI ) */}
+      <section className="py-16 px-6 md:px-12 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <VpcKommuner />
+        </div>
+      </section>
+    </div>
   );
 }
