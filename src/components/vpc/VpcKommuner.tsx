@@ -5,7 +5,7 @@ export default function VpcKommuner() {
     <section className="mb-16 w-full">
 
       {/* Header */}
-      <h2 className="text-2xl font-semibold text-gray-700 mb-6">
+      <h2 className="text-2xl font-semibold text-slate-50 mb-6">
 
         Verdiforslag – Kommuner
       </h2>
