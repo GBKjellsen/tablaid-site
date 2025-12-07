@@ -13,6 +13,20 @@ export default function InvestorPage() {
 
   const formRef = useRef<HTMLFormElement | null>(null);
   const printRef = useRef<HTMLDivElement | null>(null);
+
+  const handlePrint = () => {
+  if (!printRef.current) return;
+
+  const printContents = printRef.current.innerHTML;
+  const originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = printContents;
+  window.print();
+  document.body.innerHTML = originalContents;
+  window.location.reload();
+};
+
+
 // ----------------------------------
 // AJAX SKJEMA (Formspree)
 // ----------------------------------
