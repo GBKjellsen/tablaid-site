@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { GlowImage } from "@/components/Glow";
 
 /* -------------------------------------------------------------------------- */
 /*                                   PAGE                                      */
@@ -48,14 +49,14 @@ function HeroSection() {
             – før behovet for tjenester øker.
           </p>
 
-          <div className="mt-6 flex flex-wrap gap-4">
-            <Link href="/kommuner" className="btn-primary">
-              Kommunepilot 2026
-            </Link>
-            <Link href="/innbyggere" className="btn-secondary">
-              Se hvordan Tablaid fungerer
-            </Link>
-          </div>
+       <Link href="/kommuner" className="button-primary">
+  Kommunepilot 2026
+</Link>
+
+ <Link href="/innbyggere" className="button-secondary">
+  Se hvordan Tablaid fungerer
+</Link>
+
 
           <p className="mt-4 text-xs text-[var(--text-secondary)]">
             Du velger selv om du vil dele innsikt med pårørende eller kommunen.
@@ -66,7 +67,8 @@ function HeroSection() {
         <div className="flex flex-1 justify-center">
           <div className="relative w-full max-w-md overflow-hidden rounded-3xl 
                           border border-white/10 bg-[#0F172A]/70 shadow-[0_0_40px_-10px_#10b981]">
-            <Image
+           
+            <GlowImage
               src="/app-triple.png"
               alt="Tablaid app"
               width={900}
@@ -87,7 +89,7 @@ function HeroSection() {
 
 function AudienceSection() {
   return (
-    <section className="section-lighter py-16">
+    <section className="section-lighter py-10">
       <div className="mx-auto max-w-[var(--max-w)] px-6">
 
         <h2 className="text-3xl font-semibold text-white">
@@ -178,67 +180,81 @@ function AudienceCard({
 
 function FeaturesSection() {
   return (
-    <section className="section-dark py-20">
-      <div className="mx-auto max-w-[var(--max-w)] px-6">
+    <>
+      <section className="section-dark py-20">
+        <div className="mx-auto max-w-[var(--max-w)] px-6">
 
-        <h2 className="text-3xl font-semibold text-white text-center">
-          Nøkkelfunksjoner i Tablaid
-        </h2>
+          <h2 className="text-3xl font-semibold text-white text-center">
+            Nøkkelfunksjoner i Tablaid
+          </h2>
 
-        <p className="mt-2 text-center text-[var(--text-secondary)] max-w-xl mx-auto">
-          Tre funksjoner som sammen gir et komplett bilde av helse og etterlevelse.
-        </p>
+          <p className="mt-2 text-center text-[var(--text-secondary)] max-w-xl mx-auto">
+            Tre funksjoner som sammen gir et komplett bilde av helse og etterlevelse.
+          </p>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-          <FeatureCard
-            title="SmartTag"
-            text="NFC-etiketter som lar brukeren logge faktisk inntak ved å berøre mobilen."
-            bullets={[
-              "Ett-trykks logging",
-              "Faktisk inntaksdata",
-              "Inkludert i pilotstart",
-            ]}
-            image="/SmartTag.png"
-          />
+            <FeatureCard
+  title="SmartTag"
+  text="Gjør medisinhverdagen enklere med et raskt NFC-tapp. Perfekt for presis etterlevelse – uten stress."
+  bullets={[
+    "Tæpp for loggføring",
+    "Faktiske inntaksdata",
+    "Smartifiserer medisinskap, esker og dosetter",
+  ]}
+  image="/SmartTag.png"
+  cta={{
+    label: "Bestill SmartTags",
+    href: "/smarttag",
+    sub: "Betaling skjer sikkert via Stripe",
+  }}
+/>
 
-          <FeatureCard
-            title="Helsekompass"
-            text="Daglige mikromålinger som avslører tidlige signaler om endringer."
-            bullets={[
-              "8-dagers rotasjon",
-              "Korte spørsmål",
-              "Bedre trendinnsikt",
-            ]}
-          />
 
-          <FeatureCard
-            title="Legemiddelassistent"
-            text="Påminnelser, oversikt og trygghet – enklere etterlevelse."
-            bullets={[
-              "Skanning av medisiner",
-              "Automatisk dosettoversikt",
-              "Varsler ved manglende inntak",
-            ]}
-          />
+            <FeatureCard
+              title="Helsekompass"
+              text="Daglige mikromålinger som avslører tidlige signaler om endringer."
+              bullets={[
+                "8-dagers rotasjon",
+                "Korte spørsmål",
+                "Bedre trendinnsikt",
+              ]}
+            />
 
+            <FeatureCard
+              title="Legemiddelassistent"
+              text="Påminnelser, oversikt og trygghet – enklere etterlevelse."
+              bullets={[
+                "Skanning av medisiner",
+                "Automatisk dosettoversikt",
+                "Varsler ved manglende inntak",
+              ]}
+            />
+
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+
+       </>
   );
 }
+
 
 function FeatureCard({
   title,
   text,
   bullets,
   image,
+  cta,
 }: {
   title: string;
   text: string;
   bullets: string[];
   image?: string;
+  cta?: { label: string; href: string; sub?: string };
 }) {
+
 
   return (
     <div className="card">
@@ -259,6 +275,25 @@ function FeatureCard({
           <li key={i}>• {b}</li>
         ))}
       </ul>
+      {cta && (
+  <div className="mt-6">
+    <Link
+      href={cta.href}
+      className="inline-flex items-center justify-center w-full rounded-full 
+                 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold 
+                 py-2.5 text-sm transition"
+    >
+      {cta.label} →
+    </Link>
+
+    {cta.sub && (
+      <p className="text-xs text-[var(--text-secondary)] mt-1 text-center">
+        {cta.sub}
+      </p>
+    )}
+  </div>
+)}
+
     </div>
   );
 }

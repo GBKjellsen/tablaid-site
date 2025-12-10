@@ -16,7 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nb" className="dark">
+    <html lang="nb">
+
       <body className="min-h-screen transition-colors duration-500">
 
         {/* GLOBAL HEADER */}

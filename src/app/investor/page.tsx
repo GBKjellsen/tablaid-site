@@ -7,6 +7,9 @@ import Image from "next/image";
 import VpcInvestor from "@/components/vpc/VpcInvestor";
 import BmcInvestor from "@/components/bmc/BmcInvestor";
 
+import PageLayout from "@/components/layout/PageLayout";
+import { HeroGlow } from "@/components/Glow";
+
 export default function InvestorPage() {
   const [slipOpen, setSlipOpen] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -19,13 +22,8 @@ export default function InvestorPage() {
   /* ---------------------------------------------------- */
   const handlePrint = () => {
     if (!printRef.current) return;
-    const originalContents = document.body.innerHTML;
-    const printContents = printRef.current.innerHTML;
 
-    document.body.innerHTML = printContents;
     window.print();
-    document.body.innerHTML = originalContents;
-    window.location.reload();
   };
 
   /* ---------------------------------------------------- */
@@ -52,170 +50,162 @@ export default function InvestorPage() {
     }, 300);
   };
 
+  /* ---------------------------------------------------- */
+  /* RENDER                                               */
+  /* ---------------------------------------------------- */
   return (
-    <main className="bg-slate-950 text-slate-50">
+    <PageLayout>
 
       {/* ------------------------------------------------------ */}
-      {/* HERO SECTION MED SOFT GLOW                             */}
+      {/* HERO: BADGE + GLOW + INTRO                            */}
       {/* ------------------------------------------------------ */}
-      <section className="relative overflow-hidden pb-20 pt-28 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-emerald-500/20 blur-[120px]" />
 
-        <div className="mx-auto max-w-[var(--max-w)] flex flex-col gap-8 px-6 lg:px-20">
-<div className="inline-flex">
-  <span className="badge mt-2 px-3 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full">
-    For investorer
-  </span>
-</div>
+      <section className="relative overflow-hidden pt-24 pb-20">
+        <HeroGlow />
 
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight">
-            Bygg morgendagens forebyggende helsetjenester sammen med Tablaid
-          </h1>
+        <div className="mx-auto flex max-w-[var(--max-w)] flex-col 
+                        gap-12 px-6 lg:px-20 lg:flex-row lg:items-center">
 
-          <p className="text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed">
-            Tablaid kombinerer legemiddelassistent, funksjonsdata og pårørendestøtte 
-            for å oppdage funksjonsfall tidlig – før behovet eskalerer.
-          </p>
+          {/* TEXT */}
+          <div className="flex-1 text-center lg:text-left">
+            <span className="badge">For investorer • tidligfase 2025/26</span>
 
-          <div className="mt-4 flex flex-wrap items-center gap-4">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-4">
+              Bygg morgendagens forebyggende helsetjenester sammen med Tablaid
+            </h1>
+
+            <p className="text-slate-300 text-lg leading-relaxed mt-6 max-w-xl">
+              Tablaid kombinerer legemiddelstøtte, helsesignaler og trygg deling 
+              for å fange opp tidlige endringer — før de blir alvorlige.
+            </p>
+
             <Link
-              href="/kontakt"
-              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 
-                         text-sm font-semibold text-slate-900 hover:bg-emerald-400 transition"
-            >
+              href="/kontakt" className="button-primary">
               Book en prat om Tablaid
             </Link>
-
-            <p className="text-xs text-slate-400 max-w-xs">
-              Vi søker investorer som kombinerer kapital og samfunnsengasjement.
-            </p>
           </div>
         </div>
       </section>
 
 
       {/* ------------------------------------------------------ */}
-      {/* HVORFOR INVESTERE NÅ                                  */}
+      {/* MARKEDSTIMING                                         */}
       {/* ------------------------------------------------------ */}
+
       <section className="border-b border-slate-800 bg-slate-950/90 py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl font-semibold">Hvorfor investere i Tablaid nå?</h2>
 
-            <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-              Norge står midt i en demografisk endring som krever radikal omstilling. 
-              KS, Helsedirektoratet og Regjeringen peker alle på samme behov: 
-              <strong className="text-white"> tidlige signaler og løpende innsikt.</strong>
-            </p>
-          </div>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <h3 className="text-sm font-semibold text-emerald-300">1. Demografisk trykk</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                Antallet eldre øker raskere enn kommunenes kapasitet.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <h3 className="text-sm font-semibold text-emerald-300">2. Tidlige signaler blir kritisk</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                Beslutningsstøtte krever fortløpende data – ikke årskontroller.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <h3 className="text-sm font-semibold text-emerald-300">3. Digital modenhet</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                Dagens 70-åringer har brukt smarttelefon i over 15 år.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
-              <h3 className="text-sm font-semibold text-emerald-300">4. Reguleringer i vår favør</h3>
-              <p className="mt-2 text-sm text-slate-300">
-                EHDS åpner for trygg bruk av pasientgenererte data.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* ------------------------------------------------------ */}
-      {/* MARKEDSFORKLARENDE BRO-SEKSJON                        */}
-      {/* ------------------------------------------------------ */}
-      <section className="border-b border-slate-800 bg-slate-950/90 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-
-          <h2 className="text-2xl sm:text-3xl font-semibold">Et marked som allerede er i bevegelse</h2>
-
-          <div className="space-y-4 max-w-3xl mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
-            <p>
-              Norske kommuner skifter strategi fra reaktiv oppfølging til proaktiv og datadrevet omsorg. 
-              Alle toneangivende aktører peker på behovet for 
-              <strong className="text-white"> tidlige signaler og dokumentert funksjonsutvikling.</strong>
-            </p>
-
-            <p>
-              Tablaid tilbyr en lavterskel kommunelisens uten integrasjonskrav. 
-              Det gjør innkjøp raskt, rimelig og skalerbart.
-            </p>
-
-            <p>
-              Internasjonalt flyttes hjemmeoppfølging, funksjonsdata og medisinoversikt 
-              nærmere brukeren selv — og kommunene betaler for å redusere presset på tjenestene.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-
-      {/* ------------------------------------------------------ */}
-      {/* TAM / SAM / SOM                                        */}
-      {/* ------------------------------------------------------ */}
-      <section className="border-b border-slate-800 bg-slate-950/80 py-20 relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-emerald-500/10 blur-[120px]" />
-
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
-            Et voksende globalt marked med sterk betalingsvilje
+          <h2 className="text-2xl sm:text-3xl font-semibold">
+            Hvorfor er timingen for Tablaid akkurat nå?
           </h2>
 
-          <p className="text-slate-300 max-w-3xl mx-auto text-sm sm:text-base mb-12 leading-relaxed">
-            Segmentene vi opererer i – hjemmeoppfølging, tidlig risikodeteksjon 
-            og kommunal beslutningsstøtte – vokser raskt globalt.
-          </p>
+          <div className="space-y-4 max-w-3xl mt-6 text-slate-300 leading-relaxed">
 
-          <div className="grid gap-6 sm:grid-cols-3">
+            <p>
+              Norge står foran den største omstillingen i moderne helsetjenester.
+              NAV anslår i 2025 at vi vil mangle 
+              <strong className="text-white"> over 54 000 helsearbeidere</strong> innen 2040 —
+              30 000 sykepleiere og 24 000 helsefagarbeidere.
+            </p>
+
+            <p>
+              Samtidig etterspør kommuner og nasjonale myndigheter bedre beslutningsgrunnlag,
+              tidligere signaler og kontinuerlig innsikt i funksjon og helse.
+            </p>
+
+            <p>
+              Behovet for verktøy som gir løpende oversikt og tidlig deteksjon 
+              har aldri vært større — og aldri vært tydeligere.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ------------------------------------------------------ */}
+      {/* HVORFOR TABLAID VINNER                                */}
+      {/* ------------------------------------------------------ */}
+
+      <section className="border-b border-slate-800 bg-slate-950/90 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+
+          <h2 className="text-2xl sm:text-3xl font-semibold">
+            Hvorfor Tablaid kan bli en ledende plattform for tidlig innsikt
+          </h2>
+
+          <div className="grid gap-6 sm:grid-cols-2 mt-10">
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+              <h3 className="text-sm font-semibold text-emerald-300">1. Et hull i dagens helsetjenester</h3>
+              <p className="mt-2 text-slate-300 text-sm">
+                Det finnes ingen samlet løsning for daglige helsesignaler, funksjonsdata 
+                og trygg deling mellom innbygger, pårørende og kommune.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+              <h3 className="text-sm font-semibold text-emerald-300">2. Utviklet med praksis og fag</h3>
+              <p className="mt-2 text-slate-300 text-sm">
+                Konseptet er bygget på klinisk erfaring, pasientbehov og tett dialog 
+                med kommunale tjenester — ikke bare teknologi.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+              <h3 className="text-sm font-semibold text-emerald-300">3. Lav terskel – høy verdi</h3>
+              <p className="mt-2 text-slate-300 text-sm">
+                Tablaid fungerer som en uavhengig innbyggertjeneste, men kan integreres 
+                med relevante systemer der det gir merverdi.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+              <h3 className="text-sm font-semibold text-emerald-300">4. Et unikt datasett</h3>
+              <p className="mt-2 text-slate-300 text-sm">
+                Daglige helsesignaler gir et bilde av endringer over tid 
+                som dagens helsetjenester ikke klarer å fange opp.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* ------------------------------------------------------ */}
+      {/* SKALERBAR MODELL                                      */}
+      {/* ------------------------------------------------------ */}
+
+      <section className="border-b border-slate-800 bg-slate-950/80 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
+            En forretningsmodell som skalerer naturlig
+          </h2>
+
+          <div className="grid gap-6 sm:grid-cols-3 text-sm">
 
             <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
-              <h3 className="text-xl font-bold text-emerald-300">TAM</h3>
-              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-                Globalt marked for hjemmeoppfølging:
-                <br />
-                <span className="font-semibold text-white">230+ mrd NOK</span>
+              <h3 className="text-xl font-bold text-emerald-300">Innbyggertjeneste</h3>
+              <p className="mt-2 text-slate-300">
+                Kan brukes av enkeltpersoner fra dag én, men er designet for å skaleres via kommunale lisensavtaler.
+Dette gjør tjenesten tilgjengelig gratis for innbyggere, gir høy adopsjon og senker kommunenes terskel for å ta tjenesten i bruk.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
-              <h3 className="text-xl font-bold text-emerald-300">SAM</h3>
-              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-                Norden + Nordeuropa (velferdsteknologi):
-                <br />
-                <span className="font-semibold text-white">~15 mrd NOK</span>
+              <h3 className="text-xl font-bold text-emerald-300">Kommunalt samarbeid</h3>
+              <p className="mt-2 text-slate-300">
+                Kommuner får tilgang til trygg og samtykkebasert innsikt som gir bedre oppfølging og tidligere håndtering av endringer.
+Tjenesten kan tas i bruk uten store prosjekter og skaleres gradvis etter behov.
               </p>
             </div>
 
             <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
-              <h3 className="text-xl font-bold text-emerald-300">SOM (5 år)</h3>
-              <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-                200 norske + 200 internasjonale kommuner:
-                <br />
-                <span className="font-semibold text-white">≈ 200–250 MNOK årlig</span>
+              <h3 className="text-xl font-bold text-emerald-300">Tredjepartsverdier</h3>
+              <p className="mt-2 text-slate-300">
+                På sikt kan Tablaid kobles med tjenester innen syn, hørsel, ernæring og aktivitet.
+Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med nye inntektsstrømmer.
               </p>
             </div>
 
@@ -237,6 +227,7 @@ export default function InvestorPage() {
       {/* ------------------------------------------------------ */}
       {/* SLIP-SEKSJON                                           */}
       {/* ------------------------------------------------------ */}
+
       <section id="slip-section" className="border-b border-slate-800 bg-slate-950 py-16">
         <div className="mx-auto max-w-6xl px-6">
 
@@ -244,8 +235,8 @@ export default function InvestorPage() {
 
           <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
             Tablaid tilbyr investering via 
-            <strong className="text-emerald-300"> Simple Loan Investment Paper (SLIP)</strong> – 
-            et fleksibelt og norsk tidligfaseinstrument som konverterer til aksjer i neste emisjon.
+            <strong className="text-emerald-300"> Simple Loan Investment Paper (SLIP)</strong>, 
+            et fleksibelt tidligfaseinstrument som konverterer til aksjer ved neste emisjon.
           </p>
 
           <div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 sm:p-8">
@@ -276,9 +267,7 @@ export default function InvestorPage() {
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <p className="text-sm text-slate-400">
-                Ønsker du å motta SLIP-dokumentet?
-              </p>
+              <p className="text-sm text-slate-400">Ønsker du å motta SLIP-dokumentet?</p>
 
               <button
                 onClick={() => {
@@ -290,7 +279,7 @@ export default function InvestorPage() {
                   }, 150);
                 }}
                 className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 
-                           text-sm font-semibold text-slate-900 hover:bg-emerald-400 transition-all"
+                  text-sm font-semibold text-slate-900 hover:bg-emerald-400 transition-all"
               >
                 {slipOpen ? "Skjul SLIP" : "Les mer om SLIP"}
               </button>
@@ -304,29 +293,26 @@ export default function InvestorPage() {
       {/* ------------------------------------------------------ */}
       {/* SLIP COLLAPSIBLE                                       */}
       {/* ------------------------------------------------------ */}
+
       {slipOpen && (
         <section className="max-w-5xl mx-auto mt-8 px-6">
           <div className="rounded-xl border border-slate-700 bg-slate-900/50 p-6 text-sm text-slate-300">
-
             <h3 className="text-emerald-300 font-semibold mb-2 text-sm">Hva er en SLIP?</h3>
 
             <p className="mb-3">
-              En SLIP er et konvertibelt lån som blir til aksjer ved neste emisjon, 
-              og er mye brukt i oppstartsbedrifter som ønsker et smidig og trygt rammeverk 
-              for tidlig finansiering.
+              En SLIP er et konvertibelt lån som blir til aksjer ved neste emisjon.
             </p>
 
             <ul className="space-y-1 text-slate-300 text-sm">
               <li>• Konverteres automatisk ved neste emisjon</li>
               <li>• Rask prosess og advokatstandardisert dokument</li>
               <li>• Vanlig blant engleinvestorer og tidligfasefond</li>
-              <li>• Gir rabatt eller cap – øker investors sikkerhet</li>
+              <li>• Gir rabatt eller cap for økt sikkerhet</li>
             </ul>
 
             <p className="mt-4 text-xs text-slate-400">
               Fullt dokument sendes etter registrering i investor-skjemaet.
             </p>
-
           </div>
         </section>
       )}
@@ -335,6 +321,7 @@ export default function InvestorPage() {
       {/* ------------------------------------------------------ */}
       {/* INVESTOR SKJEMA                                        */}
       {/* ------------------------------------------------------ */}
+
       <section id="investor-access" className="max-w-6xl mx-auto px-6 py-20">
         <div className="max-w-3xl">
           <h2 className="text-2xl sm:text-3xl font-semibold">Investor-dokumenter og videre dialog</h2>
@@ -345,7 +332,7 @@ export default function InvestorPage() {
 
         {formSubmitted && (
           <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-700/30 px-4 py-2 
-                          text-sm text-emerald-300">
+            text-sm text-emerald-300">
             ✔ Tilgang aktivert – se dokumentene nedenfor
           </div>
         )}
@@ -354,14 +341,15 @@ export default function InvestorPage() {
           ref={formRef}
           onSubmit={submitForm}
           className="mt-8 grid gap-4 sm:grid-cols-2 rounded-2xl border border-slate-800 
-                     bg-slate-900/70 p-6"
+            bg-slate-900/70 p-6"
         >
           <div>
             <label className="block text-xs text-slate-300">Navn</label>
             <input
               required
               name="navn"
-              className="w-full rounded bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+              className="w-full rounded bg-slate-950 border border-slate-700 
+                px-3 py-2 text-sm"
             />
           </div>
 
@@ -371,7 +359,8 @@ export default function InvestorPage() {
               required
               type="email"
               name="epost"
-              className="w-full rounded bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+              className="w-full rounded bg-slate-950 border border-slate-700 
+                px-3 py-2 text-sm"
             />
           </div>
 
@@ -379,7 +368,8 @@ export default function InvestorPage() {
             <label className="block text-xs text-slate-300">Type investor</label>
             <select
               name="typeInvestor"
-              className="w-full rounded bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+              className="w-full rounded bg-slate-950 border border-slate-700 
+                px-3 py-2 text-sm"
             >
               <option>Privat investor</option>
               <option>Engleinvestor</option>
@@ -392,7 +382,8 @@ export default function InvestorPage() {
             <label className="block text-xs text-slate-300">Investeringsnivå (uforpliktende)</label>
             <select
               name="nivå"
-              className="w-full rounded bg-slate-950 border border-slate-700 px-3 py-2 text-sm"
+              className="w-full rounded bg-slate-950 border border-slate-700 
+                px-3 py-2 text-sm"
             >
               <option>&lt; 250 000 NOK</option>
               <option>250 000–500 000</option>
@@ -406,7 +397,8 @@ export default function InvestorPage() {
             <label className="block text-xs text-slate-300">Ønsker du informasjon om SLIP?</label>
             <select
               name="slip_interesse"
-              className="w-full rounded bg-slate-950 border border-slate-700 px-3 py-2 text-sm mt-1"
+              className="w-full rounded bg-slate-950 border border-slate-700 
+                px-3 py-2 text-sm mt-1"
             >
               <option>Nei</option>
               <option>Ja</option>
@@ -416,13 +408,12 @@ export default function InvestorPage() {
           <div className="sm:col-span-2 mt-2">
             <button
               type="submit"
-              className="rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-900 
-                         px-6 py-2 text-sm font-semibold"
+              className="rounded-full bg-emerald-500 hover:bg-emerald-400 
+                text-slate-900 px-6 py-2 text-sm font-semibold"
             >
               Send inn og få dokumentene
             </button>
           </div>
-
         </form>
       </section>
 
@@ -430,6 +421,7 @@ export default function InvestorPage() {
       {/* ------------------------------------------------------ */}
       {/* PRINTABLE SECTION                                      */}
       {/* ------------------------------------------------------ */}
+
       {formSubmitted && (
         <section id="bmc-reveal" className="mt-20 mb-10">
           <div className="max-w-5xl mx-auto px-6">
@@ -437,27 +429,22 @@ export default function InvestorPage() {
             <button
               onClick={handlePrint}
               className="mb-6 rounded-full bg-slate-800 px-4 py-2 text-xs 
-                         text-slate-300 hover:bg-slate-700"
+                text-slate-300 hover:bg-slate-700"
             >
               Skriv ut investor-materiell
             </button>
 
-            {/* PRINT-KONTAINER (Optimalisert for utskrift) */}
-            <div
-              ref={printRef}
-              className="bg-white text-black p-10 rounded-xl print:bg-white print:text-black 
-                         print:p-0 print:rounded-none"
-            >
-              <div className="flex justify-center mb-8">
-                <Image
-                  src="/Tablaid Logo Horizontal Positive.png"
-                  alt="Tablaid logo"
-                  width={240}
-                  height={80}
-                />
-              </div>
+            <div ref={printRef} className="print-container p-10 bg-white text-black rounded-xl">
 
-              <h2 className="text-center text-2xl font-semibold mb-8">
+              <Image
+                src="/logo_svart_tekst.png"
+                alt="Tablaid logo"
+                width={260}
+                height={90}
+                className="print-logo"
+              />
+
+              <h2 className="text-center text-2xl font-semibold mb-10 print-heading">
                 Investor Materiell – Tablaid
               </h2>
 
@@ -469,14 +456,15 @@ export default function InvestorPage() {
                 <BmcInvestor />
               </div>
 
-              <div className="text-center text-sm mt-10 print:mt-4">
+              <p className="text-center text-sm mt-10 print-subtle">
                 Kontakt: <strong>post@tablaid.no</strong>
-              </div>
+              </p>
+
             </div>
           </div>
         </section>
       )}
 
-    </main>
+    </PageLayout>
   );
 }

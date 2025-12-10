@@ -23,18 +23,16 @@ export default function Header() {
         </Link>
 
         {/* DESKTOP MENU */}
-        <div className="hidden lg:flex items-center gap-8 text-sm text-white">
+        <div className="hidden lg:flex items-center gap-8 text-sm">
           <Link href="/innbyggere" className="hover:text-emerald-300">Innbyggere</Link>
           <Link href="/parorende" className="hover:text-emerald-300">Pårørende</Link>
           <Link href="/kommuner" className="hover:text-emerald-300">Kommuner</Link>
           <Link href="/investor" className="hover:text-emerald-300">Investor</Link>
           <Link href="/om" className="hover:text-emerald-300">Om Tablaid</Link>
-          <Link
-            href="/kontakt"
-            className="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold shadow-lg shadow-emerald-500/20"
-          >
-            Kontakt oss
-          </Link>
+          <Link href="/kontakt" className="button-primary">
+  Kontakt oss
+</Link>
+
 
           <Link href="/support" className="hover:text-emerald-300">
             Support Tablaid

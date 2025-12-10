@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Navigasjon */}
           <div>
             <h4 className="text-sm font-semibold text-slate-200 mb-3">Navigasjon</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-400 [&_a]:text-slate-400 [&_a:hover]:text-emerald-300">
               <li><Link href="/" className="hover:text-emerald-300">Forside</Link></li>
               <li><Link href="/om" className="hover:text-emerald-300">Om Tablaid</Link></li>
               <li><Link href="/kontakt" className="hover:text-emerald-300">Kontakt</Link></li>
@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Personvern */}
           <div>
             <h4 className="text-sm font-semibold text-slate-200 mb-3">Personvern</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-400 [&_a]:text-slate-400 [&_a:hover]:text-emerald-300">
               <li><Link href="/personvern" className="hover:text-emerald-300">Personvernerklæring</Link></li>
               <li>GDPR • Normen • EU Data Act (coming)</li>
             </ul>
@@ -46,13 +46,10 @@ export default function Footer() {
           {/* Pilot & dialog */}
           <div>
             <h4 className="text-sm font-semibold text-slate-200 mb-3">Pilot & dialog</h4>
-            <ul className="space-y-2 text-sm text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-400 [&_a]:text-slate-400 [&_a:hover]:text-emerald-300">
               <li><Link href="/pilot" className="hover:text-emerald-300">Kommunepilot 2026</Link></li>
               <li><Link href="/investor" className="hover:text-emerald-300">For investorer</Link></li>
-              <Link href="/support" className="hover:text-emerald-300">
-  Support Tablaid
-</Link>
-
+              <li><Link href="/support" className="hover:text-emerald-300">Support Tablaid</Link></li>
             </ul>
           </div>
 

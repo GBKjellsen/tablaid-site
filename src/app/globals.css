@@ -1,173 +1,247 @@
-@import "tailwindcss";
-@import "tailwindcss/utilities";
+@reference "tailwindcss";
+
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ============================================================
-   TABLAID DESIGN SYSTEM v1.0
-   ============================================================ */
-
-/* -------------------------------
-   1. DESIGN TOKENS (GLOBAL)
-   ------------------------------- */
-
+   1) TABLAID TOKENS (BRAND COLORS, RADII, SHADOWS)
+============================================================ */
 :root {
-  /* BRAND COLORS */
+  /* Brand */
   --brand-emerald-50:  #ecfdf5;
   --brand-emerald-100: #d1fae5;
   --brand-emerald-300: #6ee7b7;
   --brand-emerald-400: #34d399;
   --brand-emerald-500: #10b981;
-  --brand-emerald-600: #059669;
-  --brand-emerald-700: #047857;
 
-  /* SURFACE COLORS */
-  --surface-light:      #ffffff;
-  --surface-soft:       #f8fafc;
-  --surface-muted:      #f1f5f9;
-  --surface-dark:       #0f172a;
-  --surface-darker:     #0b1120;
+  /* Surfaces */
+  --surface-dark:   #0f172a;
+  --surface-darker: #0b1120;
 
-  /* TEXT COLORS */
-  --text-primary-light: #0f172a;
-  --text-secondary-light:#475569;
-  --text-primary-dark:  #f8fafc;
-  --text-secondary-dark:#cbd5e1;
+  /* Text */
+  --text-primary-dark: #f8fafc;
+  --text-secondary-dark: #cbd5e1;
 
-  /* SHADOWS */
-  --shadow-soft:        0 4px 14px rgba(0,0,0,0.08);
-  --shadow-card:        0 4px 28px rgba(0,0,0,0.10);
-  --shadow-glow-emerald:0 0 32px rgba(16,185,129,0.35);
+  /* Radii */
+  --radius-card: 14px;
+  --radius-button: 10px;
 
-  /* RADII */
-  --radius-card:        14px;
-  --radius-button:      10px;
+  /* Shadows */
+  --shadow-card: 0 4px 28px rgba(0,0,0,0.1);
+  --shadow-soft: 0 4px 14px rgba(0,0,0,0.08);
 
-  /* TRANSITIONS */
+  /* Transitions */
   --transition-base: 0.25s ease;
-
-  /* LEGACY THEME VARIABLES (your existing ones – kept for compatibility) */
-  --color-bg: #040816;
-  --color-bg-alt: #0b1021;
-  --color-surface: #111827;
-  --color-primary: #22c55e;
-  --color-primary-soft: rgba(34, 197, 94, 0.1);
-  --color-accent: #38bdf8;
-  --color-text: #f9fafb;
-  --color-text-muted: #9ca3af;
-  --radius-lg: 1.5rem;
-  --radius-md: 1rem;
-  --radius-full: 999px;
-  --shadow-soft-legacy: 0 18px 45px rgba(15, 23, 42, 0.6);
-  --max-width: 1120px;
-  --nav-height: 72px;
 }
 
-/* -------------------------------
-   2. GLOBAL LIGHT MODE
-   ------------------------------- */
+/* ============================================================
+   2) BASE OVERRIDES (PLACED IN @layer base)
+============================================================ */
+@layer base {
 
-body {
-  background: var(--surface-light);
-  color: var(--text-primary-light);
-  transition: background var(--transition-base), color var(--transition-base);
-  font-family: system-ui, sans-serif;
-  padding: 0;
-  margin: 0;
+  html, body {
+    background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 90%);
+    color: var(--text-primary-dark);
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary-dark);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 3.4vw, 3.1rem);
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.6;
+    color: var(--text-secondary-dark);
+  }
+
+  /* --- Global link color fix --- */
+  a {
+    color: var(--brand-emerald-300);
+    text-decoration: underline;
+    transition: color .2s ease;
+  }
+  a:hover {
+    color: var(--brand-emerald-400);
+  }
+
+  /* Menu + Header links must stay white */
+  header a,
+  nav a {
+    color: var(--text-primary-dark) !important;
+    text-decoration: none;
+  }
 }
 
-/* -------------------------------
-   3. GLOBAL DARK MODE
-   ------------------------------- */
-
-.dark body {
-  background: radial-gradient(circle at top left, #1f2937 0, #020617 45%, #000 90%);
-  color: var(--text-primary-dark);
-}
-
-/* -------------------------------
-   4. CARD COMPONENT
-   ------------------------------- */
-
-.card {
-  background: var(--surface-light);
-  border: 1px solid var(--surface-muted);
-  border-radius: var(--radius-card);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-card);
-}
-
-.dark .card {
-  background: var(--surface-dark);
-  border-color: rgba(255,255,255,0.06);
-}
-
-/* -------------------------------
-   5. TYPOGRAPHY
-   ------------------------------- */
-
-h1, h2, h3 {
-  font-weight: 600;
-  letter-spacing: -0.03em;
-}
-
-h1 {
-  font-size: clamp(2.4rem, 3.4vw, 3.1rem);
-  line-height: 1.1;
-}
-
-h2 {
-  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
-  line-height: 1.2;
-}
-
-p { line-height: 1.6; }
-
-/* -------------------------------
-   6. LAYOUT HELPERS
-   ------------------------------- */
-
-.page-container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* -------------------------------
-   7. BUTTONS
-   ------------------------------- */
-
-.button {
-  @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-base font-medium whitespace-nowrap transition;
-}
-
-.button-primary {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #022c22;
-  box-shadow: var(--shadow-soft);
-}
-
-.button-primary:hover {
-  transform: translateY(-1px) scale(1.01);
-  box-shadow: 0 25px 60px rgba(34, 197, 94, 0.4);
-}
-
-.button-secondary {
-  background: rgba(15,23,42,0.8);
-  border-color: rgba(148,163,184,0.4);
-  color: var(--color-text);
-}
-
-.button-secondary:hover {
-  background: rgba(15,23,42,1);
-}
-
-/* -------------------------------
-   8. BADGE
-   ------------------------------- */
-
+/* ============================================================
+   3) BASE COMPONENTS (BADGE, BUTTON, INPUT, CARD)
+============================================================ */
+@layer components {
+/* ============================================================
+   BADGE (top tag on hero sections)
+============================================================ */
 .badge {
-  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs;
-  background: var(--color-primary-soft);
-  border: 1px solid rgba(34,197,94,0.3);
-  color: #bbf7d0;
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.25);
+  color: var(--brand-emerald-300);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+  /* ============================================================
+       BASE BUTTON (alle knapper deler dette)
+     ============================================================ */
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: var(--radius-button);
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: var(--transition-base);
+    user-select: none;
+  }
+
+
+  /* ============================================================
+       PRIMARY BUTTON (emerald — sort tekst)
+     ============================================================ */
+.button-primary {
+  @apply rounded-full bg-emerald-500 hover:bg-emerald-400
+         text-slate-900 font-semibold px-6 py-3 text-sm
+         inline-flex items-center gap-2 transition;
+}
+
+
+
+  .button-primary:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+
+
+  /* ============================================================
+       OUTLINE BUTTON (Kommunepilot + Se Tablaid)
+     ============================================================ */
+  .button-outline {
+    @apply px-5 py-2 rounded-full font-medium inline-flex items-center gap-2 transition;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: transparent;
+    color: #f8fafc;
+  }
+
+  .button-outline:hover {
+    border-color: var(--brand-emerald-400);
+    color: var(--brand-emerald-300);
+  }
+
+
+  /* ============================================================
+       SECONDARY BUTTON (dark)
+     ============================================================ */
+ .button-secondary {
+  @apply rounded-full bg-slate-800 hover:bg-slate-700
+         text-slate-200 px-6 py-3 text-sm
+         inline-flex items-center gap-2 transition;
+}
+
+
+  .button-secondary:hover {
+    background: rgba(15,23,42,0.95);
+    transform: translateY(-1px);
+  }
+
+
+  /* ============================================================
+       TERTIARY / GHOST BUTTON
+     ============================================================ */
+  .button-ghost {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.20);
+    color: #f8fafc;
+    @apply px-4 py-2 rounded-full font-medium inline-flex items-center gap-2 transition;
+  }
+
+  .button-ghost:hover {
+    border-color: var(--brand-emerald-400);
+    color: var(--brand-emerald-300);
+  }
+
+
+  /* ============================================================
+       INPUT FIELD
+     ============================================================ */
+  .input {
+    background: #0b1021;
+    border: 1px solid #1e293b;
+    @apply text-slate-100 px-3 py-2 rounded-md w-full;
+  }
+
+  .input:focus {
+    border-color: var(--brand-emerald-400);
+    outline: none;
+  }
+
+
+  /* ============================================================
+       CARD COMPONENT
+     ============================================================ */
+  .card {
+    background: var(--surface-dark);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    @apply p-6 text-slate-200;
+  }
+
+}
+
+
+
+/* ============================================================
+   4) HERO IMAGE FIX
+============================================================ */
+.hero img,
+.hero-image {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  display: block;
+}
+
+/* Prevent oversized images site-wide */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout spacing */
+section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
