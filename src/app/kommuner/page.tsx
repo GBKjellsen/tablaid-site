@@ -9,6 +9,8 @@ import VpcKommuner from "@/components/vpc/VpcKommuner";
 import { GlowImage } from "@/components/Glow";
 import VpcToggle from "@/components/VpcToggle";
 import DashboardPreview from "@/components/DashboardPreview";
+import HeroSection from "@/components/HeroSection";
+import ToggleCTA from "@/components/ui/ToggleCTA";
 
 export default function KommunerPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,71 +38,24 @@ export default function KommunerPage() {
   };
 
   return (
-    <PageLayout>
-      {/* ------------------------------------------------------ */}
-      {/* HERO */}
-      {/* ------------------------------------------------------ */}
-
-      <section className="relative overflow-hidden pt-24 pb-20">
-        <HeroGlow />
-
-        <div className="mx-auto flex max-w-[var(--max-w)] flex-col lg:flex-row lg:items-center gap-12 px-6 lg:px-20">
-
-          {/* TEXT */}
-          <div className="flex-1 text-center lg:text-left">
-            <span className="badge">For kommuner • Tidlig innsikt</span>
-
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-4">
-              Tidlige signaler for bedre omsorg – før behovet blir akutt
-            </h1>
-
-            <p className="text-slate-300 text-lg leading-relaxed mt-6 max-w-xl">
-              Tablaid gir kommunen løpende og samtykkebasert innsikt i
-              innbyggernes funksjon og helse – ikke bare punktvise observasjoner.
-              Slik fanges endringer opp tidlig, og riktige tiltak kan settes inn i tide.
-            </p>
-
-            <p className="text-slate-400 italic mt-4 text-sm max-w-xl">
-              Helsedirektoratet, KS og SSB peker på at kommunene må jobbe mer
-              kunnskapsdrevet og forebyggende for å møte framtidens omsorgsbehov.
-            </p>
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-8 justify-center lg:justify-start">
-              <a
-                href="#pilot"
-                className="rounded-full bg-emerald-500 hover:bg-emerald-400
-                text-slate-900 font-semibold px-6 py-3 text-sm"
-              >
-                Meld interesse for utprøving
-              </a>
-
-              <Link
-                href="/pilot-infoskriv-request"
-                className="rounded-full bg-slate-800 hover:bg-slate-700
-                text-slate-200 px-6 py-3 text-sm"
-              >
-                Last ned infoskriv
-              </Link>
-            </div>
-          </div>
-
-          {/* IMAGE */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <GlowImage
-              src="/app-triple_3.png"
-              alt="Tablaid app"
-              width={540}
-              height={480}
-              className="rounded-2xl shadow-xl"
-            />
-          </div>
-        </div>
-      </section>
+<PageLayout>
+   
+<HeroSection
+  badge="For kommuner • Tidlige signaler"
+  title="Tidlig innsikt som gjør tjenestene mer treffsikre"
+  subtitle="Tablaid gir kommunen løpende innsikt i funksjon og legemiddelbruk — lenge før behovet blir akutt. Bedre prioritering, mindre belastning og tryggere tjenester."
+  supportText="Helsedirektoratet, KS og SSB peker på at tidlige signaler og bedre datagrunnlag blir avgjørende for å møte framtidens omsorgsutfordringer."
+  image="/app-triple_3.png"
+  imageLeft={false}
+  primaryCta={{ label: "Meld interesse for utprøving", href: "#pilot" }}
+  secondaryCta={{ label: "Last ned infoskriv", href: "/pilot-infoskriv-request" }}
+/>
 
       {/* ------------------------------------------------------ */}
       {/* TABLAID KOMMUNEPORTAL – PREMIUM, EKSTERN FUNKSJON     */}
       {/* ------------------------------------------------------ */}
 
+      
       <section className="py-20 bg-slate-900/50 border-b border-slate-800">
         <div className="max-w-5xl mx-auto px-6">
 
@@ -284,19 +239,22 @@ export default function KommunerPage() {
             </div>
 
             <div>
-              <label className="input-label">Telefon</label>
-              <input name="telefon" className="input" />
-            </div>
+  <label className="input-label">Telefon</label>
+  <input name="telefon" className="input" />
+</div>
 
-            <div className="sm:col-span-2 mt-4">
-              <button
-                type="submit"
-                className="w-full rounded-full bg-emerald-500 hover:bg-emerald-400 
-                text-slate-900 px-6 py-3 text-sm font-semibold transition"
-              >
-                Send inn
-              </button>
-            </div>
+<div className="sm:col-span-2 mt-4">
+  <button
+    type="submit"
+    className="w-full rounded-full bg-emerald-500 hover:bg-emerald-400 
+      text-white px-6 py-3 text-sm font-semibold transition-all"
+  >
+    Send inn
+  </button>
+</div>
+
+
+
           </form>
         </div>
       </section>

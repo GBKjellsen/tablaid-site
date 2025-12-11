@@ -6,9 +6,10 @@ import Image from "next/image";
 import VpcToggle from "@/components/VpcToggle";
 import VpcInvestor from "@/components/vpc/VpcInvestor";
 import BmcInvestor from "@/components/bmc/BmcInvestor";
-
+import HeroSection from "@/components/HeroSection";
 import PageLayout from "@/components/layout/PageLayout";
 import { HeroGlow } from "@/components/Glow";
+import ToggleCTA from "@/components/ui/ToggleCTA";
 
 export default function InvestorPage() {
   const [slipOpen, setSlipOpen] = useState(false);
@@ -56,36 +57,16 @@ export default function InvestorPage() {
   return (
     <PageLayout>
 
-      {/* ------------------------------------------------------ */}
-      {/* HERO: BADGE + GLOW + INTRO                            */}
-      {/* ------------------------------------------------------ */}
+     <HeroSection
+  badge="For investorer • 2025/26"
+  title="Bygg morgendagens forebyggende helsetjenester sammen med Tablaid"
+  subtitle="Tablaid kombinerer legemiddelstøtte, daglige helsesignaler og trygg deling for å fange opp risiko tidlig – lenge før behovet blir akutt. En løsning som treffer både brukere, pårørende og kommuner."
+  supportText="Helsedirektoratet og KS peker på behovet for løsninger som gir tidligere identifisering av funksjonsfall og bedre beslutningsgrunnlag. Tablaid bygger nettopp det."
+  image="/hero-investor.png"   // ← Sett inn riktig filnavn fra det nye bildet du valgte
+  imageLeft={false}
+  primaryCta={{ label: "Book en investordialog", href: "/kontakt" }}
+/>
 
-      <section className="relative overflow-hidden pt-24 pb-20">
-        <HeroGlow />
-
-        <div className="mx-auto flex max-w-[var(--max-w)] flex-col 
-                        gap-12 px-6 lg:px-20 lg:flex-row lg:items-center">
-
-          {/* TEXT */}
-          <div className="flex-1 text-center lg:text-left">
-            <span className="badge">For investorer • tidligfase 2025/26</span>
-
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-4">
-              Bygg morgendagens forebyggende helsetjenester sammen med Tablaid
-            </h1>
-
-            <p className="text-slate-300 text-lg leading-relaxed mt-6 max-w-xl">
-              Tablaid kombinerer legemiddelstøtte, helsesignaler og trygg deling 
-              for å fange opp tidlige endringer — før de blir alvorlige.
-            </p>
-
-            <Link
-              href="/kontakt" className="button-primary">
-              Book en prat om Tablaid
-            </Link>
-          </div>
-        </div>
-      </section>
 
 
       {/* ------------------------------------------------------ */}
@@ -224,9 +205,13 @@ Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med 
         </div>
       </section>
 
-      <VpcToggle>
-        <VpcInvestor />
-      </VpcToggle>
+    <VpcToggle
+  labelClosed="Utforsk hele investeringscaset"
+  labelOpen="Skjul investeringscaset"
+>
+  <VpcInvestor />
+</VpcToggle>
+
 
    
       {/* ------------------------------------------------------ */}
@@ -274,20 +259,14 @@ Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <p className="text-sm text-slate-400">Ønsker du å motta SLIP-dokumentet?</p>
 
-              <button
-                onClick={() => {
-                  setSlipOpen(p => !p);
-                  setTimeout(() => {
-                    document.getElementById("slip-section")?.scrollIntoView({
-                      behavior: "smooth",
-                    });
-                  }, 150);
-                }}
-                className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 
-                  text-sm font-semibold text-slate-900 hover:bg-emerald-400 transition-all"
-              >
-                {slipOpen ? "Skjul SLIP" : "Les mer om SLIP"}
-              </button>
+
+<ToggleCTA
+  toggled={slipOpen}
+  onClick={() => setSlipOpen(!slipOpen)}
+  labelOn="Skjul SLIP"
+  labelOff="Les mer om SLIP"
+/>
+
             </div>
 
           </div>
@@ -411,14 +390,15 @@ Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med 
           </div>
 
           <div className="sm:col-span-2 mt-2">
-            <button
-              type="submit"
-              className="rounded-full bg-emerald-500 hover:bg-emerald-400 
-                text-slate-900 px-6 py-2 text-sm font-semibold"
-            >
-              Send inn og få dokumentene
-            </button>
-          </div>
+  <button
+    type="submit"
+    className="rounded-full bg-emerald-500 hover:bg-emerald-400 
+      text-white px-6 py-2 text-sm font-semibold transition-all"
+  >
+    Send inn og få dokumentene
+  </button>
+</div>
+
         </form>
       </section>
 

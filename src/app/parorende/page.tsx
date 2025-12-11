@@ -8,6 +8,7 @@ import VpcParorende from "@/components/vpc/VpcParorende";
 import { useState } from "react";
 import {GlowImage} from "@/components/Glow";
 import VpcToggle from "@/components/VpcToggle";
+import HeroSection from "@/components/HeroSection";
 
 export default function ParorendePage() {
   const [showVPC, setShowVPC] = useState(false);
@@ -18,53 +19,16 @@ export default function ParorendePage() {
       {/* -------------------------------------------------------------- */}
       {/* HERO */}
       {/* -------------------------------------------------------------- */}
-      <section className="relative overflow-hidden pt-24 pb-20">
-        <HeroGlow />
-
-  {/* TOP BADGE */}
-  <div className="mx-auto max-w-[var(--max-w)] flex flex-col gap-8 px-6 lg:px-20">
-    <div className="flex-1 text-center lg:text-left">
-  <span className="badge">For pårørende • støtte og innsikt</span>
-    </div>
-  </div>
-
-  {/* HERO GRID */}
-
-        <div className="mx-auto flex max-w-[var(--max-w)] flex-col-reverse 
-                        gap-12 px-6 lg:px-20 lg:flex-row lg:items-center">
-
-          {/* TEXT */}
-          <div className="space-y-6 max-w-xl">
-            <h1 className="text-4xl font-bold leading-tight">
-              Bedre oversikt og trygghet for deg som er pårørende
-            </h1>
-
-            <p className="text-slate-300 text-lg leading-relaxed">
-              Tablaid gir deg innsikt i hvordan det går med den du bryr deg om —
-              uten at du må spørre hele tiden. Deling av medisinrutiner og
-              helsetrender gjør rollen lettere, tryggere og mindre belastende.
-            </p>
-
-            <Link href="/kommuner" className="button-primary">
-              Meld interesse
-            </Link>
-</div>
-          {/* IMAGE + GLOW */}
-          <div className="relative w-fit mx-auto">
-            <div className="absolute inset-0 scale-110 blur-2xl bg-emerald-500/20 
-                            rounded-xl -z-10"></div>
-
-            <GlowImage
-              src="/mor-datter.png"
-              alt="Pårørende støtte"
-              width={320}
-              height={380}
-              priority
-              className="rounded-xl shadow-xl max-w-[280px] md:max-w-[320px]"
-            />
-          </div>
-        </div>
-      </section>
+     <HeroSection
+  badge="For pårørende • støtte i hverdagen"
+  title="Få innsikt og trygghet når du følger opp noen du er glad i"
+  subtitle="Tablaid gjør det lettere å følge opp uten å overstyre. Du får signaler om endringer i helse og funksjon, og bedre grunnlag for gode samtaler."
+  supportText="Digital støtte mellom besøk gjør det mulig å hjelpe tidligere — før små bekymringer blir store utfordringer."
+  image="/mor-datter.png"
+  imageLeft={false}
+  primaryCta={{ label: "Hvordan fungerer det?", href: "/hvordan-fungerer-det" }}
+  secondaryCta={{ label: "For innbyggere", href: "/innbyggere" }}
+/>
 
 
       {/* -------------------------------------------------------------- */}
