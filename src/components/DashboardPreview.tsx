@@ -157,7 +157,15 @@ export default function DashboardPreview() {
 /* ------------------------------------------------------ */
 /* GENERISK DASHBOARD-KORT – REUSABLE */
 /* ------------------------------------------------------ */
-function DashboardCard({ title, subtitle, details, placeholder }) {
+type DashboardCardProps = {
+  title: string;
+  subtitle?: string;
+  details?: string[];
+  placeholder?: string;
+};
+
+function DashboardCard({ title, subtitle, details, placeholder }: DashboardCardProps) {
+
   return (
     <div className="rounded-2xl bg-slate-900/80 border border-slate-700 p-6 shadow-lg shadow-black/30">
       <h4 className="text-lg font-semibold text-emerald-300">{title}</h4>
