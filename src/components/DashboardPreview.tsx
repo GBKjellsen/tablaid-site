@@ -171,11 +171,14 @@ function DashboardCard({ title, subtitle, details, placeholder }: DashboardCardP
       <h4 className="text-lg font-semibold text-emerald-300">{title}</h4>
       <p className="text-slate-300 mt-1 text-sm">{subtitle}</p>
 
-      <ul className="text-sm text-slate-300 mt-3 space-y-1">
-        {details.map((d, i) => (
-          <li key={i}>• {d}</li>
-        ))}
-      </ul>
+      {details && (
+  <ul className="text-sm text-slate-300 mt-3 space-y-1">
+    {details.map((d, i) => (
+      <li key={i}>• {d}</li>
+    ))}
+  </ul>
+)}
+
 
       <div className="h-20 bg-slate-800/40 rounded-xl mt-4 flex items-center justify-center text-slate-500 text-xs">
         {placeholder}
