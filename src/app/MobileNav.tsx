@@ -12,7 +12,17 @@ export default function MobileNav() {
       <button
         onClick={() => setOpen(!open)}
         aria-label="Åpne meny"
-        className="text-slate-200 hover:text-emerald-300 focus:outline-none"
+        className="
+  text-slate-200 
+  hover:text-emerald-300 
+  focus:outline-none 
+  bg-transparent
+  border border-transparent
+  touch-manipulation
+  active:bg-transparent
+  hover:bg-transparent
+"
+
       >
         <svg
           className="h-6 w-6"
