@@ -7,10 +7,10 @@ import PageLayout from "@/components/layout/PageLayout";
 import { HeroGlow } from "@/components/Glow";
 import VpcKommuner from "@/components/vpc/VpcKommuner";
 import { GlowImage } from "@/components/Glow";
-
+import VpcToggle from "@/components/VpcToggle";
+import DashboardPreview from "@/components/DashboardPreview";
 
 export default function KommunerPage() {
-  const [showVPC, setShowVPC] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -45,23 +45,24 @@ export default function KommunerPage() {
         <HeroGlow />
 
         <div className="mx-auto flex max-w-[var(--max-w)] flex-col lg:flex-row lg:items-center gap-12 px-6 lg:px-20">
+
           {/* TEXT */}
           <div className="flex-1 text-center lg:text-left">
-            <span className="badge">For kommuner • tidlig innsikt</span>
+            <span className="badge">For kommuner • Tidlig innsikt</span>
 
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-4">
-              Tablaid gir kommunen tidlig innsikt
+              Tidlige signaler for bedre omsorg – før behovet blir akutt
             </h1>
 
             <p className="text-slate-300 text-lg leading-relaxed mt-6 max-w-xl">
-              Kommuner mangler ofte løpende innsikt i hvordan innbyggernes helse
-              og funksjon utvikler seg mellom fysiske møter. Tablaid gir tidlige
-              signaler – før behovet blir akutt.
+              Tablaid gir kommunen løpende og samtykkebasert innsikt i
+              innbyggernes funksjon og helse – ikke bare punktvise observasjoner.
+              Slik fanges endringer opp tidlig, og riktige tiltak kan settes inn i tide.
             </p>
 
             <p className="text-slate-400 italic mt-4 text-sm max-w-xl">
-              Helsedirektoratet, KS og SSB peker på at tidlige signaler og bedre
-              datagrunnlag er nødvendig for å håndtere framtidens omsorgsbehov.
+              Helsedirektoratet, KS og SSB peker på at kommunene må jobbe mer
+              kunnskapsdrevet og forebyggende for å møte framtidens omsorgsbehov.
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-8 justify-center lg:justify-start">
@@ -73,12 +74,13 @@ export default function KommunerPage() {
                 Meld interesse for utprøving
               </a>
 
-              <button
+              <Link
+                href="/pilot-infoskriv-request"
                 className="rounded-full bg-slate-800 hover:bg-slate-700
                 text-slate-200 px-6 py-3 text-sm"
               >
-                Last ned infoskriv (PDF)
-              </button>
+                Last ned infoskriv
+              </Link>
             </div>
           </div>
 
@@ -96,21 +98,63 @@ export default function KommunerPage() {
       </section>
 
       {/* ------------------------------------------------------ */}
-      {/* SYSTEMTRYKK / BEGRUNNELSE */}
+      {/* TABLAID KOMMUNEPORTAL – PREMIUM, EKSTERN FUNKSJON     */}
+      {/* ------------------------------------------------------ */}
+
+      <section className="py-20 bg-slate-900/50 border-b border-slate-800">
+        <div className="max-w-5xl mx-auto px-6">
+
+          <div className="rounded-3xl border border-emerald-500/20 bg-slate-900/80 p-10 shadow-xl shadow-black/30">
+
+            <h2 className="text-3xl font-semibold text-emerald-300 text-center">
+              Kommuneportal (beta)
+            </h2>
+
+            <p className="text-slate-300 text-center mt-3 max-w-2xl mx-auto">
+              Kommuner som deltar i pilotering eller inngår lisens får tilgang
+              til Tablaids kommuneportal – et eksternt dashboard med aggregert innsikt,
+              tidlige trender og beslutningsstøtte basert på samtykkede data.
+            </p>
+
+            <p className="text-slate-400 text-center mt-2 text-sm">
+              Full portal åpnes trinnvis i løpet av 2026.
+            </p>
+
+            <div className="mt-12 flex flex-col items-center gap-8">
+
+              {/* ▼▼ Kun preview, ikke VPC ▼▼ */}
+              <VpcToggle>
+                <DashboardPreview />
+              </VpcToggle>
+
+              {/* Ekstern lenke til egen dashboardside */}
+              <Link href="/kommune-login" className="button-primary">
+                Åpne Kommuneportal (beta)
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ------------------------------------------------------ */}
+      {/* SYSTEMTRYKK / SAMFUNNSUTFORDRING */}
       {/* ------------------------------------------------------ */}
 
       <section className="border-b border-slate-800 bg-slate-950 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
+
           <h2 className="text-2xl sm:text-3xl font-semibold">
-            Kommunene trenger tidligere signaler – ikke flere punktbesøk
+            Flere eldre – færre ansatte. Kommunene må fange opp endring tidligere.
           </h2>
 
           <p className="mt-6 text-slate-300 leading-relaxed text-lg">
-            Ifølge Helsedirektoratet, KS og SSB står Norge foran økende behov i
-            helse- og omsorg, samtidig som tilgangen på helsepersonell synker.
-            Kommunene trenger løsninger som fanger opp endring tidlig – ikke når
-            behovet allerede har eskalert.
+            Innen 2040 mangler Norge over 50 000 helsepersonell. Samtidig øker antallet
+            innbyggere med sammensatte behov. Kommunene trenger løsninger som gir
+            kontinuerlig innsikt – ikke flere tunge kartleggingsprosesser eller
+            punktbesøk som kommer for sent.
           </p>
+
         </div>
       </section>
 
@@ -120,60 +164,47 @@ export default function KommunerPage() {
 
       <section className="bg-slate-950/80 py-20 border-b border-slate-800">
         <div className="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3 px-6">
+
           <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
             <h3 className="text-xl font-bold text-emerald-300">Tidlige signaler</h3>
             <p className="mt-2 text-slate-300">
-              Tablaid fanger opp endringer i funksjon og helse gjennom daglige
-              innbyggersvar – ikke bare årlige vurderinger.
+              Tablaid viser endringer fra dag til dag, ikke kun én gang i året.
             </p>
           </div>
 
           <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
             <h3 className="text-xl font-bold text-emerald-300">Støtte for pårørende</h3>
             <p className="mt-2 text-slate-300">
-              Pårørende får bedre oversikt – og kommunen får et tryggere
-              beslutningsgrunnlag.
+              Innsikt deles trygt – og kommunen får bedre beslutningsgrunnlag.
             </p>
           </div>
 
           <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
             <h3 className="text-xl font-bold text-emerald-300">Lav belastning</h3>
             <p className="mt-2 text-slate-300">
-              Innbyggere logger selv. Kommunen mottar kun trender og nøkkelfunn
-              etter samtykke.
+              Innbyggere logger selv. Kommunen mottar kun trender og nøkkelfunn.
             </p>
           </div>
 
           <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
             <h3 className="text-xl font-bold text-emerald-300">Bedre beslutningsstøtte</h3>
             <p className="mt-2 text-slate-300">
-              Kontinuerlig innsikt gjør prioritering enklere – og kvaliteten
-              tryggere.
+              Kontinuerlig innsikt gjør prioritering enklere og mer målrettet.
             </p>
           </div>
-        </div>
 
-        <div className="text-center mt-16">
-          <button
-            onClick={() => setShowVPC((v) => !v)}
-            className="px-6 py-2 text-sm rounded-full border border-slate-700
-              text-slate-300 hover:bg-slate-800 transition"
-          >
-            {showVPC ? "Skjul detaljert verdikart (VPC)" : "Vis detaljert verdikart (VPC)"}
-          </button>
         </div>
-
-        {showVPC && (
-          <div className="max-w-5xl mx-auto mt-10 px-6 text-left">
-            <div
-              className="rounded-2xl border border-slate-800 bg-slate-900/60 
-              p-6 shadow-lg shadow-black/20"
-            >
-              <VpcKommuner />
-            </div>
-          </div>
-        )}
       </section>
+
+      {/* ------------------------------------------------------ */}
+      {/* VPC – DETALJERT VERDIFORSALG (EXPAND) */}
+      {/* ------------------------------------------------------ */}
+
+      <div className="py-10">
+        <VpcToggle>
+          <VpcKommuner />
+        </VpcToggle>
+      </div>
 
       {/* ------------------------------------------------------ */}
       {/* PILOTINFO */}
@@ -186,9 +217,8 @@ export default function KommunerPage() {
           </h2>
 
           <p className="mt-4 text-slate-300 leading-relaxed">
-            Kommunen får trenddata, tidlige signaler og bedre grunnlag for
-            riktige beslutninger. Utprøving krever minimal innsats, og lisensen
-            gjelder ut 2026.
+            Kommunen får trenddata, tidlige signaler og et styrket beslutningsgrunnlag.
+            Utprøving krever minimal innsats og lisensen gjelder ut 2026.
           </p>
 
           <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 mt-10 text-left max-w-xl mx-auto">
@@ -205,7 +235,7 @@ export default function KommunerPage() {
       </section>
 
       {/* ------------------------------------------------------ */}
-      {/* SKJEMA */}
+      {/* INTERESSER-SKJEMA */}
       {/* ------------------------------------------------------ */}
 
       <section className="py-20 bg-slate-950">
@@ -215,7 +245,7 @@ export default function KommunerPage() {
           </h2>
 
           <p className="mt-2 text-slate-300">
-            Fyll ut skjemaet, så tar vi kontakt innen 1–2 virkedager.
+            Fyll inn kontaktinformasjon, så tar vi kontakt innen 1–2 virkedager.
           </p>
 
           {submitted && (
@@ -258,16 +288,6 @@ export default function KommunerPage() {
               <input name="telefon" className="input" />
             </div>
 
-            <div>
-              <label className="input-label">Ønsket oppstart</label>
-              <select name="oppstart" className="input">
-                <option>Snarest</option>
-                <option>Mars 2026</option>
-                <option>Q2 2026</option>
-                <option>Usikker – ønsker dialog</option>
-              </select>
-            </div>
-
             <div className="sm:col-span-2 mt-4">
               <button
                 type="submit"
@@ -280,6 +300,7 @@ export default function KommunerPage() {
           </form>
         </div>
       </section>
+
     </PageLayout>
   );
 }

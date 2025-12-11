@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import VpcToggle from "@/components/VpcToggle";
 import VpcInvestor from "@/components/vpc/VpcInvestor";
 import BmcInvestor from "@/components/bmc/BmcInvestor";
 
@@ -215,15 +215,20 @@ Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med 
 
 
       {/* ------------------------------------------------------ */}
-      {/* VPC INVESTOR                                           */}
+      {/* VPC INVESTOR – COLLAPSIBLE */}
       {/* ------------------------------------------------------ */}
+
       <section className="mt-20 mb-10">
         <div className="max-w-5xl mx-auto px-6">
-          <VpcInvestor />
+          {/* Plassholder eller intro-tekst */}
         </div>
       </section>
 
+      <VpcToggle>
+        <VpcInvestor />
+      </VpcToggle>
 
+   
       {/* ------------------------------------------------------ */}
       {/* SLIP-SEKSJON                                           */}
       {/* ------------------------------------------------------ */}

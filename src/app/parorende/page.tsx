@@ -7,6 +7,7 @@ import { HeroGlow } from "@/components/Glow";
 import VpcParorende from "@/components/vpc/VpcParorende";
 import { useState } from "react";
 import {GlowImage} from "@/components/Glow";
+import VpcToggle from "@/components/VpcToggle";
 
 export default function ParorendePage() {
   const [showVPC, setShowVPC] = useState(false);
@@ -92,27 +93,19 @@ export default function ParorendePage() {
       </section>
 
 
-      {/* -------------------------------------------------------------- */}
-      {/* VPC – COLLAPSIBLE SECTION */}
-      {/* -------------------------------------------------------------- */}
-      <section className="mx-auto max-w-[var(--max-w)] px-6 lg:px-20 mt-16 mb-24">
+    {/* -------------------------------------------------------------- */}
+{/* VPC – COLLAPSIBLE SECTION */}
+{/* -------------------------------------------------------------- */}
 
-        <button
-          onClick={() => setShowVPC(!showVPC)}
-          className="w-full rounded-2xl border border-slate-800 bg-slate-900/60 
-                     px-6 py-4 text-left font-semibold text-slate-100 
-                     hover:bg-slate-900/70 transition"
-        >
-          {showVPC ? "Skjul detaljert verdikart" : "Vis detaljert verdikart (VPC)"}
-        </button>
+<section className="mx-auto max-w-[var(--max-w)] px-6 lg:px-20 mt-16 mb-24">
+  {/* Innholdet i seksjonen (verdibokser etc.) beholdes som før */}
+</section>
 
-        {showVPC && (
-          <div className="mt-6 animate-fadeIn">
-            <VpcParorende />
-          </div>
-        )}
-      </section>
+{/* Ny og elegant toggle-basert VPC-visning */}
+<VpcToggle>
+  <VpcParorende />
+</VpcToggle>
 
-    </PageLayout>
-  );
+</PageLayout>
+);
 }

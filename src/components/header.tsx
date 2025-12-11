@@ -52,16 +52,16 @@ export default function Header() {
 
         {/* MOBILE MENU BUTTON */}
         <button
-          className="lg:hidden text-white text-2xl"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? "✕" : "☰"}
-        </button>
+  className="lg:hidden text-white text-2xl border border-emerald-400 rounded-md px-2 py-1"
+  onClick={() => setOpen(!open)}
+>
+  {open ? "✕" : "☰"}
+</button>
       </nav>
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="lg:hidden flex flex-col bg-[#0A0F1F]/95 backdrop-blur border-t border-white/10 px-6 py-5 space-y-4 text-white text-sm">
+        <div className="lg:hidden flex flex-col bg-slate-950 border-t border-white/10 px-6 py-5 space-y-4 text-white text-sm rounded-b-lg shadow-lg">
           <Link href="/innbyggere" onClick={() => setOpen(false)}>Innbyggere</Link>
           <Link href="/parorende" onClick={() => setOpen(false)}>Pårørende</Link>
           <Link href="/kommuner" onClick={() => setOpen(false)}>Kommuner</Link>

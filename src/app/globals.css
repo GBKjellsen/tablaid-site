@@ -220,6 +220,116 @@
 
 }
 
+/* ============================================================
+   PRINT STYLES – HIDE HEADER, FOOTER AND NAVIGATION ON PRINT
+============================================================ */
+@media print {
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  /* Optional: Remove outer padding for cleaner PDF */
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+/* ============================================================
+   PRINT-OPTIMIZED LAYOUT (HEADERS, SECTIONS, PAGE BREAKS, NUMBERS)
+============================================================ */
+@media print {
+
+  /* Page margins & page numbers */
+  @page {
+    margin: 20mm 15mm;
+    @bottom-center {
+      content: counter(page) " / " counter(pages);
+      font-size: 10pt;
+      color: #666;
+    }
+  }
+
+  /* Remove navigation + footer on printed version */
+  header,
+  footer,
+  nav {
+    display: none !important;
+  }
+
+  /* Prevent awkward content splits */
+  section,
+  .print-section,
+  ul,
+  li,
+  .card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Keep headings with at least one block of content */
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Ensure content does NOT start on new page alone */
+  h2 + p,
+  h2 + ul,
+  h3 + p,
+  h3 + ul {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
+  /* Avoid single orphan list items */
+  ul li {
+    widows: 2;
+    orphans: 2;
+  }
+
+  /* ============================================================
+     PRINT FIX – gjør tekst og bakgrunn lesbar ved utskrift
+  ============================================================ */
+
+  /* Global tekstfarge */
+  * {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Fjern mørk bakgrunn */
+  body, html {
+    background: #fff !important;
+  }
+
+  /* Fjern glows og mørke overlays */
+  .section-dark,
+  .section-lighter,
+  .page-glow,
+  .hero-glow,
+  [class*="bg-"],
+  [class*="shadow-"],
+  [class*="backdrop-"] {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* Lenker må være synlige */
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  /* Bilder skal vises normalt */
+  img {
+    filter: none !important;
+  }
+}
+
+
 
 
 /* ============================================================
