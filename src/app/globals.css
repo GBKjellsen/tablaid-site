@@ -355,3 +355,13 @@ section {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
+/* Fjern mobil touch highlight rundt knapper/lenker */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fjern default knapp-bakgrunn i iOS/Safari */
+button {
+  background-color: transparent !important;
+  -webkit-appearance: none;
+}

@@ -8,40 +8,38 @@ export default function MobileNav() {
 
   return (
     <div className="sm:hidden">
-      {/* Hamburger Button */}
-      <button
-        onClick={() => setOpen(!open)}
-        aria-label="Åpne meny"
-        className="
-  text-slate-200 
-  hover:text-emerald-300 
-  focus:outline-none 
-  bg-transparent
-  border border-transparent
-  touch-manipulation
-  active:bg-transparent
-  hover:bg-transparent
-"
-
-      >
-        <svg
-          className="h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d={
-              open
-                ? "M6 18L18 6M6 6l12 12" // X icon
-                : "M4 6h16M4 12h16M4 18h16" // hamburger
-            }
-          />
-        </svg>
-      </button>
+     {/* Hamburger Button */}
+<button
+  onClick={() => setOpen(!open)}
+  aria-label="Åpne meny"
+  className="
+    text-slate-200 hover:text-emerald-300 
+    focus:outline-none 
+    bg-transparent      /* <-- Hindrer grå bakgrunn på Safari */
+    border-0            /* <-- Fjern default knappestil */
+    p-0                 /* <-- Unngå padding som kan trigge highlight */
+    appearance-none     /* <-- iOS fix */
+  "
+>
+  <svg
+    className="h-6 w-6"
+    fill="none"          /* <-- kritisk for å unngå fyll */
+    stroke="currentColor"
+    strokeWidth={2}
+    viewBox="0 0 24 24"
+    style={{ background: "transparent" }} /* <-- ekstra forsikring */
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d={
+        open
+          ? "M6 18L18 6M6 6l12 12"  // X icon
+          : "M4 6h16M4 12h16M4 18h16" // hamburger
+      }
+    />
+  </svg>
+</button>
 
       {/* Mobile Menu Panel */}
       {open && (

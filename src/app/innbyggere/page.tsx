@@ -15,53 +15,54 @@ export default function InnbyggerPage() {
   return (
     <PageLayout>
 
-     {/* -------------------------------------------------------------- */}
-{/* HERO */}
-{/* -------------------------------------------------------------- */}
+{/* ------------------------------------------------------ */}
+{/* HERO – INNBYGGERE                                     */}
+{/* ------------------------------------------------------ */}
+
 <section className="relative overflow-hidden pt-24 pb-20">
   <HeroGlow />
 
-  <div className="mx-auto flex max-w-[var(--max-w)] flex-col-reverse 
-                  gap-12 px-6 lg:px-20 lg:flex-row lg:items-center">
+  <div className="mx-auto max-w-[var(--max-w)] px-6 lg:px-20 flex flex-col items-center text-center">
+    
+    <span className="badge">For innbyggere • trygghet & oversikt</span>
 
-    {/* TEXT */}
-    <div className="flex-1 text-center lg:text-left space-y-6 max-w-xl">
+    <h1 className="text-3xl md:text-4xl font-bold leading-tight mt-4">
+      En enklere hverdag med bedre oversikt over helsen din
+    </h1>
 
-      {/* TOP BADGE */}
-      <span className="badge">For innbyggere • brukere av appen</span>
+    <p className="text-slate-300 text-lg leading-relaxed mt-6 max-w-xl">
+      Tablaid hjelper deg med å holde kontroll på medisiner, funksjon og 
+      egen helse — dag for dag. En trygg og enkel løsning for deg som 
+      ønsker oversikt, mestring og støtte fra dine nærmeste.
+    </p>
 
-      <h1 className="text-4xl font-bold leading-tight">
-        En enklere og tryggere hverdag med medisiner og helse
-      </h1>
+    <p className="text-slate-400 italic mt-4 text-sm max-w-xl">
+      1 av 2 som bruker faste medisiner tar dem ikke som foreskrevet. 
+      Tidlig oversikt gjør hverdagen tryggere — både for deg og dine pårørende.
+    </p>
 
-      <p className="text-slate-300 text-lg leading-relaxed">
-        Tablaid hjelper deg å holde oversikt, forstå behandlingen din bedre og 
-        følge med på egen helse — uten stress og uten kompliserte løsninger.
-      </p>
-
-      <Link
-        href="/kommuner" className="button-primary" >
-        Meld interesse
-      </Link>
-    </div>
-
-    {/* IMAGE + GLOW */}
-    <div className="relative w-fit mx-auto">
-      <div className="absolute inset-0 scale-110 blur-2xl bg-emerald-500/20 
-                      rounded-xl -z-10"></div>
-
+    {/* Bilde */}
+    <div className="mt-10">
       <GlowImage
         src="/app-hand.png"
-        alt="Bruker holder Tablaid-appen"
-        width={350}
-        height={420}
-        priority
-        className="rounded-xl shadow-xl object-cover max-w-[260px] md:max-w-[300px]"
+        alt="Tablaid for innbyggere"
+        width={540}
+        height={480}
+        className="rounded-2xl shadow-xl"
       />
+    </div>
+
+    {/* Knapper */}
+    <div className="flex flex-col sm:flex-row gap-4 mt-10">
+      <a href="#kom-i-gang" className="button-primary">Kom i gang</a>
+      <Link href="/parorende" className="button-secondary">
+        Støtte fra pårørende
+      </Link>
     </div>
 
   </div>
 </section>
+
 
 
       {/* -------------------------------------------------------------- */}
