@@ -3,127 +3,156 @@
 import PageLayout from "@/components/layout/PageLayout";
 import HeroSection from "@/components/HeroSection";
 
-export default function HvordanFungererDetInnbyggere() {
+export default function HvordanFungererTablaid() {
   return (
     <PageLayout>
 
-      {/* ------------------------------------------------------ */}
-      {/* HERO                                                   */}
-      {/* ------------------------------------------------------ */}
-      <HeroSection
-        badge="For innbyggere"
-        title="Kom i gang med Tablaid – enkelt, trygt og tilpasset deg"
-        subtitle="Tablaid hjelper deg å holde oversikt over helse, trivsel og legemiddelbruk. Det tar under 20 sekunder om dagen – og gir deg bedre kontroll i hverdagen."
-        image="/app-triple_3.png"
-        imageLeft={false}
-        primaryCta={{ label: "Last ned når appen lanseres", href: "/#pilot" }}
-        secondaryCta={{ label: "Les mer om funksjonene", href: "#funksjoner" }}
-      />
+     {/* ------------------------------------------------------ */}
+{/* HERO – FORKLARINGSSIDE                                */}
+{/* ------------------------------------------------------ */}
+<section className="bg-slate-900 border-b border-slate-800">
+  <HeroSection
+    badge="For innbyggere"
+    title="Slik fungerer Tablaid – steg for steg"
+    subtitle="Tablaid er laget for å gi deg bedre oversikt over legemiddelbruk og egen helse i hverdagen. Her ser du hvordan løsningen følger deg fra hverdagsrutiner til nyttig innsikt over tid."
+    image="/app-triple_3.png"
+    imageLeft={false}
+    primaryCta={{
+      label: "Se brukerreisen",
+      href: "#forklaring-start",
+    }}
+    secondaryCta={{
+      label: "Meld interesse for tidlig tilgang",
+      href: "/innbyggere#tidlig-tilgang",
+    }}
+  />
+</section>
+
+{/* Visuell overgang / kapittelmarkør */}
+<div className="bg-slate-950">
+  <div className="mx-auto h-px w-24 bg-emerald-500/40" />
+</div>
 
       {/* ------------------------------------------------------ */}
-      {/* INTRO: HVORFOR TABLAID?                               */}
+      {/* INTRO                                                  */}
       {/* ------------------------------------------------------ */}
-      <section className="bg-slate-950 py-20 border-b border-slate-800 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-
+      <section className="bg-slate-950 py-5 border-b border-slate-800 px-6">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-semibold">
-            Et trygt verktøy for å forstå egen helse bedre
+            En løsning for oversikt, trygghet og bedre dialog
           </h2>
 
-          <p className="text-slate-300 mt-6 text-lg leading-relaxed">
-            Mange opplever at det er vanskelig å holde oversikt over hvordan 
-            man egentlig har det fra uke til uke. Tablaid gjør dette enkelt ved 
-            å samle små daglige svar og gi deg tydelige trender over tid.
+          <p className="text-slate-300 text-lg leading-relaxed">
+            Mange opplever at det er vanskelig å beskrive hvordan hverdagen faktisk er
+            – både for seg selv, pårørende og helsetjenestene. Tablaid gjør dette enklere
+            ved å samle små, hverdagsnære datapunkter og vise utvikling over tid.
           </p>
 
-          <p className="text-slate-400 italic mt-4">
-            Du får bedre kontroll, og du kan dele innsikt med 
-            pårørende eller kommunen – kun dersom du selv ønsker det.
+          <p className="text-slate-400 italic">
+            Ikke for å overvåke – men for å gi bedre grunnlag for støtte, dialog og riktige valg.
           </p>
-
         </div>
       </section>
 
       {/* ------------------------------------------------------ */}
-      {/* FUNKSJONER – STEG FOR STEG                             */}
+      {/* BRUKERREISEN                                          */}
       {/* ------------------------------------------------------ */}
-      <section id="funksjoner" className="py-20 bg-slate-950/80 border-b border-slate-800 px-6">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="py-10 bg-slate-950/80 border-b border-slate-800 px-6">
+        <div className="max-w-5xl mx-auto">
 
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-12">
-            Slik bruker du Tablaid i hverdagen
+          <h2 className="text-2xl sm:text-3xl font-semibold text-center mb-16">
+            Brukerreisen – fra hverdagsrutiner til verdifull innsikt
           </h2>
 
-          <div className="grid gap-10 sm:grid-cols-3 text-left">
+          <div className="space-y-12">
 
             {/* STEG 1 */}
-            <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
-              <h3 className="text-xl font-bold text-emerald-300">1. Last ned og sett opp</h3>
-              <p className="text-slate-300 mt-2">
-                Når appen lanseres laster du den ned fra App Store eller Google Play. 
-                Der legger du inn medisiner (kan skannes) og tilpasser dine daglige varsler.
-              </p>
-            </div>
+            <JourneyStep
+              step="1"
+              title="Brukerreisen starter på apoteket"
+              text="Når du henter ut medisiner på apoteket, kan legemidlene enkelt registreres i Tablaid. Da sikrer du at appen gjenspeiler det du faktisk bruker – med riktig legemiddel og styrke som utgangspunkt for videre oversikt."
+            />
 
             {/* STEG 2 */}
-            <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
-              <h3 className="text-xl font-bold text-emerald-300">2. Daglige check-ins</h3>
-              <p className="text-slate-300 mt-2">
-                Hver dag får du 4–6 enkle spørsmål om søvn, energi, humør og 
-                funksjon. Det tar under 20 sekunder – men gir stor verdi over tid.
-              </p>
-            </div>
+            <JourneyStep
+              step="2"
+              title="Orden og struktur i medisinhverdagen"
+              text="Medisinene organiseres etter når de tas, for eksempel morgen, dag og kveld. Du kan tilpasse påminnelser og rutiner slik at de passer din hverdag – ikke omvendt."
+            />
 
             {/* STEG 3 */}
-            <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6">
-              <h3 className="text-xl font-bold text-emerald-300">3. «Tæpp» for å logge medisiner</h3>
-              <p className="text-slate-300 mt-2">
-                Når du tar medisinen holder du telefonen inntil etiketten for å logge det – 
-                eller registrerer manuelt. Du slipper huskelister og unødvendig stress.
-              </p>
-            </div>
+            <JourneyStep
+              step="3"
+              title="Enkel registrering i det øyeblikket det skjer"
+              text="Når du tar medisinen, registreres inntaket raskt og enkelt. Du slipper manuelle lister og hukommelsesstress, samtidig som appen bygger en pålitelig oversikt over legemiddelrutinene dine over tid."
+            />
+
+            {/* STEG 4 */}
+            <JourneyStep
+              step="4"
+              title="Korte sjekk-inn om hvordan du har det"
+              text="Med jevne mellomrom inviteres du til å svare på korte sjekk-inn om energi, funksjon og hverdagsform. Det tar under ett minutt, men gir verdifull innsikt når svarene ses i sammenheng over tid."
+            />
+
+            {/* STEG 5 */}
+            <JourneyStep
+              step="5"
+              title="Mønstre og sammenheng – ikke enkeltmålinger"
+              text="Når informasjon om legemiddelrutiner og egenopplevd funksjon sees samlet, blir det lettere å forstå utvikling over tid. Det handler ikke om diagnoser, men om mønstre som kan gi tidlige signaler på endringer."
+            />
+
+            {/* STEG 6 */}
+            <JourneyStep
+              step="6"
+              title="Trygg deling med pårørende og tjenester"
+              text="Du bestemmer selv om innsikt skal deles med pårørende eller kommunale omsorgstjenester. For noen kan dette gi bedre dialog i hverdagen. For andre kan det fungere som et referansegrunnlag i møte med primærhelsetjenesten eller ved søknad om tjenester."
+            />
 
           </div>
         </div>
       </section>
 
       {/* ------------------------------------------------------ */}
-      {/* DETTE FÅR DU SOM BRUKER                                */}
+      {/* SAMHANDLING                                            */}
       {/* ------------------------------------------------------ */}
-      <section className="py-20 bg-slate-950 px-6 border-b border-slate-800">
-        <div className="max-w-4xl mx-auto">
+      <section className="py-20 bg-slate-950 border-b border-slate-800 px-6">
+        <div className="max-w-4xl mx-auto space-y-6">
 
           <h2 className="text-2xl sm:text-3xl font-semibold text-center">
-            Hva Tablaid gir deg
+            Bedre grunnlag for samhandling
           </h2>
 
-          <ul className="mt-10 space-y-4 text-slate-300 text-lg">
-            <li>• En enkel måte å følge med på egen helse fra dag til dag</li>
-            <li>• Bedre kontroll over medisiner og påminnelser</li>
-            <li>• Personlige trender som viser hvordan du faktisk har det</li>
-            <li>• Tidlige signaler når noe endrer seg</li>
-            <li>• Mulighet for trygg deling med pårørende eller tjenesteapparatet</li>
-            <li>• Et verktøy som er laget for å være så lite mas som mulig</li>
-          </ul>
+          <p className="text-slate-300 text-lg leading-relaxed">
+            Når hverdagsinnsikt deles på en strukturert og samtykkebasert måte,
+            kan både pårørende, fastlege og kommunale tjenester få et bedre bilde
+            av situasjonen – før behovet blir akutt.
+          </p>
+
+          <p className="text-slate-300 text-lg leading-relaxed">
+            Tablaid kan bidra med oversikt og dokumentasjon som styrker dialogen
+            med primærhelsetjenesten og gir et mer nyansert grunnlag for vurdering
+            av behov for oppfølging og tjenester.
+          </p>
 
         </div>
       </section>
 
       {/* ------------------------------------------------------ */}
-      {/* CTA                                                     */}
+      {/* CTA – TIDLIG TILGANG                                   */}
       {/* ------------------------------------------------------ */}
-      <section className="py-20 bg-slate-950/90 px-6">
-        <div className="max-w-3xl mx-auto text-center">
+      <section id="tidlig-tilgang" className="py-20 bg-slate-950/90 px-6">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
 
           <h2 className="text-2xl sm:text-3xl font-semibold">
             Ønsker du å prøve Tablaid?
           </h2>
 
-          <p className="text-slate-300 mt-4">
-            Appen lanseres i 2026. Meld interesse for å få tidlig tilgang.
+          <p className="text-slate-300">
+            Tablaid lanseres i 2026. Meld interesse for å få beskjed når
+            tidlig tilgang åpnes for innbyggere.
           </p>
 
-          <a href="/#pilot" className="button-primary mt-8 inline-block">
+          <a href="/innbyggere#tidlig-tilgang" className="button-primary inline-block">
             Meld interesse
           </a>
 
@@ -131,5 +160,34 @@ export default function HvordanFungererDetInnbyggere() {
       </section>
 
     </PageLayout>
+  );
+}
+
+/* ------------------------------------------------------ */
+/* HJELPEKOMPONENT – BRUKERREISE                           */
+/* ------------------------------------------------------ */
+
+function JourneyStep({
+  step,
+  title,
+  text,
+}: {
+  step: string;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8">
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 
+                        text-emerald-300 flex items-center justify-center font-semibold">
+          {step}
+        </div>
+        <div>
+          <h3 className="text-lg font-semibold text-white">{title}</h3>
+          <p className="mt-2 text-slate-300 leading-relaxed">{text}</p>
+        </div>
+      </div>
+    </div>
   );
 }

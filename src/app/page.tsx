@@ -40,13 +40,13 @@ function HeroSection() {
           <h1 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
             En digital{" "}
             <span className="text-emerald-400">helse- og legemiddelassistent</span>{" "}
-            for innbyggere, pårørende og kommuner.
+            for tryggere hverdager.
           </h1>
 
           <p className="mt-4 text-lg text-[var(--text-secondary)]">
-            Tablaid kombinerer legemiddelassistent, helsekompass og
-            pårørendestøtte for å fange opp tidlige signaler om funksjonsfall
-            – før behovet for tjenester øker.
+            Tablaid kombinerer enkel legemiddelstøtte og daglige sjekk-inn for å fange opp tidlige
+             signaler om endringer – og gjøre det lettere å samarbeide mellom innbygger,
+              pårørende og kommune. Du velger selv om og med hvem innsikt deles.
           </p>
 
        <Link href="/kommuner" className="button-primary">
@@ -54,7 +54,7 @@ function HeroSection() {
 </Link>
 
  <Link href="/innbyggere" className="button-secondary">
-  Se hvordan Tablaid fungerer
+  Slik fungerer Tablaid
 </Link>
 
 

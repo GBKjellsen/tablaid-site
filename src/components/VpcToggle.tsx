@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 
-interface VpcToggleProps {
+type VpcToggleProps = {
   children: React.ReactNode;
-  labelClosed?: string;
-  labelOpen?: string;
-}
+  labelOn?: string;
+  labelOff?: string;
+};
 
 export default function VpcToggle({
   children,
-  labelClosed = "Se kommunens fulle verdiforslag",
-  labelOpen = "Skjul kommunens verdiforslag",
+  labelOn = "Skjul verdiforslag",
+  labelOff = "Se verdiforslag"
 }: VpcToggleProps) {
   const [open, setOpen] = useState(false);
 
@@ -29,7 +29,7 @@ export default function VpcToggle({
             transition
           "
         >
-          {open ? labelOpen : labelClosed}
+          {open ? labelOn : labelOff}
         </button>
       </div>
 

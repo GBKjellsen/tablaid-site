@@ -152,6 +152,23 @@ export default function InvestorPage() {
         </div>
       </section>
 
+      {/* ------------------------------------------------------ */}
+      {/* VPC INVESTOR – COLLAPSIBLE */}
+      {/* ------------------------------------------------------ */}
+
+      <section className="mt-20 mb-10">
+        <div className="max-w-5xl mx-auto px-6">
+          {/* Plassholder eller intro-tekst */}
+        </div>
+      </section>
+
+    <VpcToggle
+  labelOn="Skjul investorens verdiforslag"
+  labelOff="Se full investor-VPC"
+>
+  <VpcInvestor />
+</VpcToggle>
+
 
       {/* ------------------------------------------------------ */}
       {/* SKALERBAR MODELL                                      */}
@@ -195,22 +212,6 @@ Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med 
       </section>
 
 
-      {/* ------------------------------------------------------ */}
-      {/* VPC INVESTOR – COLLAPSIBLE */}
-      {/* ------------------------------------------------------ */}
-
-      <section className="mt-20 mb-10">
-        <div className="max-w-5xl mx-auto px-6">
-          {/* Plassholder eller intro-tekst */}
-        </div>
-      </section>
-
-    <VpcToggle
-  labelClosed="Utforsk hele investeringscaset"
-  labelOpen="Skjul investeringscaset"
->
-  <VpcInvestor />
-</VpcToggle>
 
 
    

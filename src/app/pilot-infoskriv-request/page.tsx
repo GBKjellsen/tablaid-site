@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import ToggleCTA from "@/components/ui/ToggleCTA";
 
 export default function InfoskrivPage() {
   const router = useRouter();
@@ -72,15 +73,15 @@ export default function InfoskrivPage() {
           placeholder="E-postadresse"
         />
 
-        <button
-          type="submit"
-          className="button-primary w-full"
-          disabled={state === "loading"}
-        >
-          {state === "loading"
-            ? "Sender..."
-            : "Last ned infoskriv"}
-        </button>
+<ToggleCTA
+  toggled={false}
+  onClick={() => {}}
+  labelOn={state === "loading" ? "Sender..." : "Last ned infoskriv"}
+  labelOff={state === "loading" ? "Sender..." : "Last ned infoskriv"}
+  disabled={state === "loading"}
+/>
+
+
 
       </form>
     </div>

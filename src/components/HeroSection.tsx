@@ -28,7 +28,7 @@ export default function HeroSection({
   verticalImage = false,
 }: HeroProps) {
   return (
-    <section className="relative overflow-hidden pt-24 pb-20">
+    <section className="relative overflow-hidden pt-20 sm:pt-24 lg:pt-28 pb-16 sm:pb-20">
       {/* Glow */}
       <div className="absolute inset-0 pointer-events-none opacity-60">
         <div className="hero-glow" />
@@ -65,7 +65,15 @@ export default function HeroSection({
 
           {/* CTAs */}
           {(primaryCta || secondaryCta) && (
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+<div
+  className="
+    mt-8 sm:mt-10
+    flex flex-col gap-3
+    sm:flex-row sm:gap-4
+    w-full sm:w-auto
+    justify-center lg:justify-start
+  "
+>
               {primaryCta && (
                 <Link href={primaryCta.href} className="button-primary">
                   {primaryCta.label}

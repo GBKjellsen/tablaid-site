@@ -22,12 +22,18 @@ export default function ParorendePage() {
      <HeroSection
   badge="For pårørende • støtte i hverdagen"
   title="Få innsikt og trygghet når du følger opp noen du er glad i"
-  subtitle="Tablaid gjør det lettere å følge opp uten å overstyre. Du får signaler om endringer i helse og funksjon, og bedre grunnlag for gode samtaler."
-  supportText="Digital støtte mellom besøk gjør det mulig å hjelpe tidligere — før små bekymringer blir store utfordringer."
+  subtitle="Tablaid gjør det lettere å følge opp uten å overstyre. Du får signaler om endringer i helse og funksjon, noe som gir bedre grunnlag for dialog og støtte – også når du ikke kan være fysisk til stede."
+  supportText="Tidlige signaler kan gjøre det lettere å hjelpe før små bekymringer blir store."
   image="/mor-datter.png"
   imageLeft={false}
-  primaryCta={{ label: "Hvordan fungerer det?", href: "/hvordan-fungerer-det" }}
-  secondaryCta={{ label: "For innbyggere", href: "/innbyggere" }}
+  primaryCta={{ 
+    label: "Skriv meg opp for tidlig tilgang", 
+    href: "#tidlig-tilgang" 
+  }}
+  secondaryCta={{ 
+    label: "For innbyggere", 
+    href: "/innbyggere" 
+  }}
 />
 
 
@@ -66,9 +72,61 @@ export default function ParorendePage() {
 </section>
 
 {/* Ny og elegant toggle-basert VPC-visning */}
-<VpcToggle>
+<VpcToggle
+  labelOn="Skjul verdiforslag for pårørende"
+  labelOff="Se pårørendes fulle verdiforslag"
+>
   <VpcParorende />
 </VpcToggle>
+
+
+<section id="tidlig-tilgang" className="py-20 bg-slate-950 border-t border-slate-800">
+  <div className="max-w-xl mx-auto px-6 text-center">
+    <h2 className="text-2xl sm:text-3xl font-semibold">
+      Få beskjed når Tablaid lanseres 
+    </h2>
+
+    <p className="mt-3 text-slate-300 text-sm leading-relaxed">
+      Meld din interesse, så gir vi beskjed når tidlig tilgang blir tilgjengelig.
+      Ingen forpliktelser.
+    </p>
+
+    <form
+      action="https://formspree.io/f/mpwvkqva"
+      method="POST"
+      className="mt-8 grid gap-4 text-left"
+    >
+      <div>
+        <label className="input-label">Navn</label>
+        <input name="navn" className="input" />
+      </div>
+
+      <div>
+        <label className="input-label">E-post</label>
+        <input name="epost" type="email" required className="input" />
+      </div>
+
+      <input type="hidden" name="kilde" value="Pårørende – tidlig tilgang" />
+    <div>
+     <label className="input-label">Rolle (valgfritt)</label>
+      <select name="rolle" className="input">
+        <option value="">Velg (valgfritt)</option>
+        <option value="personlig_bruk">Personlig bruk (innbygger)</option>
+        <option value="parorende">Pårørende</option>
+        <option value="begge">Personlig bruk og som pårørende</option>
+        <option value="annet">Annet / usikker</option>
+  </select>
+</div>
+      <button
+        type="submit"
+        className="mt-4 w-full rounded-full bg-emerald-500 hover:bg-emerald-400
+                   text-white py-3 text-sm font-semibold transition"
+      >
+        Meld interesse
+      </button>
+    </form>
+  </div>
+</section>
 
 </PageLayout>
 );

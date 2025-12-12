@@ -51,6 +51,41 @@ export default function KommunerPage() {
   secondaryCta={{ label: "Last ned infoskriv", href: "/pilot-infoskriv-request" }}
 />
 
+      
+
+      {/* ------------------------------------------------------ */}
+      {/* SYSTEMTRYKK / SAMFUNNSUTFORDRING */}
+      {/* ------------------------------------------------------ */}
+
+      <section className="border-b border-slate-800 bg-slate-950 py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          <h2 className="text-2xl sm:text-3xl font-semibold">
+            Flere eldre – færre ansatte. Kommunene må fange opp endring tidligere.
+          </h2>
+
+          <p className="mt-6 text-slate-300 leading-relaxed text-lg">
+            Innen 2040 mangler Norge over 50 000 helsepersonell. Samtidig øker antallet
+            innbyggere med sammensatte behov. Kommunene trenger løsninger som gir
+            kontinuerlig innsikt – ikke flere tunge kartleggingsprosesser eller
+            punktbesøk som kommer for sent.
+          </p>
+ {/* ------------------------------------------------------ */}
+      {/* VPC – DETALJERT VERDIFORSALG (EXPAND) */}
+      {/* ------------------------------------------------------ */}
+
+      <div className="py-10">
+       <VpcToggle
+  labelOn="Skjul kommunens verdiforslag"
+  labelOff="Se kommunens fulle verdiforslag"
+>
+  <VpcKommuner />
+</VpcToggle>
+
+      </div>
+        </div>
+      </section>
+      
       {/* ------------------------------------------------------ */}
       {/* TABLAID KOMMUNEPORTAL – PREMIUM, EKSTERN FUNKSJON     */}
       {/* ------------------------------------------------------ */}
@@ -91,28 +126,6 @@ export default function KommunerPage() {
           </div>
         </div>
       </section>
-
-      {/* ------------------------------------------------------ */}
-      {/* SYSTEMTRYKK / SAMFUNNSUTFORDRING */}
-      {/* ------------------------------------------------------ */}
-
-      <section className="border-b border-slate-800 bg-slate-950 py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-
-          <h2 className="text-2xl sm:text-3xl font-semibold">
-            Flere eldre – færre ansatte. Kommunene må fange opp endring tidligere.
-          </h2>
-
-          <p className="mt-6 text-slate-300 leading-relaxed text-lg">
-            Innen 2040 mangler Norge over 50 000 helsepersonell. Samtidig øker antallet
-            innbyggere med sammensatte behov. Kommunene trenger løsninger som gir
-            kontinuerlig innsikt – ikke flere tunge kartleggingsprosesser eller
-            punktbesøk som kommer for sent.
-          </p>
-
-        </div>
-      </section>
-
       {/* ------------------------------------------------------ */}
       {/* VERDIBOKSER */}
       {/* ------------------------------------------------------ */}
@@ -151,15 +164,7 @@ export default function KommunerPage() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------ */}
-      {/* VPC – DETALJERT VERDIFORSALG (EXPAND) */}
-      {/* ------------------------------------------------------ */}
-
-      <div className="py-10">
-        <VpcToggle>
-          <VpcKommuner />
-        </VpcToggle>
-      </div>
+     
 
       {/* ------------------------------------------------------ */}
       {/* PILOTINFO */}
