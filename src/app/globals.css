@@ -183,11 +183,14 @@ p {
        OUTLINE BUTTON (Kommunepilot + Se Tablaid)
      ============================================================ */
   .button-outline {
-    @apply px-5 py-2 rounded-full font-medium inline-flex items-center gap-2 transition;
-    border: 1px solid rgba(255,255,255,0.25);
-    background: transparent;
-    color: #f8fafc;
-  }
+  @apply px-5 py-2 rounded-full font-medium
+         flex items-center justify-center gap-2 transition
+         w-full sm:w-auto box-border;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: transparent;
+  color: #f8fafc;
+}
+
 
   .button-outline:hover {
     border-color: var(--brand-emerald-400);
@@ -201,8 +204,10 @@ p {
  .button-secondary {
   @apply rounded-full bg-slate-800 hover:bg-slate-700
          text-slate-200 px-6 py-3 text-sm
-         inline-flex items-center gap-2 transition;
+         flex items-center justify-center gap-2 transition
+         w-full sm:w-auto box-border;
 }
+
 
 
   .button-secondary:hover {
@@ -234,6 +239,7 @@ p {
   .button-secondary,
   .button-outline {
     width: 100%;
+      max-width: 100%;
     justify-content: center;
   }
 }

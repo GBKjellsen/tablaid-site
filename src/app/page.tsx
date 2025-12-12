@@ -33,35 +33,13 @@ function HeroSection() {
       <div className="mx-auto flex max-w-[var(--max-w)] flex-col-reverse gap-12 px-6 
                       lg:flex-row lg:items-center">
         
-        {/* Text */}
-        <div className="flex-1">
-          <span className="badge">Pilot våren 2026 • Tablaid</span>
-
-          <h1 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-            En digital{" "}
-            <span className="text-emerald-400">helse- og legemiddelassistent</span>{" "}
-            for tryggere hverdager.
-          </h1>
-
-          <p className="mt-4 text-lg text-[var(--text-secondary)]">
-            Tablaid kombinerer enkel legemiddelstøtte og daglige sjekk-inn for å fange opp tidlige
-             signaler om endringer – og gjøre det lettere å samarbeide mellom innbygger,
-              pårørende og kommune. Du velger selv om og med hvem innsikt deles.
-          </p>
-
-       <Link href="/kommuner" className="button-primary">
-  Kommunepilot 2026
-</Link>
-
- <Link href="/innbyggere" className="button-secondary">
-  Slik fungerer Tablaid
-</Link>
-
-
-          <p className="mt-4 text-xs text-[var(--text-secondary)]">
-            Du velger selv om du vil dele innsikt med pårørende eller kommunen.
-          </p>
-        </div>
+        
+{/* MOBILE BADGE – OVER IMAGE */}
+<div className="flex justify-center lg:hidden -mb-4 relative z-10">
+  <span className="badge">
+    Pilot våren 2026 • Tablaid
+  </span>
+</div>
 
         {/* Image */}
         <div className="flex flex-1 justify-center">
@@ -78,10 +56,45 @@ function HeroSection() {
           </div>
         </div>
 
+        {/* TEXT */}
+    <div className="flex-1 text-center lg:text-left">
+      <span className="badge hidden lg:inline-block">
+        Pilot våren 2026 • Tablaid
+      </span>
+
+
+          <h1 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
+            En digital{" "}
+            <span className="text-emerald-400">helse- og legemiddelassistent</span>{" "}
+            for tryggere hverdager.
+          </h1>
+
+          <p className="mt-4 text-lg text-[var(--text-secondary)]">
+            Tablaid kombinerer enkel legemiddelstøtte og daglige sjekk-inn for å fange opp tidlige
+             signaler om endringer – og gjøre det lettere å samarbeide mellom innbygger,
+              pårørende og kommune. Du velger selv om og med hvem innsikt deles.
+          </p>
+{/* CTA WRAPPER */}
+ <div className="mt-6 flex flex-col gap-3 w-full max-w-sm mx-auto sm:flex-row sm:max-w-none sm:mx-0">
+        <Link href="/kommuner" className="button-primary w-full sm:w-auto">
+          Kommunepilot 2026
+        </Link>
+        <Link href="/innbyggere" className="button-secondary w-full sm:w-auto">
+          Slik fungerer Tablaid
+        </Link>
       </div>
+
+      <p className="mt-4 text-xs text-[var(--text-secondary)]">
+        Du velger selv om du vil dele innsikt med pårørende eller kommunen.
+      </p>
+  
+        </div>  
+      </div>    
     </section>
   );
 }
+
+
 
 /* -------------------------------------------------------------------------- */
 /*                            AUDIENCE SECTION                                */
