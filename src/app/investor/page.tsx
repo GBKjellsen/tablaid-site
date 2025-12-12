@@ -62,7 +62,7 @@ export default function InvestorPage() {
   title="Bygg morgendagens forebyggende helsetjenester sammen med Tablaid"
   subtitle="Tablaid kombinerer legemiddelstøtte, daglige helsesignaler og trygg deling for å fange opp risiko tidlig – lenge før behovet blir akutt. En løsning som treffer både brukere, pårørende og kommuner."
   supportText="Helsedirektoratet og KS peker på behovet for løsninger som gir tidligere identifisering av funksjonsfall og bedre beslutningsgrunnlag. Tablaid bygger nettopp det."
-  image="/hero-investor.png"   // ← Sett inn riktig filnavn fra det nye bildet du valgte
+  image="/fin-investor.png"   // ← Sett inn riktig filnavn fra det nye bildet du valgte
   imageLeft={false}
   primaryCta={{ label: "Book en investordialog", href: "/kontakt" }}
 />

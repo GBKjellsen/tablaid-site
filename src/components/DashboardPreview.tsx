@@ -23,7 +23,7 @@ export default function DashboardPreview() {
 
           <div>
             <h3 className="text-xl font-semibold text-emerald-300">
-              Vinje kommune – Dashboard (Beta)
+              Vinje kommune – Dashboard (Kommune valgt kun som eksempel)
             </h3>
             <p className="text-xs text-slate-400">
               Sist oppdatert: 12. desember 2025 kl. 08:13

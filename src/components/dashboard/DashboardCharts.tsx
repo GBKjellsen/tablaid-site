@@ -25,9 +25,16 @@ export default function DashboardCharts() {
 
       {/* Funksjonsnivå */}
       <div className="bg-white/60 border border-slate-300 rounded-2xl p-6">
-        <h3 className="text-lg font-semibold text-slate-700 mb-4">
-          Funksjonsutvikling (CFS)
-        </h3>
+       <h3 className="text-lg font-semibold text-slate-700">
+  Funksjonsutvikling (selvrapportert)
+</h3>
+<p className="text-sm text-slate-500 mb-3 max-w-sm">
+  Viser utvikling i brukerens egenrapporterte funksjon over tid.
+  Kartleggingen er forankret i anerkjente funksjons- og
+  skrøpelighetsrammeverk brukt i helsetjenesten, og gir et tidlig
+  signal om endringer som kan være relevante for oppfølging.
+</p>
+
 
         <ResponsiveContainer width="100%" height={240}>
           <LineChart data={functionData}>
@@ -38,7 +45,12 @@ export default function DashboardCharts() {
             <Line type="monotone" dataKey="score" stroke="#10b981" strokeWidth={3} />
           </LineChart>
         </ResponsiveContainer>
+        <p className="text-xs text-slate-500 mt-3 italic">
+  Inspirert av Clinical Frailty Scale (Rockwood et al., Dalhousie University),
+  tilpasset selvrapportert bruk.
+</p>
       </div>
+
 
       {/* Etterlevelse */}
       <div className="bg-white/60 border border-slate-300 rounded-2xl p-6">

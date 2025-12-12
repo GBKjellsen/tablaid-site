@@ -86,46 +86,45 @@ export default function KommunerPage() {
         </div>
       </section>
       
-      {/* ------------------------------------------------------ */}
-      {/* TABLAID KOMMUNEPORTAL – PREMIUM, EKSTERN FUNKSJON     */}
-      {/* ------------------------------------------------------ */}
+{/* ------------------------------------------------------ */}
+{/* TABLAID KOMMUNEPORTAL – PREMIUM, EKSTERN FUNKSJON       */}
+{/* ------------------------------------------------------ */}
 
-      
-      <section className="py-20 bg-slate-900/50 border-b border-slate-800">
-        <div className="max-w-5xl mx-auto px-6">
+<section className="py-20 bg-slate-900/50 border-b border-slate-800">
+  <div className="max-w-5xl mx-auto px-6">
 
-          <div className="rounded-3xl border border-emerald-500/20 bg-slate-900/80 p-10 shadow-xl shadow-black/30">
+    <div className="rounded-3xl border border-emerald-500/20 bg-slate-900/80 p-10 shadow-xl shadow-black/30">
 
-            <h2 className="text-3xl font-semibold text-emerald-300 text-center">
-              Kommuneportal (beta)
-            </h2>
+      <h2 className="text-3xl font-semibold text-emerald-300 text-center">
+        Kommuneportal (beta)
+      </h2>
 
-            <p className="text-slate-300 text-center mt-3 max-w-2xl mx-auto">
-              Kommuner som deltar i pilotering eller inngår lisens får tilgang
-              til Tablaids kommuneportal – et eksternt dashboard med aggregert innsikt,
-              tidlige trender og beslutningsstøtte basert på samtykkede data.
-            </p>
+      <p className="text-slate-300 text-center mt-3 max-w-2xl mx-auto">
+        Kommuner som deltar i pilotering eller inngår lisens får tilgang
+        til Tablaids kommuneportal – et eksternt dashboard med aggregert innsikt,
+        tidlige trender og beslutningsstøtte basert på samtykkede data.
+      </p>
 
-            <p className="text-slate-400 text-center mt-2 text-sm">
-              Full portal åpnes trinnvis i løpet av 2026.
-            </p>
+      <p className="text-slate-400 text-center mt-2 text-sm">
+        Full portal åpnes trinnvis i løpet av 2026.
+      </p>
 
-            <div className="mt-12 flex flex-col items-center gap-8">
+      <div className="mt-12 flex flex-col items-center gap-8">
+        <DashboardPreview />
 
-              {/* ▼▼ Kun preview, ikke VPC ▼▼ */}
-              <VpcToggle>
-                <DashboardPreview />
-              </VpcToggle>
-
-              {/* Ekstern lenke til egen dashboardside */}
-              <Link href="/kommune-login" className="button-primary">
-                Åpne Kommuneportal (beta)
-              </Link>
-            </div>
-
-          </div>
+        <div className="mt-6 text-center">
+          <Link href="/kommune-login" className="button-outline">
+            Åpne kommuneportal (beta - vises best på desk top)
+          </Link>
         </div>
-      </section>
+      </div>
+
+    </div> {/* ← lukker rounded-3xl box */}
+
+  </div> {/* ← lukker max-width container */}
+</section>
+
+
       {/* ------------------------------------------------------ */}
       {/* VERDIBOKSER */}
       {/* ------------------------------------------------------ */}
