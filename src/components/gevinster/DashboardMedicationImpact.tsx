@@ -11,10 +11,10 @@ export default function DashboardMedicationImpact() {
       </p>
 
       <ul className="text-slate-300 mt-4 space-y-2">
-        <li>• Bedre etterlevelse stabiliserer helsetilstanden</li>
-        <li>• Forebygger fall og forverring tidlig</li>
-        <li>• Gir trygghet for innbygger og pårørende</li>
-        <li>• Reduserer behov for akutte tjenester</li>
+        <li> Bedre etterlevelse stabiliserer helsetilstanden</li>
+        <li> Forebygger fall og forverring tidlig</li>
+        <li> Gir trygghet for innbygger og pårørende</li>
+        <li> Reduserer behov for akutte tjenester</li>
       </ul>
     </div>
   );

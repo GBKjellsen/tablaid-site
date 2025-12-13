@@ -182,12 +182,12 @@ export default function KommunerPage() {
 
           <div className="rounded-2xl bg-slate-900/60 border border-slate-800 p-8 mt-10 text-left max-w-xl mx-auto">
             <ul className="space-y-2 text-slate-300">
-              <li>• Oppstartsmøte og behovsavklaring</li>
-              <li>• 20–30 frivillige innbyggere</li>
-              <li>• Daglig helse- og funksjonslogging</li>
-              <li>• Månedlige trender og nøkkelfunn</li>
-              <li>• Ingen personsensitive data deles</li>
-              <li>• Lavterskel lisens gyldig ut 2026</li>
+              <li> Oppstartsmøte og behovsavklaring</li>
+              <li> 20–30 frivillige innbyggere</li>
+              <li> Daglig helse- og funksjonslogging</li>
+              <li> Månedlige trender og nøkkelfunn</li>
+              <li> Ingen personsensitive data deles</li>
+              <li> Lavterskel lisens gyldig ut 2026</li>
             </ul>
           </div>
         </div>

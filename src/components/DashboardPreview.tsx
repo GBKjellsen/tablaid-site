@@ -63,10 +63,10 @@ export default function DashboardPreview() {
           </p>
 
           <ul className="mt-4 space-y-2 text-sm text-slate-200">
-            <li>• 3 med fallende etterlevelse</li>
-            <li>• 2 med endringer i energi/søvn</li>
-            <li>• 1 med økt smerterapportering</li>
-            <li>• 1 med gradvis kognitiv endring</li>
+            <li> 3 med fallende etterlevelse</li>
+            <li> 2 med endringer i energi/søvn</li>
+            <li> 1 med økt smerterapportering</li>
+            <li> 1 med gradvis kognitiv endring</li>
           </ul>
 
           <div className="mt-4 text-xs text-slate-500">
@@ -172,12 +172,13 @@ function DashboardCard({ title, subtitle, details, placeholder }: DashboardCardP
       <p className="text-slate-300 mt-1 text-sm">{subtitle}</p>
 
       {details && (
-  <ul className="text-sm text-slate-300 mt-3 space-y-1">
+  <ul className="list-disc pl-5 text-sm text-slate-300 mt-3 space-y-1">
     {details.map((d, i) => (
-      <li key={i}>• {d}</li>
+      <li key={i}>{d}</li>
     ))}
   </ul>
 )}
+
 
 
       <div className="h-20 bg-slate-800/40 rounded-xl mt-4 flex items-center justify-center text-slate-500 text-xs">

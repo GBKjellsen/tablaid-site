@@ -12,10 +12,10 @@ export default function DashboardApplications() {
         </p>
 
         <ul className="text-sm text-slate-600 mt-3 space-y-1">
-          <li>• 6 fikk raskere saksbehandling</li>
-          <li>• 4 fikk prioritet oppjustert</li>
-          <li>• 7 fikk vedtak</li>
-          <li>• 1 avslag (pga manglende kriterier)</li>
+          <li> 6 fikk raskere saksbehandling</li>
+          <li> 4 fikk prioritet oppjustert</li>
+          <li> 7 fikk vedtak</li>
+          <li> 1 avslag (pga manglende kriterier)</li>
         </ul>
 
       </div>

@@ -14,11 +14,11 @@ export default function VpcInvestor() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-6">
           <h3 className="text-sm font-semibold text-emerald-300 mb-2">Hva investorer ønsker</h3>
           <ul className="space-y-1 text-slate-300 text-sm">
-            <li>• Løsninger som treffer store samfunnsutfordringer</li>
-            <li>• Sterk timing og dokumenterte markedsdrivere</li>
-            <li>• Et team med faglig tyngde og gjennomføringsevne</li>
-            <li>• Forretningsmodell med både B2C- og B2G-potensial</li>
-            <li>• Datagrunnlag som blir mer verdifullt over tid</li>
+            <li> Løsninger som treffer store samfunnsutfordringer</li>
+            <li> Sterk timing og dokumenterte markedsdrivere</li>
+            <li> Et team med faglig tyngde og gjennomføringsevne</li>
+            <li> Forretningsmodell med både B2C- og B2G-potensial</li>
+            <li> Datagrunnlag som blir mer verdifullt over tid</li>
           </ul>
         </div>
 
@@ -26,11 +26,11 @@ export default function VpcInvestor() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-6">
           <h3 className="text-sm font-semibold text-emerald-300 mb-2">Hva Tablaid tilbyr</h3>
           <ul className="space-y-1 text-slate-300 text-sm">
-            <li>• En unik kombinasjon av medisin, funksjon og trivsel</li>
-            <li>• Pilotmodell med rask verdidokumentasjon</li>
-            <li>• Høy brukeraksept blant både innbyggere og pårørende</li>
-            <li>• Lav friksjon ved innføring – rask skalering</li>
-            <li>• Et datagrunnlag som bygger prediktiv verdi</li>
+            <li> En unik kombinasjon av medisin, funksjon og trivsel</li>
+            <li> Pilotmodell med rask verdidokumentasjon</li>
+            <li> Høy brukeraksept blant både innbyggere og pårørende</li>
+            <li> Lav friksjon ved innføring – rask skalering</li>
+            <li> Et datagrunnlag som bygger prediktiv verdi</li>
           </ul>
         </div>
 
@@ -38,10 +38,10 @@ export default function VpcInvestor() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-6">
           <h3 className="text-sm font-semibold text-emerald-300 mb-2">Utfordringer i markedet</h3>
           <ul className="space-y-1 text-slate-300 text-sm">
-            <li>• Vanskelig å validere verdi i kommunal sektor</li>
-            <li>• Få løsninger kombinerer funksjon, trivsel og legemidler</li>
-            <li>• Lite kontinuerlige datakilder i primærhelsetjenesten</li>
-            <li>• Fragmenterte systemer uten helhetlig brukerreise</li>
+            <li> Vanskelig å validere verdi i kommunal sektor</li>
+            <li> Få løsninger kombinerer funksjon, trivsel og legemidler</li>
+            <li> Lite kontinuerlige datakilder i primærhelsetjenesten</li>
+            <li> Fragmenterte systemer uten helhetlig brukerreise</li>
           </ul>
         </div>
 
@@ -49,11 +49,11 @@ export default function VpcInvestor() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-6">
           <h3 className="text-sm font-semibold text-emerald-300 mb-2">Slik reduserer Tablaid risiko</h3>
           <ul className="space-y-1 text-slate-300 text-sm">
-            <li>• Faglig forankret modell for funksjon og trivsel</li>
-            <li>• Kombinerer tre datastrømmer ingen andre har samlet før</li>
-            <li>• Testet med kommunesektorens behov og arbeidsflyt</li>
-            <li>• Unik timing: demografisk press + digital modenhet</li>
-            <li>• Klar vei til skalering og repeterbare piloter</li>
+            <li> Faglig forankret modell for funksjon og trivsel</li>
+            <li> Kombinerer tre datastrømmer ingen andre har samlet før</li>
+            <li> Testet med kommunesektorens behov og arbeidsflyt</li>
+            <li> Unik timing: demografisk press + digital modenhet</li>
+            <li> Klar vei til skalering og repeterbare piloter</li>
           </ul>
         </div>
       </div>

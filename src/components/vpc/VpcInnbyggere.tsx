@@ -15,11 +15,11 @@ export default function VpcInnbyggere() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
           <h3 className="text-emerald-300 font-semibold mb-2">Dine oppgaver</h3>
           <ul className="text-slate-300 text-sm space-y-1">
-            <li>• Huske daglige medisiner</li>
-            <li>• Ta riktig dose til riktig tid</li>
-            <li>• Opprettholde funksjon og trygghet i hverdagen</li>
-            <li>• Forstå egen helseutvikling over tid</li>
-            <li>• Unngå feilmedisinering og unødvendige legebesøk</li>
+            <li> Huske daglige medisiner</li>
+            <li> Ta riktig dose til riktig tid</li>
+            <li> Opprettholde funksjon og trygghet i hverdagen</li>
+            <li> Forstå egen helseutvikling over tid</li>
+            <li> Unngå feilmedisinering og unødvendige legebesøk</li>
           </ul>
         </div>
 
@@ -27,11 +27,11 @@ export default function VpcInnbyggere() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
           <h3 className="text-emerald-300 font-semibold mb-2">Det vi tilbyr deg</h3>
           <ul className="text-slate-300 text-sm space-y-1.5">
-            <li>• Legemiddelassistent med smarte påminnelser</li>
-            <li>• Daglige funksjonssjekker gjennom Helsekompasset</li>
-            <li>• SmartTags for enkel registrering av medisininntak</li>
-            <li>• Månedlige sammendrag og refleksjon basert på ditt helsekompass</li>
-            <li>• Mulighet for trygg deling av innsikt til pårørende</li>
+            <li> Legemiddelassistent med smarte påminnelser</li>
+            <li> Daglige funksjonssjekker gjennom Helsekompasset</li>
+            <li> SmartTags for enkel registrering av medisininntak</li>
+            <li> Månedlige sammendrag og refleksjon basert på ditt helsekompass</li>
+            <li> Mulighet for trygg deling av innsikt til pårørende</li>
           </ul>
         </div>
 
@@ -39,10 +39,10 @@ export default function VpcInnbyggere() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
           <h3 className="text-emerald-300 font-semibold mb-2">Dine utfordringer</h3>
           <ul className="text-slate-300 text-sm space-y-1">
-            <li>• Du glemmer doser eller mister oversikten</li>
-            <li>• Du kan føle deg utrygg eller uinformert</li>
-            <li>• Stress knyttet til helse og funksjon</li>
-            <li>• Lite feedback på hvordan ting utvikler seg</li>
+            <li> Du glemmer doser eller mister oversikten</li>
+            <li> Du kan føle deg utrygg eller uinformert</li>
+            <li> Stress knyttet til helse og funksjon</li>
+            <li> Lite feedback på hvordan ting utvikler seg</li>
           </ul>
         </div>
 
@@ -52,10 +52,10 @@ export default function VpcInnbyggere() {
             Måter vi reduserer det som plager deg
           </h3>
           <ul className="text-slate-300 text-sm space-y-1">
-            <li>• Reduserer stress og forglemmelser</li>
-            <li>• Gir deg oversikt i en enkel digital logg</li>
-            <li>• Skaper forutsigbarhet og trygghet i hverdagen</li>
-            <li>• Viser deg tydelig utvikling over tid</li>
+            <li> Reduserer stress og forglemmelser</li>
+            <li> Gir deg oversikt i en enkel digital logg</li>
+            <li> Skaper forutsigbarhet og trygghet i hverdagen</li>
+            <li> Viser deg tydelig utvikling over tid</li>
           </ul>
         </div>
 
@@ -63,10 +63,10 @@ export default function VpcInnbyggere() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
           <h3 className="text-emerald-300 font-semibold mb-2">Dine gevinster</h3>
           <ul className="text-slate-300 text-sm space-y-1">
-            <li>• Opplevelse av mestring, kontroll og ro</li>
-            <li>• Tidlige signaler som gir trygghet</li>
-            <li>• Enklere dialog med pårørende og helsetjenesten</li>
-            <li>• Bedre forståelse av egen helse</li>
+            <li> Opplevelse av mestring, kontroll og ro</li>
+            <li> Tidlige signaler som gir trygghet</li>
+            <li> Enklere dialog med pårørende og helsetjenesten</li>
+            <li> Bedre forståelse av egen helse</li>
           </ul>
         </div>
 
@@ -74,10 +74,10 @@ export default function VpcInnbyggere() {
         <div className="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
           <h3 className="text-emerald-300 font-semibold mb-2">Slik gir vi deg verdi</h3>
           <ul className="text-slate-300 text-sm space-y-1">
-            <li>• Økt trygghet i hverdagen</li>
-            <li>• Bedre oversikt over funksjon og medisiner</li>
-            <li>• Klar kommunikasjon med pårørende og helsepersonell</li>
-            <li>• Bedre innsikt som støtter egen mestring</li>
+            <li> Økt trygghet i hverdagen</li>
+            <li> Bedre oversikt over funksjon og medisiner</li>
+            <li> Klar kommunikasjon med pårørende og helsepersonell</li>
+            <li> Bedre innsikt som støtter egen mestring</li>
           </ul>
         </div>
 

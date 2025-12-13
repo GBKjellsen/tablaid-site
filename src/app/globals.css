@@ -161,10 +161,12 @@ p {
      ============================================================ */
 .button-primary {
   @apply inline-flex items-center justify-center 
-    rounded-full bg-emerald-500 hover:bg-emerald-400
-    text-slate-900 px-6 py-3 text-sm font-semibold 
-    transition-all;
+         rounded-full bg-emerald-500 hover:bg-emerald-400
+         text-slate-900 px-6 py-3 text-sm font-semibold 
+         transition-all
+         w-full sm:w-auto box-border;
 }
+
 
 
   .button-primary:hover {

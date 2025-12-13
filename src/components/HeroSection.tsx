@@ -65,23 +65,25 @@ export default function HeroSection({
   </div>
 )}
 
-        {/* IMAGE (ALLTID ØVERST PÅ MOBIL) */}
-        <div className="flex flex-1 justify-center">
-          <GlowImage
-            src={image}
-            alt={title}
-            width={verticalImage ? 300 : 540}
-            height={verticalImage ? 460 : 480}
-            className={
-              verticalImage
-                ? "w-[240px] sm:w-[280px] lg:w-[340px] rounded-2xl shadow-xl"
-                : "w-[90%] sm:w-[80%] lg:w-[420px] rounded-2xl shadow-xl"
-            }
-          />
-        </div>
+{/* IMAGE (ALLTID ØVERST PÅ MOBIL) */}
+<div className="flex w-full justify-center">
+  <GlowImage
+    src={image}
+    alt={title}
+    width={verticalImage ? 300 : 540}
+    height={verticalImage ? 460 : 480}
+    className={
+      verticalImage
+        ? "w-full max-w-[340px] mx-auto rounded-2xl shadow-xl"
+        : "w-full max-w-[420px] mx-auto sm:max-w-[360px] lg:max-w-[420px] rounded-2xl shadow-xl"
+    }
+  />
+</div>
+
+
 
         {/* TEXT (ALLTID UNDER BILDE PÅ MOBIL) */}
-        <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+        <div className="w-full text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
           {badge && (
             <span className="badge mb-4 hidden lg:inline-block">
               {badge}
@@ -102,21 +104,22 @@ export default function HeroSection({
             </p>
           )}
 
-          {/* CTAs */}
+{/* CTAs */}
 {(primaryCta || secondaryCta) && (
   <div
     className="
       mt-6
       flex flex-col gap-3
-      w-full max-w-sm mx-auto
-      sm:flex-row sm:max-w-none sm:mx-0
+      items-stretch
+      max-w-sm mx-auto
+      sm:flex-row sm:items-center sm:max-w-none sm:mx-0
       lg:justify-start
     "
   >
     {primaryCta && (
       <Link
         href={primaryCta.href}
-        className="button-primary w-full sm:w-auto"
+        className="button-primary inline-flex justify-center whitespace-nowrap"
       >
         {primaryCta.label}
       </Link>
@@ -125,15 +128,16 @@ export default function HeroSection({
     {secondaryCta && (
       <Link
         href={secondaryCta.href}
-        className="button-secondary w-full sm:w-auto"
+        className="button-secondary inline-flex justify-center whitespace-nowrap"
       >
         {secondaryCta.label}
       </Link>
     )}
   </div>
 )}
-        </div>   {/* ← lukker TEXT-blokken */}
-      </div>     {/* ← lukker CONTENT-wrapper */}
-    </section>
-  );
+
+</div>   {/* lukker TEXT-blokken */}
+</div>   {/* lukker CONTENT-wrapper */}
+</section>
+);
 }

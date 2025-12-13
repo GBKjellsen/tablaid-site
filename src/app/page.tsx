@@ -171,9 +171,9 @@ function AudienceCard({
       <h3 className="text-sm text-emerald-300 font-semibold">{title}</h3>
       <p className="mt-2 text-[var(--text-secondary)]">{text}</p>
 
-      <ul className="mt-3 space-y-1 text-sm text-[var(--text-secondary)]">
+      <ul className="mt-3 list-disc list-inside space-y-1 text-sm text-[var(--text-secondary)]">
         {bullets.map((b, i) => (
-          <li key={i}>• {b}</li>
+          <li key={i}>{b}</li>
         ))}
       </ul>
 
@@ -283,9 +283,9 @@ function FeatureCard({
 
       <p className="text-[var(--text-secondary)] text-sm">{text}</p>
 
-      <ul className="mt-4 space-y-1 text-sm text-[var(--text-secondary)]">
+      <ul className="mt-4 list-disc list-inside space-y-1 text-sm text-[var(--text-secondary)]">
         {bullets.map((b, i) => (
-          <li key={i}>• {b}</li>
+          <li key={i}>{b}</li>
         ))}
       </ul>
       {cta && (

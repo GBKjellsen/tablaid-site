@@ -12,11 +12,11 @@ export default function DashboardLEON() {
       </p>
 
       <ul className="text-slate-300 mt-4 space-y-2">
-        <li>• Tidlig oversikt over funksjonsendringer</li>
-        <li>• Færre ekstra hjemmebesøk</li>
-        <li>• Bedre samspill mellom kommune, innbygger og pårørende</li>
-        <li>• Bedre prioritering av knappe ressurser</li>
-        <li>• Lavere belastning på hjemmetjenesten</li>
+        <li> Tidlig oversikt over funksjonsendringer</li>
+        <li> Færre ekstra hjemmebesøk</li>
+        <li> Bedre samspill mellom kommune, innbygger og pårørende</li>
+        <li> Bedre prioritering av knappe ressurser</li>
+        <li> Lavere belastning på hjemmetjenesten</li>
       </ul>
     </div>
   );
