@@ -71,10 +71,7 @@ secondaryCta={{
         </div>
       </section>
 
-<MedicationPrinciplesSection
-  title="12 prinsipper for trygg legemiddelbruk"
-  subtitle="Små grep som gir bedre effekt, trygghet og oversikt."
-/>
+<MedicationPrinciplesSection/>
 
      {/* -------------------------------------------------------------- */}
 {/* VPC – COLLAPSIBLE SECTION */}
