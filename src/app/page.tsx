@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { GlowImage } from "@/components/Glow";
+import MedicationPrinciplesSection from "@/components/medication/MedicationPrinciplesSection";
 
 /* -------------------------------------------------------------------------- */
 /*                                   PAGE                                      */
@@ -194,6 +195,9 @@ function AudienceCard({
 function FeaturesSection() {
   return (
     <>
+      {/* ------------------------------------------------------------------ */}
+      {/*  Feature cards (3 kolonner)                                        */}
+      {/* ------------------------------------------------------------------ */}
       <section className="section-dark py-20">
         <div className="mx-auto max-w-[var(--max-w)] px-6">
 
@@ -206,23 +210,21 @@ function FeaturesSection() {
           </p>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
             <FeatureCard
-  title="SmartTag"
-  text="Gjør medisinhverdagen enklere med et raskt NFC-tapp. Perfekt for presis etterlevelse – uten stress."
-  bullets={[
-    "Tæpp for loggføring",
-    "Faktiske inntaksdata",
-    "Smartifiserer medisinskap, esker og dosetter",
-  ]}
-  image="/SmartTag.png"
-  cta={{
-    label: "Bestill SmartTags",
-    href: "/smarttag",
-    sub: "Betaling skjer sikkert via Stripe",
-  }}
-/>
-
+              title="SmartTag"
+              text="Gjør medisinhverdagen enklere med et raskt NFC-tapp. Perfekt for presis etterlevelse – uten stress."
+              bullets={[
+                "Tæpp for loggføring",
+                "Faktiske inntaksdata",
+                "Smartifiserer medisinskap, esker og dosetter",
+              ]}
+              image="/SmartTag.png"
+              cta={{
+                label: "Bestill SmartTags",
+                href: "/smarttag",
+                sub: "Betaling skjer sikkert via Stripe",
+              }}
+            />
 
             <FeatureCard
               title="Helsekompass"
@@ -243,15 +245,18 @@ function FeaturesSection() {
                 "Varsler ved manglende inntak",
               ]}
             />
-
           </div>
         </div>
       </section>
 
-
-       </>
+      {/* ------------------------------------------------------------------ */}
+      {/*  Medication principles (egen, fullbredde seksjon)                 */}
+      {/* ------------------------------------------------------------------ */}
+      <MedicationPrinciplesSection />
+    </>
   );
 }
+
 
 
 function FeatureCard({

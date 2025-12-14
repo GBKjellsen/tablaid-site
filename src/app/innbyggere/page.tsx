@@ -9,6 +9,7 @@ import { useState } from "react";
 import {GlowImage} from "@/components/Glow";
 import VpcToggle from "@/components/VpcToggle";
 import HeroSection from "@/components/HeroSection";
+import MedicationPrinciplesSection from "@/components/medication/MedicationPrinciplesSection";
 
 export default function InnbyggerPage() {
   const [showVPC, setShowVPC] = useState(false);
@@ -70,6 +71,10 @@ secondaryCta={{
         </div>
       </section>
 
+<MedicationPrinciplesSection
+  title="12 prinsipper for trygg legemiddelbruk"
+  subtitle="Små grep som gir bedre effekt, trygghet og oversikt."
+/>
 
      {/* -------------------------------------------------------------- */}
 {/* VPC – COLLAPSIBLE SECTION */}

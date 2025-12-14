@@ -289,10 +289,10 @@ Dette styrker brukeropplevelsen og bygger en bærekraftig økosystem-modell med 
             </p>
 
             <ul className="space-y-1 text-slate-300 text-sm">
-              <li>• Konverteres automatisk ved neste emisjon</li>
-              <li>• Rask prosess og advokatstandardisert dokument</li>
-              <li>• Vanlig blant engleinvestorer og tidligfasefond</li>
-              <li>• Gir rabatt eller cap for økt sikkerhet</li>
+              <li> Konverteres automatisk ved neste emisjon</li>
+              <li> Rask prosess og advokatstandardisert dokument</li>
+              <li> Vanlig blant engleinvestorer og tidligfasefond</li>
+              <li> Gir rabatt eller cap for økt sikkerhet</li>
             </ul>
 
             <p className="mt-4 text-xs text-slate-400">
