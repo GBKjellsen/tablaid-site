@@ -25,7 +25,7 @@ export default function RootLayout({
 
         {/* PAGE CONTENT */}
         <div className="flex flex-col min-h-screen">
-          <main className="grow">{children}</main>
+          <main className="grow lg:px20">{children}</main>
           <Footer />
         </div>
 

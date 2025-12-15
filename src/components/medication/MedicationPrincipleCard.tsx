@@ -34,7 +34,7 @@ export default function MedicationPrincipleCard({
       {/* Kilder */}
       <ul className="mt-4 text-xs text-slate-400 space-y-1">
         {principle.sources.map((src, i) => (
-          <li key={i}>• {src}</li>
+          <li key={i}> {src}</li>
         ))}
       </ul>
 
