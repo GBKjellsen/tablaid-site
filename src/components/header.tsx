@@ -16,8 +16,8 @@ export default function Header() {
           <Image
             src="/tablaid-logo-negative.png"
             alt="Tablaid logo"
-            width={150}
-            height={40}
+            width={200}
+            height={60}
             priority
           />
         </Link>
