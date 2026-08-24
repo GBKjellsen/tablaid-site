@@ -26,7 +26,7 @@ export default function HomePage() {
 
 function HeroSection() {
 	return (
-		<section className="relative pt-24 pb-20 overflow-hidden mx-50 section-dark">
+		<section className="relative pt-24 pb-20 overflow-hidden mx-[7vw] section-dark">
 			{/* Glow */}
 			<div
 				className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 
@@ -106,7 +106,7 @@ function HeroSection() {
 
 function AudienceSection() {
 	return (
-		<section className="py-10 mx-50 section-lighter">
+		<section className="py-10 mx-[7vw] section-lighter">
 			<div className="mx-auto max-w-[var(--max-w)] px-6">
 				<h2 className="text-3xl font-semibold text-white">
 					Én løsning – tre perspektiver
@@ -197,7 +197,7 @@ function FeaturesSection() {
 			{/* ------------------------------------------------------------------ */}
 			{/*  Feature cards (3 kolonner)                                        */}
 			{/* ------------------------------------------------------------------ */}
-			<section className="py-20 mx-50 section-dark">
+			<section className="py-20 mx-[7vw] section-dark">
 				<div className="mx-auto max-w-[var(--max-w)] px-6">
 					<h2 className="text-3xl font-semibold text-center text-white">
 						Nøkkelfunksjoner i Tablaid
@@ -314,7 +314,7 @@ function FeatureCard({
 
 function NeedsSection() {
 	return (
-		<section className="py-20 mx-50 section-lighter">
+		<section className="py-20 mx-[7vw] section-lighter">
 			<div className="mx-auto max-w-[var(--max-w)] px-6">
 				<h2 className="text-3xl font-semibold text-white">
 					Dokumenterte behov i helsetjenesten
@@ -372,7 +372,7 @@ function NeedCard({
 
 function VoicesSection() {
 	return (
-		<section className="py-20 mx-50 section-dark">
+		<section className="py-20 mx-[7vw] section-dark">
 			<div className="mx-auto max-w-[var(--max-w)] px-6">
 				<h2 className="text-3xl font-semibold text-white">
 					Myndighetenes budskap
