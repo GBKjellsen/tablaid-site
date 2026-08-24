@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "../lib/supabaseClient";
+// import { supabase } from "../lib/supabaseClient";
 
 export type Kommune = {
 	municipality_id: string | null;
@@ -12,13 +12,9 @@ export function useKommuner() {
 	const [kommuner, setKommuner] = useState<Kommune[]>([]);
 
 	useEffect(() => {
-		const load = async () => {
-			const { data } = await supabase
-				.from("municipality_allowlist")
-				.select("municipality_id, municipality_name");
-			if (data) setKommuner(data);
-		};
-		load();
+		// DISABLED (2026-08-24): municipality_allowlist query disabled until DB is active.
+		// Re-enable by restoring the supabase.from(...).select(...) call below.
+		setKommuner([]);
 	}, []);
 
 	return kommuner;
