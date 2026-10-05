@@ -47,8 +47,8 @@ export default function Header() {
 					<Link href="/login" className="hover:text-emerald-300">
 						Logg inn
 					</Link>
-					<Link href="/signup" className="hover:text-emerald-300">
-						Registrer
+					<Link href="/dashboard" className="hover:text-emerald-300">
+						Dashboard
 					</Link>
 
 					{/* ENGLISH FLAG */}
@@ -96,8 +96,8 @@ export default function Header() {
 					<Link href="/login" onClick={() => setOpen(false)}>
 						Logg inn
 					</Link>
-					<Link href="/signup" onClick={() => setOpen(false)}>
-						Registrer
+					<Link href="/dashboard" onClick={() => setOpen(false)}>
+						Dashboard
 					</Link>
 					<Link href="/en" onClick={() => setOpen(false)}>
 						<Image src="/gb-flag.svg" width={26} height={18} alt="English" />

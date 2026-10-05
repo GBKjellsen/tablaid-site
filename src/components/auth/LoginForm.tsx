@@ -5,7 +5,7 @@ import { useState } from "react";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { useAuth } from "../../hooks/useAuth";
-import { MailIcon, LockIcon, EyeIcon, ArrowIcon } from "../ui/icons";
+import { MailIcon, LockIcon, EyeIcon, ArrowIcon } from "../ui/Icons";
 
 type Props = {
 	asModal?: boolean;

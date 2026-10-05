@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ChevronDownIcon } from "./icons";
+import { ChevronDownIcon } from "./Icons";
 
 type Option = { value: string; label: string };
 
