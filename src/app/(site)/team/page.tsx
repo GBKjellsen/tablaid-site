@@ -1,136 +1,75 @@
-"use client";
-
 import Link from "next/link";
 
+const team = [
+	{ name: "[Navn på person]", role: "[Rolle i Tablaid]" },
+	{ name: "[Navn på person]", role: "[Rolle i Tablaid]" },
+];
+
 export default function TeamPage() {
-  return (
-    <main className="bg-[#0A0F1F] text-white min-h-screen pb-24">
-      {/* HEADER */}
-      <section className="max-w-5xl mx-auto px-4 pt-20 pb-10">
-        <h1 className="text-4xl font-bold mb-4">Team & styre</h1>
+	return (
+		<main>
+			<section className="section-dark mx-[7vw] px-6 py-20 sm:py-24">
+				<div className="mx-auto max-w-(--max-w) text-center">
+					<h1 className="text-4xl font-bold text-white sm:text-5xl">
+						Menneskene bak Tablaid
+					</h1>
+					<p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-(--text-secondary)">
+						Bak Tablaid står et team som arbeider med å utvikle digitale verktøy
+						for legemiddeloversikt, kontrollert deling og tilgang til
+						helserelaterte tilbud.
+					</p>
+					<p className="mx-auto mt-4 max-w-3xl text-(--text-secondary)">
+						Her presenterer vi menneskene som utvikler produktet, og
+						kompetansen de bringer inn i arbeidet.
+					</p>
+				</div>
+			</section>
 
-        <p className="text-gray-300 max-w-3xl leading-relaxed">
-          Tablaid utvikles av et tverrfaglig team med klinisk innsikt, teknisk
-          kapasitet og sterk forståelse for forebygging og tidlige signaler.
-          Appen utvikles i samarbeid med Podium gjennom et arbeidsinkluderende
-          utviklingsløp som kombinerer kompetansebygging, samfunnsverdi og høy
-          utviklingsfart.
-        </p>
-      </section>
+			<section className="mx-[7vw] py-16 section-lighter">
+				<div className="mx-auto max-w-(--max-w) px-6">
+					<h2 className="text-3xl font-semibold text-white">Teamet</h2>
+					<div className="grid gap-6 mt-8 md:grid-cols-2">
+						{team.map((person, i) => (
+							<article key={i} className="card">
+								<h3 className="text-lg font-semibold text-emerald-300">
+									{person.name} — {person.role}
+								</h3>
+								<p className="mt-3 text-sm text-slate-400">
+									[Kort biografi med bekreftet informasjon om relevant
+									erfaring, kompetanse og ansvarsområde.]
+								</p>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
 
-      {/* TEAM */}
-      <section className="max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-2xl font-semibold mb-6">Team</h2>
+			<section className="mx-[7vw] py-16 section-dark">
+				<div className="mx-auto max-w-(--max-w) px-6">
+					<h2 className="text-3xl font-semibold text-white">Styret</h2>
+					<p className="mt-4 text-sm text-slate-400">
+						[Navn på styremedlem] — [Bekreftet styreverv og relevant bakgrunn.]
+					</p>
+				</div>
+			</section>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Gaute */}
-          <PersonCard
-            initials="GB"
-            name="Gaute Birkeland Kjellsen"
-            role="Daglig leder & grunnlegger"
-          />
+			<section className="mx-[7vw] py-16 section-lighter">
+				<div className="mx-auto max-w-(--max-w) px-6">
+					<h2 className="text-3xl font-semibold text-white">Samarbeid</h2>
+					<p className="mt-4 max-w-3xl text-sm text-slate-400">
+						[Legg inn samarbeidspartnere som har bekreftet at de kan omtales
+						offentlig, med korrekt beskrivelse av samarbeidet.]
+					</p>
+				</div>
+			</section>
 
-          {/* Podium-team */}
-          <PersonCard initials="RA" name="Robin André" role="Tech Lead (Podium)" />
-          <PersonCard initials="SA" name="Sami Ahmed" role="Backend-utvikler (Podium)" />
-          <PersonCard initials="AR" name="Arthur" role="UX Designer (Podium)" />
-          <PersonCard initials="OH" name="Ole Kristian Hexeberg" role="UX/UI (Podium)" />
-
-          {/* Ekstern rådgiver */}
-          <PersonCard
-            initials="CH"
-            name="Christian Håland"
-            role="Sikkerhetsrådgiver – Binary Security"
-          />
-        </div>
-      </section>
-
-      {/* PODIUM-SAMARBEID */}
-      <section className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="text-2xl font-semibold mb-4">Utvikling gjennom Podium</h2>
-        <p className="text-gray-300 max-w-3xl leading-relaxed mb-6">
-          Tablaid utvikles gjennom Podium – et arbeidsmarkedstiltak som kobler
-          dyktige kandidater med relevante teknologiprosjekter. Dette gir både
-          kontinuitet, samfunnsverdi og tilgang på tverrfaglig kompetanse.
-        </p>
-        <p className="text-gray-400 text-sm">
-          Podium leveres gjennom JobZone / Job & Talent.
-        </p>
-      </section>
-
-      {/* STYRE */}
-      <section className="max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-2xl font-semibold mb-6">Styre</h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <PersonCard
-            initials="KB"
-            name="Karina Birkeland"
-            role="Styreleder – HR-direktør i Innovasjon Norge"
-            linkedIn="https://linkedin.com/in/karinabirkeland"
-          />
-
-          <PersonCard
-            initials="RW"
-            name="Randi Willa"
-            role="Styremedlem"
-            linkedIn="https://linkedin.com/in/randi-willa-8865b163"
-          />
-
-          <PersonCard
-            initials="AS"
-            name="Amir Sasson"
-            role="Styremedlem"
-            linkedIn="https://linkedin.com/in/amir-sasson-84750a3"
-          />
-        </div>
-      </section>
-
-      {/* Tilbake-link */}
-      <section className="max-w-5xl mx-auto px-4 py-10 text-center">
-        <Link
-          href="/"
-          className="text-green-400 hover:text-green-300 text-sm underline"
-        >
-          ← Tilbake til forsiden
-        </Link>
-      </section>
-    </main>
-  );
-}
-
-/* COMPONENT: PersonCard */
-function PersonCard({
-  initials,
-  name,
-  role,
-  linkedIn,
-}: {
-  initials: string;
-  name: string;
-  role: string;
-  linkedIn?: string;
-}) {
-  return (
-    <div className="bg-[#0F172A] border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
-      <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center text-lg font-semibold">
-        {initials}
-      </div>
-
-      <h3 className="text-lg font-medium">{name}</h3>
-
-      <p className="text-sm text-gray-300 leading-relaxed">{role}</p>
-
-      {linkedIn && (
-        <a
-          href={linkedIn}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-green-400 hover:text-green-300"
-        >
-          LinkedIn →
-        </a>
-      )}
-    </div>
-  );
+			<section className="px-6 py-20 section-soft">
+				<div className="mx-auto max-w-(--max-w) text-center">
+					<Link href="/kontakt" className="button-primary">
+						Kontakt oss
+					</Link>
+				</div>
+			</section>
+		</main>
+	);
 }

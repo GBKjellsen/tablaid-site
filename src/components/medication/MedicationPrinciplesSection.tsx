@@ -19,12 +19,12 @@ export default function MedicationPrinciplesSection() {
 	return (
 		<section className="section-dark mx-[7vw] py-20">
 			{/* TEKST – sentrert og i normal sidebredde */}
-			<div className="mx-auto max-w-[var(--max-w)] px-6 text-center">
+			<div className="mx-auto max-w-(--max-w) px-6 text-center">
 				<h2 className="text-3xl font-semibold text-white">
 					Legemiddelvett – trygg bruk i hverdagen
 				</h2>
 
-				<p className="mt-2 max-w-xl mx-auto text-[var(--text-secondary)]">
+				<p className="mt-2 max-w-xl mx-auto text-(--text-secondary)">
 					Praktiske prinsipper for trygg og riktig legemiddelbruk.
 				</p>
 			</div>

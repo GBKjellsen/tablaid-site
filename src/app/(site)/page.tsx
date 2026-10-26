@@ -1,442 +1,181 @@
 import Link from "next/link";
-import Image from "next/image";
-import { GlowImage } from "@/components/Glow";
-import MedicationPrinciplesSection from "@/components/medication/MedicationPrinciplesSection";
-
-/* -------------------------------------------------------------------------- */
-/*                                   PAGE                                      */
-/* -------------------------------------------------------------------------- */
 
 export default function HomePage() {
 	return (
 		<>
 			<HeroSection />
-			<AudienceSection />
-			<FeaturesSection />
-			<NeedsSection />
-			<VoicesSection />
-			<PlatformsSection />
+			<MainFeaturesSection />
+			<ControlSection />
+			<OrganizationsSection />
+			<MedicationAdviceSection />
+			<DevelopmentSection />
 		</>
 	);
 }
-
-/* -------------------------------------------------------------------------- */
-/*                               HERO SECTION                                 */
-/* -------------------------------------------------------------------------- */
 
 function HeroSection() {
 	return (
-		<section className="relative pt-24 pb-20 overflow-hidden mx-[7vw] section-dark">
-			{/* Glow */}
-			<div
-				className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 
-                      bg-emerald-500/20 blur-[120px]"
-			/>
-
-			<div
-				className="mx-auto flex max-w-[var(--max-w)] flex-col-reverse gap-12 px-6 
-                      lg:flex-row lg:items-center"
-			>
-				{/* MOBILE BADGE – OVER IMAGE */}
-				<div className="relative z-10 flex justify-center -mb-4 lg:hidden">
-					<span className="badge">Pilot våren 2026 • Tablaid</span>
-				</div>
-
-				{/* Image */}
-				<div className="flex justify-center flex-1">
-					<div
-						className="relative w-full max-w-md overflow-hidden rounded-3xl 
-                          border border-white/10 bg-[#0F172A]/70 shadow-[0_0_40px_-10px_#10b981]"
-					>
-						<GlowImage
-							src="/app-triple.png"
-							alt="Tablaid app"
-							width={900}
-							height={700}
-							className="object-cover"
-						/>
-					</div>
-				</div>
-
-				{/* TEXT */}
-				<div className="flex-1 text-center lg:text-left">
-					<span className="hidden badge lg:inline-block">
-						Pilot våren 2026 • Tablaid
-					</span>
-
-					<h1 className="mt-4 text-4xl font-bold text-white sm:text-5xl">
-						En digital{" "}
-						<span className="text-emerald-400">
-							helse- og legemiddelassistent
-						</span>{" "}
-						for tryggere hverdager.
-					</h1>
-
-					<p className="mt-4 text-lg text-[var(--text-secondary)]">
-						Tablaid kombinerer enkel legemiddelstøtte og daglige sjekk-inn for å
-						fange opp tidlige signaler om endringer – og gjøre det lettere å
-						samarbeide mellom innbygger, pårørende og kommune. Du velger selv om
-						og med hvem innsikt deles.
-					</p>
-					{/* CTA WRAPPER */}
-					<div className="flex flex-col w-full max-w-sm gap-3 mx-auto mt-6 sm:flex-row sm:max-w-none sm:mx-0">
-						<Link href="/kommuner" className="w-full button-primary sm:w-auto">
-							Kommunepilot 2026
-						</Link>
-						<Link
-							href="/innbyggere"
-							className="w-full button-secondary sm:w-auto"
-						>
-							Slik fungerer Tablaid
-						</Link>
-					</div>
-
-					<p className="mt-4 text-xs text-[var(--text-secondary)]">
-						Du velger selv om du vil dele innsikt med pårørende eller kommunen.
-					</p>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-/* -------------------------------------------------------------------------- */
-/*                            AUDIENCE SECTION                                */
-/* -------------------------------------------------------------------------- */
-
-function AudienceSection() {
-	return (
-		<section className="py-10 mx-[7vw] section-lighter">
-			<div className="mx-auto max-w-[var(--max-w)] px-6">
-				<h2 className="text-3xl font-semibold text-white">
-					Én løsning – tre perspektiver
-				</h2>
-
-				<p className="mt-2 text-[var(--text-secondary)] max-w-xl">
-					Tablaid er laget for samspill mellom innbygger, pårørende og kommunen.
+		<section className="relative mx-[7vw] overflow-hidden section-dark px-6 py-24">
+			<div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 bg-emerald-500/20 blur-[120px]" />
+			<div className="mx-auto max-w-(--max-w) text-center">
+				<h1 className="text-4xl font-bold text-white sm:text-5xl">
+					Tablaid – tre funksjoner. Én app.{" "}
+					<span className="text-emerald-400">På dine premisser.</span>
+				</h1>
+				<p className="mx-auto mt-6 max-w-3xl text-lg text-(--text-secondary)">
+					Tablaid samler tre funksjoner som kan gjøre det enklere å håndtere
+					egen medisinoversikt, dele informasjon med personer du stoler på, og
+					finne helserelaterte tilbud. Du bestemmer selv hvordan du bruker
+					appen, hvilken informasjon du deler, og hvem du deler den med.
 				</p>
-
-				<div className="grid gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-3">
-					<AudienceCard
-						title="For innbyggere"
-						text="En trygg og enkel oversikt over helse og legemidler."
-						bullets={[
-							"Oversiktlig funksjonsdashboard",
-							"Daglig helsekompass",
-							"Valgfri deling av innsikt",
-						]}
-						href="/innbyggere"
-					/>
-
-					<AudienceCard
-						title="For pårørende"
-						text="Innsikt uten overvåking – kun når innbygger ønsker det."
-						bullets={[
-							"Tidlige signaler",
-							"Bedre dialog og oversikt",
-							"Støtte uten å overstyre",
-						]}
-						href="/parorende"
-					/>
-
-					<AudienceCard
-						title="For kommuner"
-						text="Tidlige signaler og bedre grunnlag for riktige tjenester."
-						bullets={[
-							"Pilotoppsett for 25 innbyggere",
-							"Trendinnsikt over tid",
-							"Under anbudsgrensen",
-						]}
-						href="/kommuner"
-					/>
+				<div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+					<Link href="/medisinskapet" className="button-primary">
+						Se hvordan Medisinskapet fungerer
+					</Link>
+					<Link href="/lavterskeltilbud" className="button-secondary">
+						Utforsk lavterskeltilbud
+					</Link>
 				</div>
 			</div>
 		</section>
 	);
 }
 
-function AudienceCard({
-	title,
-	text,
-	bullets,
-	href,
-}: {
-	title: string;
-	text: string;
-	bullets: string[];
-	href: string;
-}) {
+function MainFeaturesSection() {
 	return (
-		<div className="card">
-			<h3 className="text-sm font-semibold text-emerald-300">{title}</h3>
-			<p className="mt-2 text-[var(--text-secondary)]">{text}</p>
-
-			<ul className="mt-3 list-disc list-inside space-y-1 text-sm text-[var(--text-secondary)]">
-				{bullets.map((b, i) => (
-					<li key={i}>{b}</li>
-				))}
-			</ul>
-
-			<Link
-				href={href}
-				className="inline-block mt-4 text-sm text-emerald-300 hover:text-emerald-200"
-			>
-				Les mer →
-			</Link>
-		</div>
-	);
-}
-
-/* -------------------------------------------------------------------------- */
-/*                          FEATURES SECTION                                  */
-/* -------------------------------------------------------------------------- */
-
-function FeaturesSection() {
-	return (
-		<>
-			{/* ------------------------------------------------------------------ */}
-			{/*  Feature cards (3 kolonner)                                        */}
-			{/* ------------------------------------------------------------------ */}
-			<section className="py-20 mx-[7vw] section-dark">
-				<div className="mx-auto max-w-[var(--max-w)] px-6">
-					<h2 className="text-3xl font-semibold text-center text-white">
-						Nøkkelfunksjoner i Tablaid
-					</h2>
-
-					<p className="mt-2 text-center text-[var(--text-secondary)] max-w-xl mx-auto">
-						Tre funksjoner som sammen gir et komplett bilde av helse og
-						etterlevelse.
-					</p>
-
-					<div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
-						<FeatureCard
-							title="SmartTag"
-							text="Gjør medisinhverdagen enklere med et raskt NFC-tapp. Perfekt for presis etterlevelse – uten stress."
-							bullets={[
-								"Tæpp for loggføring",
-								"Faktiske inntaksdata",
-								"Smartifiserer medisinskap, esker og dosetter",
-							]}
-							image="/SmartTag.png"
-							cta={{
-								label: "Bestill SmartTags",
-								href: "/smarttag",
-								sub: "Betaling skjer sikkert via Stripe",
-							}}
-						/>
-
-						<FeatureCard
-							title="Helsekompass"
-							text="Daglige mikromålinger som avslører tidlige signaler om endringer."
-							bullets={[
-								"8-dagers rotasjon",
-								"Korte spørsmål",
-								"Bedre trendinnsikt",
-							]}
-						/>
-
-						<FeatureCard
-							title="Legemiddelassistent"
-							text="Påminnelser, oversikt og trygghet – enklere etterlevelse."
-							bullets={[
-								"Skanning av medisiner",
-								"Automatisk dosettoversikt",
-								"Varsler ved manglende inntak",
-							]}
-						/>
-					</div>
+		<section className="mx-[7vw] py-20 section-lighter">
+			<div className="mx-auto max-w-(--max-w) px-6">
+				<div className="grid gap-6 lg:grid-cols-3">
+					<FeatureCard
+						title="Medisinskapet – oversikt over legemidlene dine"
+						text="Med Medisinskapet kan du samle informasjon om legemidlene dine, registrere dosering og inntak og følge med på beholdningen. Du kan også bruke påminnelser og egne notater som støtte i medisinrutinene dine."
+						link="/medisinskapet"
+						linkLabel="Utforsk Medisinskapet"
+					/>
+					<FeatureCard
+						title="Profildeling – du bestemmer hva du deler"
+						text="Ønsker du støtte fra en pårørende eller en annen person du stoler på? Med Tablaid kan du dele profilen din på dine egne premisser. Du bestemmer hvem du deler med, og hvilken informasjon vedkommende får tilgang til. Deling er frivillig, og du kan avslutte den når du ønsker det."
+						link="/for-deg#deling"
+						linkLabel="Les om deling"
+					/>
+					<FeatureCard
+						title="Lavterskeltilbud – finn tilbud som kan passe for deg"
+						text="Grupper, møteplasser, kurs og helserelaterte arrangementer kan gjøre det enklere å finne informasjon, fellesskap eller støtte. Tablaid skal samle slike tilbud fra registrerte organisasjoner og gjøre dem lettere å oppdage."
+						link="/lavterskeltilbud"
+						linkLabel="Slik fungerer lavterskeltilbud"
+					/>
 				</div>
-			</section>
-
-			{/* ------------------------------------------------------------------ */}
-			{/*  Medication principles (egen, fullbredde seksjon)                 */}
-			{/* ------------------------------------------------------------------ */}
-			<MedicationPrinciplesSection />
-		</>
+			</div>
+		</section>
 	);
 }
 
 function FeatureCard({
 	title,
 	text,
-	bullets,
-	image,
-	cta,
+	link,
+	linkLabel,
 }: {
 	title: string;
 	text: string;
-	bullets: string[];
-	image?: string;
-	cta?: { label: string; href: string; sub?: string };
+	link: string;
+	linkLabel: string;
 }) {
 	return (
-		<div className="card">
-			<div className="flex items-center justify-between mb-4">
-				<h3 className="text-sm font-semibold tracking-wide uppercase text-emerald-300">
-					{title}
-				</h3>
+		<article className="card flex flex-col">
+			<h2 className="text-lg font-semibold text-emerald-300">{title}</h2>
+			<p className="mt-3 flex-1 text-(--text-secondary)">{text}</p>
+			<Link
+				href={link}
+				className="mt-5 inline-block text-sm text-emerald-300 hover:text-emerald-200"
+			>
+				{linkLabel} →
+			</Link>
+		</article>
+	);
+}
 
-				{image && <Image src={image} alt="Icon" width={40} height={40} />}
+function ControlSection() {
+	return (
+		<section className="mx-[7vw] py-20 section-dark">
+			<div className="mx-auto max-w-(--max-w) px-6 text-center">
+				<h2 className="text-3xl font-semibold text-white">
+					Tablaid tilpasser seg dine behov – du beholder kontrollen.
+				</h2>
+				<p className="mx-auto mt-4 max-w-3xl text-lg text-(--text-secondary)">
+					Bruk Medisinskapet til å holde oversikt over egne legemidler, velg om
+					du vil dele profilen din med noen du stoler på, og utforsk
+					lavterskeltilbud når du ønsker det. Du velger selv hvilke funksjoner
+					du vil bruke.
+				</p>
 			</div>
+		</section>
+	);
+}
 
-			<p className="text-[var(--text-secondary)] text-sm">{text}</p>
+function OrganizationsSection() {
+	return (
+		<section className="mx-[7vw] py-20 section-lighter">
+			<div className="mx-auto max-w-(--max-w) px-6 text-center">
+				<h2 className="text-3xl font-semibold text-white">
+					For organisasjoner som tilbyr støtte og aktiviteter
+				</h2>
+				<p className="mx-auto mt-4 max-w-3xl text-(--text-secondary)">
+					Organisasjoner kan registrere seg hos Tablaid og sende inn informasjon
+					om tilbud de ønsker å gjøre synlige for brukerne våre. Organisasjoner
+					og tilbud gjennomgår Tablaids kontrollprosess før publisering.
+				</p>
+				<Link
+					href="/organisasjoner"
+					className="button-primary mt-6 inline-flex"
+				>
+					For organisasjoner
+				</Link>
+			</div>
+		</section>
+	);
+}
 
-			<ul className="mt-4 list-disc list-inside space-y-1 text-sm text-[var(--text-secondary)]">
-				{bullets.map((b, i) => (
-					<li key={i}>{b}</li>
-				))}
-			</ul>
-			{cta && (
-				<div className="mt-6">
-					<Link
-						href={cta.href}
-						className="inline-flex items-center justify-center w-full rounded-full 
-                 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold 
-                 py-2.5 text-sm transition"
-					>
-						{cta.label} →
+function MedicationAdviceSection() {
+	return (
+		<section className="mx-[7vw] py-16 section-dark">
+			<div className="mx-auto max-w-(--max-w) px-6 text-center">
+				<h2 className="text-3xl font-semibold text-white">Legemiddelvett</h2>
+				<p className="mx-auto mt-3 max-w-2xl text-(--text-secondary)">
+					Finn praktiske råd om legemiddelbruk, rutiner, oppbevaring,
+					pakningsvedlegg og når du bør kontakte helsepersonell.
+				</p>
+				<Link
+					href="/medisinskapet/legemiddelvett"
+					className="mt-5 inline-block text-emerald-300 hover:text-emerald-200"
+				>
+					Les Legemiddelvett →
+				</Link>
+			</div>
+		</section>
+	);
+}
+
+function DevelopmentSection() {
+	return (
+		<section className="section-soft px-6 py-20">
+			<div className="mx-auto max-w-(--max-w) text-center">
+				<h2 className="text-3xl font-semibold text-white">
+					Tablaid er i utvikling – og bygges videre
+				</h2>
+				<p className="mx-auto mt-4 max-w-3xl text-lg text-(--text-secondary)">
+					Tablaid har tre hovedfunksjoner: Medisinskapet, Profildeling og
+					Lavterskeltilbud. Vi arbeider også med videreutvikling av eksisterende
+					funksjoner og mulige tilleggsmoduler.
+				</p>
+				<div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+					<Link href="/om" className="button-secondary">
+						Les om Tablaid
 					</Link>
-
-					{cta.sub && (
-						<p className="text-xs text-[var(--text-secondary)] mt-1 text-center">
-							{cta.sub}
-						</p>
-					)}
+					<Link href="/investor" className="button-secondary">
+						For investorer
+					</Link>
 				</div>
-			)}
-		</div>
-	);
-}
-
-/* -------------------------------------------------------------------------- */
-/*              NEEDS SECTION (dokumenterte utfordringer)                     */
-/* -------------------------------------------------------------------------- */
-
-function NeedsSection() {
-	return (
-		<section className="py-20 mx-[7vw] section-lighter">
-			<div className="mx-auto max-w-[var(--max-w)] px-6">
-				<h2 className="text-3xl font-semibold text-white">
-					Dokumenterte behov i helsetjenesten
-				</h2>
-
-				<p className="mt-3 text-[var(--text-secondary)] max-w-xl">
-					Tilsyn og strategidokumenter peker på tre gjennomgående utfordringer.
-				</p>
-
-				<div className="grid gap-8 mt-10 sm:grid-cols-2 lg:grid-cols-3">
-					<NeedCard
-						title="Legemiddelbruk"
-						text="Risiko ved uklare lister og fravær av system for faktisk etterlevelse hjemme."
-						bottom="Tablaid gir innsikt der legemidlene faktisk tas – i hjemmet."
-					/>
-
-					<NeedCard
-						title="Funksjon & skrøpelighet"
-						text="Kommunene etterlyser løpende innsikt – ikke sjeldne enkeltmålinger."
-						bottom="Helsekompasset gir korte daglige datapunkter som avslører trender."
-					/>
-
-					<NeedCard
-						title="Pårørende som ressurs"
-						text="Viktige observasjoner kan deles trygt med samtykke fra innbygger."
-						bottom="Tablaid styrker samarbeid rundt innbyggeren."
-					/>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-function NeedCard({
-	title,
-	text,
-	bottom,
-}: {
-	title: string;
-	text: string;
-	bottom: string;
-}) {
-	return (
-		<div className="card">
-			<p className="text-sm uppercase text-emerald-300">{title}</p>
-			<p className="mt-2 text-[var(--text-secondary)]">{text}</p>
-			<p className="mt-3 text-sm text-[var(--text-secondary)]">{bottom}</p>
-		</div>
-	);
-}
-
-/* -------------------------------------------------------------------------- */
-/*                             VOICES SECTION                                 */
-/* -------------------------------------------------------------------------- */
-
-function VoicesSection() {
-	return (
-		<section className="py-20 mx-[7vw] section-dark">
-			<div className="mx-auto max-w-[var(--max-w)] px-6">
-				<h2 className="text-3xl font-semibold text-white">
-					Myndighetenes budskap
-				</h2>
-
-				<p className="mt-3 text-[var(--text-secondary)] max-w-xl">
-					Tablaid bygger på føringer fra Helsedirektoratet, KS og nasjonale
-					reformer.
-				</p>
-
-				<div className="grid gap-6 mt-10 sm:grid-cols-2">
-					<QuoteCard
-						quote="Utvikling over tid er avgjørende for å identifisere økende risiko tidlig."
-						source="Helsedirektoratet, Samhandlingsstrategi 2024–2030"
-					/>
-
-					<QuoteCard
-						quote="Pasienter og pårørende er en ressurs i forbedringsarbeidet."
-						source="Helsetilsynet, Tilsynsmelding 2023"
-					/>
-
-					<QuoteCard
-						quote="Det er behov for å styrke helsepersonells kunnskap om legemidler."
-						source="Helsetilsynet, Tilsynsmelding 2025"
-					/>
-
-					<QuoteCard
-						quote="Hovedmålet er å flytte hjemmetjenestene fra reaktiv til proaktiv oppfølging."
-						source="Regjeringens Bo Trygt Hjemme-reform"
-					/>
-				</div>
-			</div>
-		</section>
-	);
-}
-
-function QuoteCard({ quote, source }: { quote: string; source: string }) {
-	return (
-		<div className="card">
-			<p className="italic text-[var(--text-secondary)]">{quote}</p>
-			<p className="mt-2 text-xs text-[var(--text-secondary)]">{source}</p>
-		</div>
-	);
-}
-
-/* -------------------------------------------------------------------------- */
-/*                        PLATFORM ANNOUNCEMENT SECTION                        */
-/* -------------------------------------------------------------------------- */
-
-function PlatformsSection() {
-	return (
-		<section className="py-20 section-soft">
-			<div className="mx-auto max-w-[var(--max-w)] px-6 text-center">
-				<h2 className="text-3xl font-semibold text-white">
-					Kommer på alle plattformer
-				</h2>
-
-				<p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto text-lg">
-					Den fullverdige Tablaid-appen lanseres for
-					<span className="font-semibold text-emerald-400"> iOS</span> og
-					<span className="font-semibold text-emerald-400"> Android</span> i
-					2026. Pilotkommuner får tilgang til en moderne web-app som fungerer på
-					alle enheter.
-				</p>
 			</div>
 		</section>
 	);

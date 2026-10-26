@@ -3,7 +3,6 @@
 import { useState } from "react";
 import type { ChangeEvent, SubmitEvent } from "react";
 import Button from "../ui/Button";
-import { useKommuner } from "../../hooks/useKommuner";
 import OrganizationInfoSection from "./signup/OrganizationInfoSection";
 import ContactInfoSection from "./signup/ContactInfoSection";
 import AdditionalInfoSection from "./signup/AdditionalInfoSection";
@@ -20,7 +19,6 @@ export default function SignupForm() {
 	const [contactEmail, setContactEmail] = useState("");
 	const [contactPhone, setContactPhone] = useState("");
 	const [address, setAddress] = useState("");
-	const [kommuneId, setKommuneId] = useState("");
 	const [fylke, setFylke] = useState("");
 	const [description, setDescription] = useState("");
 	const [logo, setLogo] = useState<File | null>(null);
@@ -30,8 +28,6 @@ export default function SignupForm() {
 	const [error, setError] = useState<string | null>(null);
 	const [submitting, setSubmitting] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
-
-	const kommuner = useKommuner();
 
 	const onLogoChange = (e: ChangeEvent<HTMLInputElement>) => {
 		const file = e.target.files?.[0] ?? null;
@@ -81,7 +77,6 @@ export default function SignupForm() {
 			contactEmail,
 			contactPhone,
 			address,
-			kommuneId,
 			fylke,
 			description,
 			logoName: logo?.name ?? null,
@@ -128,9 +123,6 @@ export default function SignupForm() {
 					onContactPhoneChange={(e) => setContactPhone(e.target.value)}
 					address={address}
 					onAddressChange={(e) => setAddress(e.target.value)}
-					kommuneId={kommuneId}
-					onKommuneChange={setKommuneId}
-					kommuner={kommuner}
 					fylke={fylke}
 					onFylkeChange={setFylke}
 				/>

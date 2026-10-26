@@ -111,7 +111,7 @@
   /* --- Global link color fix --- */
   a {
     color: var(--brand-emerald-300);
-    text-decoration: underline;
+    text-decoration: none;
     transition: color .2s ease;
   }
 
@@ -183,7 +183,6 @@
 
   .button-primary:hover {
     filter: brightness(1.08);
-    transform: translateY(-1px);
   }
 
   .button-primary:disabled {
@@ -222,7 +221,6 @@
 
   .button-secondary:hover {
     background: rgba(15, 23, 42, 0.95);
-    transform: translateY(-1px);
   }
 
 

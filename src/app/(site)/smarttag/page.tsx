@@ -15,7 +15,7 @@ export default function SmartTagPage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-72 
                         bg-emerald-500/20 blur-[120px]" />
 
-        <div className="mx-auto max-w-[var(--max-w)] px-6 lg:px-20 text-center">
+        <div className="mx-auto max-w-(--max-w) px-6 lg:px-20 text-center">
           <h1 className="text-4xl font-bold leading-tight">
             Bestill SmartTags
           </h1>

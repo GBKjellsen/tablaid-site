@@ -4,7 +4,6 @@ import type { ChangeEvent } from "react";
 import Input from "../../ui/Input";
 import Select from "../../ui/Select";
 import { FYLKER } from "../../../data/signupOptions";
-import type { Kommune } from "../../../hooks/useKommuner";
 
 type Props = {
 	contactName: string;
@@ -15,9 +14,6 @@ type Props = {
 	onContactPhoneChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	address: string;
 	onAddressChange: (e: ChangeEvent<HTMLInputElement>) => void;
-	kommuneId: string;
-	onKommuneChange: (value: string) => void; // was: (e: ChangeEvent<HTMLSelectElement>) => void
-	kommuner: Kommune[];
 	fylke: string;
 	onFylkeChange: (value: string) => void; // was: (e: ChangeEvent<HTMLSelectElement>) => void
 };
@@ -31,9 +27,6 @@ export default function ContactInfoSection({
 	onContactPhoneChange,
 	address,
 	onAddressChange,
-	kommuneId,
-	onKommuneChange,
-	kommuner,
 	fylke,
 	onFylkeChange,
 }: Props) {
@@ -67,16 +60,6 @@ export default function ContactInfoSection({
 					value={address}
 					onChange={onAddressChange}
 					placeholder="Gateadresse, postnummer"
-				/>
-				<Select
-					label="Kommune"
-					value={kommuneId}
-					onChange={onKommuneChange}
-					placeholder="Velg kommune"
-					options={kommuner.map((k) => ({
-						value: k.municipality_id ?? "",
-						label: k.municipality_name ?? "",
-					}))}
 				/>
 				<Select
 					label="Fylke"

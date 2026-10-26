@@ -1,48 +1,99 @@
-"use client";
-
 import Link from "next/link";
 
 export default function KontaktPage() {
-  return (
-    <main className="bg-[#0A0F1F] text-white min-h-screen">
-      <section className="max-w-4xl mx-auto px-4 py-20 text-center">
-        <h1 className="text-4xl font-bold mb-6">Kontakt oss</h1>
-        <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-          Vi hører gjerne fra deg — enten du er kommune, pårørende, bruker, fagperson eller investor.
-        </p>
+	return (
+		<main>
+			<section className="section-dark mx-[7vw] px-6 py-20 sm:py-24">
+				<div className="mx-auto max-w-(--max-w) text-center">
+					<h1 className="text-4xl font-bold text-white sm:text-5xl">
+						Ta kontakt med Tablaid
+					</h1>
+					<p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-(--text-secondary)">
+						Har du spørsmål om Tablaid, ønsker du å registrere et helserelatert
+						tilbud, eller vil du diskutere samarbeid eller investering? Ta
+						gjerne kontakt.
+					</p>
+				</div>
+			</section>
 
-        <div className="bg-[#0F172A] border border-white/10 rounded-xl p-10 inline-block text-left">
-          <p className="text-gray-300 mb-2">
-            <span className="font-semibold">E-post:</span>{" "}
-            <Link href="mailto:post@tablaid.no" className="underline">
-              post@tablaid.no
-            </Link>
-          </p>
-          <p className="text-gray-300 mb-2">
-            <span className="font-semibold">Daglig leder:</span> Gaute Birkeland Kjellsen
-          </p>
-          <p className="text-gray-300 mb-6">
-            <span className="font-semibold">Telefon:</span> 913 43 663
-          </p>
+			<section className="mx-[7vw] py-16 section-lighter">
+				<div className="mx-auto max-w-(--max-w) px-6">
+					<div className="grid gap-6 md:grid-cols-2">
+						<article className="card">
+							<h2 className="text-xl font-semibold text-emerald-300">
+								Generelle henvendelser
+							</h2>
+							<p className="mt-3 text-(--text-secondary)">
+								Har du spørsmål om produktet eller ønsker å komme i kontakt med
+								oss?
+							</p>
+							<p className="mt-3 text-(--text-secondary)">
+								E-post:{" "}
+								<a
+									href="mailto:post@tablaid.no"
+									className="text-emerald-300 hover:text-emerald-200"
+								>
+									post@tablaid.no
+								</a>{" "}
+								<span className="text-sm text-slate-400">
+									(midlertidig – oppdateres)
+								</span>
+							</p>
+						</article>
 
-          <p className="text-gray-200 mb-4">
-            Vil du:
-          </p>
-          <ul className="list-disc pl-5 text-gray-300 space-y-1 mb-6">
-            <li>teste Tablaid i din kommune?</li>
-            <li>få et innblikk i dashbord og funksjonsdata?</li>
-            <li>bidra som testbruker eller pårørende?</li>
-          </ul>
+						<article className="card">
+							<h2 className="text-xl font-semibold text-emerald-300">
+								Organisasjoner og tilbud
+							</h2>
+							<p className="mt-3 text-(--text-secondary)">
+								Representerer du en organisasjon som ønsker å registrere seg
+								eller publisere et tilbud? Organisasjonsregistrering og
+								innlogging skjer på Tablaid.no.
+							</p>
+							<Link
+								href="/organisasjoner"
+								className="button-secondary mt-4 inline-flex"
+							>
+								For organisasjoner
+							</Link>
+						</article>
 
-          <Link
-            href="mailto:post@tablaid.no"
-  className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black rounded-full font-semibold shadow-lg shadow-emerald-500/30 transition"
+						<article className="card">
+							<h2 className="text-xl font-semibold text-emerald-300">
+								Samarbeid og presse
+							</h2>
+							<p className="mt-3 text-sm text-slate-400">
+								Kontakt: [bekreftet kontaktperson eller e-postadresse –
+								oppdateres senere]
+							</p>
+						</article>
 
-          >
-            Book et uforpliktende møte
-          </Link>
-        </div>
-      </section>
-    </main>
-  );
+						<article className="card">
+							<h2 className="text-xl font-semibold text-emerald-300">
+								Investering
+							</h2>
+							<Link
+								href="/investor"
+								className="button-secondary mt-4 inline-flex"
+							>
+								For investorer
+							</Link>
+						</article>
+
+						<article className="card md:col-span-2">
+							<h2 className="text-xl font-semibold text-emerald-300">
+								Brukerstøtte
+							</h2>
+							<p className="mt-3 text-(--text-secondary)">
+								For spørsmål om bruk av appen:{" "}
+								<span className="text-sm text-slate-400">
+									[supportkanal oppdateres før publisering]
+								</span>
+							</p>
+						</article>
+					</div>
+				</div>
+			</section>
+		</main>
+	);
 }
