@@ -22,7 +22,7 @@ export default function MedicationPrincipleCard({
       </h3>
 
       {/* Kort tekst */}
-      <p className="mt-2 text-sm text-[var(--text-secondary)]">
+      <p className="mt-2 text-sm text-(--text-secondary)">
         {principle.shortText}
       </p>
 
